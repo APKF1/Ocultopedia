@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public BottleController bottlePrefab;
-    public Transform layoutRoot;
-    public int columns = 5;
+    public BottleController bottlePrefab;     // Prefab do frasco
+    public Transform layoutRoot;              // Raiz onde os frascos ficam organizados
+    public int columns = 5;                   // Nº de colunas na grade
     public Vector2 spacing = new Vector2(1.6f, 2.6f);
 
-    public int colorsCount = 6;
-    public int capacity = 4;
-    public int extraEmptyBottles = 2;
+    public int colorsCount = 6;               // Nº de cores diferentes
+    public int capacity = 4;                  // Capacidade de cada frasco
+    public int extraEmptyBottles = 2;         // Quantos frascos extras vazios
     public float pourSpeed = 0.08f;
 
-    private readonly List<BottleController> bottles = new();
+    private List<BottleController> bottles = new List<BottleController>();
     private BottleController selected;
     private bool isBusy;
 
@@ -26,94 +26,104 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            var worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (Physics2D.Raycast(worldPoint, Vector2.zero).collider?.GetComponent<BottleController>() is BottleController bottle)
-                HandleBottleClick(bottle);
+            var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (hit.collider)
+            {
+                var bottle = hit.collider.GetComponent<BottleController>();
+                if (bottle) HandleBottleClick(bottle);
+            }
         }
     }
 
+    // Cria todos os frascos e distribui cores
     void BuildLevel()
     {
-        bottles.ForEach(b => Destroy(b.gameObject));
+        foreach (var b in bottles) Destroy(b.gameObject);
         bottles.Clear();
 
         int total = colorsCount + extraEmptyBottles;
-
         for (int i = 0; i < total; i++)
         {
             int r = i / columns;
             int c = i % columns;
             var pos = new Vector3(c * spacing.x, -r * spacing.y, 0);
-            bottles.Add(Instantiate(bottlePrefab, pos, Quaternion.identity, layoutRoot));
+            var b = Instantiate(bottlePrefab, pos, Quaternion.identity, layoutRoot);
+            bottles.Add(b);
         }
 
         var palette = MakePalette(colorsCount);
-
         for (int i = 0; i < colorsCount; i++)
             bottles[i].FillWithColor(palette[i], capacity);
 
-        StartCoroutine(ShuffleRoutine(100));
+        Shuffle(100); // embaralha
     }
 
+    // Lógica de clique
     void HandleBottleClick(BottleController bottle)
     {
-        if (!selected) SelectBottle(bottle);
-        else if (selected == bottle) DeselectBottle();
+        if (!selected)
+        {
+            selected = bottle;
+            selected.SetHighlight(true);
+        }
+        else if (selected == bottle)
+        {
+            selected.SetHighlight(false);
+            selected = null;
+        }
         else
         {
             if (bottle.CanReceiveFrom(selected, out int maxPour))
                 StartCoroutine(Pour(selected, bottle, maxPour));
             else
             {
-                DeselectBottle();
-                SelectBottle(bottle);
+                selected.SetHighlight(false);
+                selected = bottle;
+                selected.SetHighlight(true);
             }
         }
     }
 
-    void SelectBottle(BottleController bottle)
-    {
-        selected = bottle;
-        selected.SetHighlight(true);
-    }
-
-    void DeselectBottle()
-    {
-        selected?.SetHighlight(false);
-        selected = null;
-    }
-
+    // Faz o despejo animado
     IEnumerator Pour(BottleController from, BottleController to, int amount)
     {
         isBusy = true;
         yield return StartCoroutine(from.PourTo(to, amount, pourSpeed));
         isBusy = false;
 
-        DeselectBottle();
+        selected.SetHighlight(false);
+        selected = null;
 
-        if (CheckWin()) Debug.Log("🎉 Vitória!");
+        if (CheckWin())
+            Debug.Log("🎉 Vitória!");
     }
 
-    bool CheckWin() => bottles.TrueForAll(b => b.IsEmpty || b.IsUniformFilled());
+    // Checa se o jogo terminou
+    bool CheckWin()
+    {
+        foreach (var b in bottles)
+        {
+            if (b.IsEmpty) continue;
+            if (!b.IsUniformFilled()) return false;
+        }
+        return true;
+    }
 
-    IEnumerator ShuffleRoutine(int steps)
+    // Embaralha as cores
+    void Shuffle(int steps)
     {
         var rnd = new System.Random();
-
         for (int s = 0; s < steps; s++)
         {
             var from = bottles[rnd.Next(bottles.Count)];
             var to = bottles[rnd.Next(bottles.Count)];
             if (from == to) continue;
-
             if (to.CanReceiveFrom(from, out int max) && max > 0)
-            {
-                int amount = Random.Range(1, max + 1);
-                yield return StartCoroutine(from.PourTo(to, amount, 0f));
-            }
+                StartCoroutine(from.PourTo(to, Random.Range(1, max + 1), 0));
         }
     }
 
+    // Cria paleta de cores HSV
     Color32[] MakePalette(int n)
     {
         var arr = new Color32[n];
