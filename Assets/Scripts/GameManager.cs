@@ -1,137 +1,97 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public BottleController bottlePrefab;     // Prefab do frasco
-    public Transform layoutRoot;              // Raiz onde os frascos ficam organizados
-    public int columns = 5;                   // Nº de colunas na grade
-    public Vector2 spacing = new Vector2(1.6f, 2.6f);
+    public static GameManager Instance;
 
-    public int colorsCount = 6;               // Nº de cores diferentes
-    public int capacity = 4;                  // Capacidade de cada frasco
-    public int extraEmptyBottles = 2;         // Quantos frascos extras vazios
-    public float pourSpeed = 0.08f;
+    public BottleController bottlePrefab;
+    public Transform layoutRoot;
+    public int rows = 2;
+    public int columns = 4;
+    public List<Color> colors = new List<Color> { Color.red, Color.blue, Color.green, Color.yellow };
 
-    private List<BottleController> bottles = new List<BottleController>();
-    private BottleController selected;
-    private bool isBusy;
+    private BottleController selectedBottle;
 
-    void Start() => BuildLevel();
-
-    void Update()
+    void Awake()
     {
-        if (isBusy) return;
+        Instance = this;
+    }
 
-        if (Input.GetMouseButtonDown(0))
+    void Start()
+    {
+        GenerateBottles();
+    }
+
+    void GenerateBottles()
+    {
+        List<Color> allColors = new List<Color>();
+        for (int i = 0; i < colors.Count; i++)
         {
-            var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider)
+            for (int j = 0; j < 4; j++) // 4 líquidos por cor
             {
-                var bottle = hit.collider.GetComponent<BottleController>();
-                if (bottle) HandleBottleClick(bottle);
+                allColors.Add(colors[i]);
             }
         }
-    }
 
-    // Cria todos os frascos e distribui cores
-    void BuildLevel()
-    {
-        foreach (var b in bottles) Destroy(b.gameObject);
-        bottles.Clear();
-
-        int total = colorsCount + extraEmptyBottles;
-        for (int i = 0; i < total; i++)
+        // Embaralha
+        for (int i = 0; i < allColors.Count; i++)
         {
-            int r = i / columns;
-            int c = i % columns;
-            var pos = new Vector3(c * spacing.x, -r * spacing.y, 0);
-            var b = Instantiate(bottlePrefab, pos, Quaternion.identity, layoutRoot);
-            bottles.Add(b);
+            Color temp = allColors[i];
+            int randomIndex = Random.Range(i, allColors.Count);
+            allColors[i] = allColors[randomIndex];
+            allColors[randomIndex] = temp;
         }
 
-        var palette = MakePalette(colorsCount);
-        for (int i = 0; i < colorsCount; i++)
-            bottles[i].FillWithColor(palette[i], capacity);
+        int bottleCount = rows * columns;
+        for (int i = 0; i < bottleCount; i++)
+        {
+            BottleController bottle = Instantiate(bottlePrefab, layoutRoot);
+            bottle.transform.localPosition = new Vector3((i % columns) * 2f, -(i / columns) * 3f, 0); // ajuste do espaçamento
+            bottle.liquids = new List<Color>();
 
-        Shuffle(100); // embaralha
+            for (int j = 0; j < 4; j++)
+            {
+                if (allColors.Count > 0)
+                {
+                    bottle.liquids.Add(allColors[0]);
+                    allColors.RemoveAt(0);
+                }
+            }
+
+            bottle.RenderLiquids();
+        }
     }
 
-    // Lógica de clique
-    void HandleBottleClick(BottleController bottle)
+    public void SelectBottle(BottleController bottle)
     {
-        if (!selected)
+        if (selectedBottle == null)
         {
-            selected = bottle;
-            selected.SetHighlight(true);
-        }
-        else if (selected == bottle)
-        {
-            selected.SetHighlight(false);
-            selected = null;
+            selectedBottle = bottle;
         }
         else
         {
-            if (bottle.CanReceiveFrom(selected, out int maxPour))
-                StartCoroutine(Pour(selected, bottle, maxPour));
-            else
+            if (bottle != selectedBottle)
             {
-                selected.SetHighlight(false);
-                selected = bottle;
-                selected.SetHighlight(true);
+                TransferLiquid(selectedBottle, bottle);
             }
+            DeselectBottle();
         }
     }
 
-    // Faz o despejo animado
-    IEnumerator Pour(BottleController from, BottleController to, int amount)
+    public void DeselectBottle()
     {
-        isBusy = true;
-        yield return StartCoroutine(from.PourTo(to, amount, pourSpeed));
-        isBusy = false;
-
-        selected.SetHighlight(false);
-        selected = null;
-
-        if (CheckWin())
-            Debug.Log("🎉 Vitória!");
+        selectedBottle = null;
     }
 
-    // Checa se o jogo terminou
-    bool CheckWin()
+    void TransferLiquid(BottleController from, BottleController to)
     {
-        foreach (var b in bottles)
+        if (from.IsEmpty()) return;
+        Color topColor = from.liquids[from.liquids.Count - 1];
+        if (to.CanReceive(topColor))
         {
-            if (b.IsEmpty) continue;
-            if (!b.IsUniformFilled()) return false;
+            from.PourLiquid();
+            to.ReceiveLiquid(topColor);
         }
-        return true;
-    }
-
-    // Embaralha as cores
-    void Shuffle(int steps)
-    {
-        var rnd = new System.Random();
-        for (int s = 0; s < steps; s++)
-        {
-            var from = bottles[rnd.Next(bottles.Count)];
-            var to = bottles[rnd.Next(bottles.Count)];
-            if (from == to) continue;
-            if (to.CanReceiveFrom(from, out int max) && max > 0)
-                StartCoroutine(from.PourTo(to, Random.Range(1, max + 1), 0));
-        }
-    }
-
-    // Cria paleta de cores HSV
-    Color32[] MakePalette(int n)
-    {
-        var arr = new Color32[n];
-        for (int i = 0; i < n; i++)
-        {
-            float h = i / (float)n;
-            arr[i] = (Color)Color.HSVToRGB(h, 0.9f, 1f);
-        }
-        return arr;
     }
 }
