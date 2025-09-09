@@ -451,6 +451,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Workbench
   spawnPoint: {fileID: 1808286326}
   defaultResultPrefab: {fileID: 236904070}
+  components: []
+  combinacao:
+  - Objeto1Objeto2
+  resultados:
+  - {fileID: 236904070}
+  - {fileID: 754056372}
+  comps: 
 --- !u!1 &329520125
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +649,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &754056372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9043129499375797289, guid: 8d448508e11e1b340894777a91cdfd56, type: 3}
+  m_PrefabInstance: {fileID: 6662340686314263551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &887580410
 GameObject:
   m_ObjectHideFlags: 0

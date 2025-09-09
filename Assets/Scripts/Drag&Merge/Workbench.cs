@@ -6,7 +6,11 @@ public class Workbench : MonoBehaviour
     public Transform spawnPoint;   // Onde o item final vai nascer
     public GameObject defaultResultPrefab; // Prefab do item padrão (caso não haja combinação)
 
-    private List<string> components = new List<string>(); // Armazena os nomes dos componentes atuais
+    public List<string> components = new List<string>(); // Lista utilizada para ordenar em ordem alfabética
+    public List<string> combinacao = new List<string>() {"Objeto1Objeto2"};
+    public GameObject[] resultados ;
+
+    public string comps;
 
     // Quando um componente entra na área da Workbench
     void OnTriggerEnter2D(Collider2D other)
@@ -39,11 +43,15 @@ public class Workbench : MonoBehaviour
     // Método chamado pelo botão
     public void Craft()
     {
-        if (components.Count == 0)
+        if (components.Count <= 1)
         {
-            Debug.Log("Nenhum componente na Workbench!");
+            Debug.Log("Componentes faltando na Workbench!");
             return;
         }
+
+
+        components.Sort();
+
 
         GameObject resultPrefab = GetResultFromComponents(); // escolhe o resultado
         Instantiate(resultPrefab, spawnPoint.position, Quaternion.identity);
@@ -64,19 +72,10 @@ public class Workbench : MonoBehaviour
     // Decide o que criar dependendo dos componentes
     private GameObject GetResultFromComponents()
     {
-        // Exemplo simples de combinações:
-        if (components.Contains("Wood") && components.Contains("Stone"))
-        {
-            Debug.Log("Criou um Machado!");
-            return Resources.Load<GameObject>("Axe"); // precisa estar em Resources
-        }
-        else if (components.Contains("Stone") && components.Contains("Iron"))
-        {
-            Debug.Log("Criou uma Espada!");
-            return Resources.Load<GameObject>("Sword");
-        }
-
+        comps = components[0] + components[1];
+        int indexResult = combinacao.IndexOf(comps);
+        Debug.Log(indexResult);
         // Se não bate com nenhuma receita, retorna o item padrão
-        return defaultResultPrefab;
+        return resultados[indexResult + 1]; // Sempre index + 1 pq index 0 é o item faltando
     }
 }
