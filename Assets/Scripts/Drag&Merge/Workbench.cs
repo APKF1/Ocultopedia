@@ -17,13 +17,11 @@ public class Workbench : MonoBehaviour
     {
         if (other.CompareTag("Component"))
         {
-            string compName = other.gameObject.name.Replace("(Clone)", ""); 
-            if (!components.Contains(compName))
-            {
-                components.Add(compName);
-                Debug.Log($"Componente adicionado: {compName}");
-            }
+            string AWOOOBA = other.gameObject.name;
+            components.Add(AWOOOBA);
+            Debug.Log($"Componente adicionado: {AWOOOBA}");
         }
+        Debug.Log(components[0]);
     }
 
     // Quando um componente sai da área
@@ -31,12 +29,9 @@ public class Workbench : MonoBehaviour
     {
         if (other.CompareTag("Component"))
         {
-            string compName = other.gameObject.name.Replace("(Clone)", "");
-            if (components.Contains(compName))
-            {
-                components.Remove(compName);
-                Debug.Log($"Componente removido: {compName}");
-            }
+            string AWOOOBA = other.gameObject.name;
+            components.Remove(AWOOOBA);
+            Debug.Log($"Componente removido: {AWOOOBA}");
         }
     }
 
@@ -72,7 +67,19 @@ public class Workbench : MonoBehaviour
     // Decide o que criar dependendo dos componentes
     private GameObject GetResultFromComponents()
     {
+        for (int i = 0; i < 2; i++)
+        {
+            string compName = components[i];
+            if (compName.Contains("(Clone)"))
+            {
+                compName =  compName.Replace("(Clone)", "");
+                components[i] = compName;
+            }
+        }
         comps = components[0] + components[1];
+        Debug.Log(comps);
+        Debug.Log(components[0]);
+        Debug.Log(components[1]);
         int indexResult = combinacao.IndexOf(comps);
         Debug.Log(indexResult);
 

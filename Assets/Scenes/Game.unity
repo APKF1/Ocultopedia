@@ -271,9 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Workbench
   spawnPoint: {fileID: 1808286326}
   defaultResultPrefab: {fileID: 0}
-  components:
-  - 
-  - 
+  components: []
   combinacao:
   - Objeto1Objeto2
   resultados:

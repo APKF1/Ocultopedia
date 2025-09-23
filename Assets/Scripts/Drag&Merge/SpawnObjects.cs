@@ -6,16 +6,19 @@ public class SpawnObjects : MonoBehaviour
     // Lista de objetos que podem ser instanciados
     public List<GameObject> components = new List<GameObject>();
 
+    // Start é chamado uma vez ao iniciar o script
     void Start()
     {
-        SpawnObjetos(10); 
+        SpawnObjetos(10); // Spawna 10 objetos ao iniciar
     }
 
+    // Update é chamado a cada frame, mas não está sendo usado agora
     void Update()
     {
         
     }
 
+    // Função para spawnar "n" objetos aleatoriamente posicionados
     void SpawnObjetos(int n)
     {
         for (int i = 0; i < n; i++)
