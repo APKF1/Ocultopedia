@@ -581,10 +581,10 @@ Transform:
   m_Children:
   - {fileID: 169381430}
   - {fileID: 1615832313}
-  - {fileID: 1231420291}
-  - {fileID: 1861378236}
   - {fileID: 364208959}
   - {fileID: 96126721}
+  - {fileID: 1231420291}
+  - {fileID: 1861378236}
   - {fileID: 1713525253}
   m_Father: {fileID: 2035309986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
