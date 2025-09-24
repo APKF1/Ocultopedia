@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2974770584934962412}
   m_Layer: 0
   m_Name: Ouro
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 3660805687161055875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 2.12, z: 0}
-  m_LocalScale: {x: 0.12596816, y: 0.12596816, z: 1.1996968}
+  m_LocalPosition: {x: 9.3024, y: -0.5108, z: 0}
+  m_LocalScale: {x: 0.113182396, y: 0.113182396, z: 1.0779276}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 5526544600958181190, guid: 9ea7415c32992134ead2a10a0bbe29af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -9,7 +9,7 @@ public class SpawnObjects : MonoBehaviour
     // Start é chamado uma vez ao iniciar o script
     void Start()
     {
-        SpawnObjetos(10); // Spawna 10 objetos ao iniciar
+        SpawnObjetos(30); // Spawna 10 objetos ao iniciar
     }
 
     // Update é chamado a cada frame, mas não está sendo usado agora

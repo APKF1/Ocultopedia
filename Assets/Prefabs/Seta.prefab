@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4970174585310901014}
   m_Layer: 0
   m_Name: Seta
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 3545033742530903929}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2406, y: 2.2239, z: 0}
-  m_LocalScale: {x: 0.05134802, y: 0.05134802, z: 0.48902875}
+  m_LocalPosition: {x: -9.5923, y: -1.3056, z: 0}
+  m_LocalScale: {x: 0.041186247, y: 0.041186247, z: 0.39224997}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 8286640039455712374, guid: f3efffdc77e23e64cb75b9abc3feb805, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

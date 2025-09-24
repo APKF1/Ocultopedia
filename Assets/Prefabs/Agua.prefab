@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6800182019411583292}
   m_Layer: 0
   m_Name: Agua
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1670016831012326952}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.2, y: 2.56, z: 0}
-  m_LocalScale: {x: 0.18132839, y: 0.18132839, z: 0.18132839}
+  m_LocalPosition: {x: -8.4439, y: 0.5268, z: 0}
+  m_LocalScale: {x: 0.17492749, y: 0.17492749, z: 0.17492749}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: eb66fd67bced5a94b97aa45376b18041, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

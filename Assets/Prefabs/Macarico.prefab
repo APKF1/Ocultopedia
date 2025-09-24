@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6875991491490304996}
   m_Layer: 0
   m_Name: Macarico
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1161831353661913276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5532, y: 2.2355, z: 0}
-  m_LocalScale: {x: 0.09977488, y: 0.09977488, z: 0.95023704}
+  m_LocalPosition: {x: 2.36, y: 1.18, z: 0}
+  m_LocalScale: {x: 0.08306259, y: 0.08306259, z: 0.7910723}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 5386558699712307762, guid: f6ebc4919df3fe742a671a546d48e01f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

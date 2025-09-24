@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3167249449162763414}
   m_Layer: 0
   m_Name: Clipe
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6903643717632588658}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000037450698, y: 4.2064126e-12, z: -0, w: 1}
-  m_LocalPosition: {x: -8.426, y: 2.072, z: 0}
+  m_LocalPosition: {x: -6.33, y: 0.76, z: -0}
   m_LocalScale: {x: 0.04505968, y: 0.04505968, z: 0.4291398}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -7771802469966239822, guid: e7db23482cf91014d9f6078775b0e5c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8010602235623103996}
   m_Layer: 0
   m_Name: Manteiga
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8236535394124785080}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.32, y: 2.1451, z: 0}
-  m_LocalScale: {x: 0.086614564, y: 0.086614564, z: 0.82490057}
+  m_LocalPosition: {x: 8.6143, y: 1.2021, z: 0}
+  m_LocalScale: {x: 0.080014534, y: 0.08204998, z: 0.82490057}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 6948548871080242239, guid: 6b7753bfbf9416b48a6439697d6c18fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
