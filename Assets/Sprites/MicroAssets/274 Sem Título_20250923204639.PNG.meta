@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 005d22145d04bb548b92c6cc3b565405
+guid: f6ebc4919df3fe742a671a546d48e01f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8654722213307402245
-    second: Desenho_SUPER_incompleto-removebg-preview_0
+      213: 5386558699712307762
+    second: "274 Sem Ti\u0301tulo_20250923204639_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Desenho_SUPER_incompleto-removebg-preview_0
+      name: "274 Sem Ti\u0301tulo_20250923204639_0"
       rect:
         serializedVersion: 2
-        x: 58
-        y: 103
-        width: 313
-        height: 381
+        x: 240
+        y: 367
+        width: 1663
+        height: 1881
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 508ced19fffbb1870800000000000000
-      internalID: 8654722213307402245
+      spriteID: 23264222996e0ca40800000000000000
+      internalID: 5386558699712307762
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Desenho_SUPER_incompleto-removebg-preview_0: 8654722213307402245
+      "274 Sem Ti\u0301tulo_20250923204639_0": 5386558699712307762
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
