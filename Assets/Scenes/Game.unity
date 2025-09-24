@@ -273,10 +273,10 @@ MonoBehaviour:
   defaultResultPrefab: {fileID: 0}
   components: []
   combinacao:
-  - Objeto1Objeto2
+  - AdagaManteiga
   resultados:
   - {fileID: 7766122950575095443, guid: a000285847fd48a42a5f486e5a087c1e, type: 3}
-  - {fileID: 9043129499375797289, guid: 8d448508e11e1b340894777a91cdfd56, type: 3}
+  - {fileID: 3100231063915847936, guid: 8cae3ddb6937ae84989a77b5da6c17b5, type: 3}
   comps: 
 --- !u!1 &329520125
 GameObject:
@@ -514,8 +514,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnObjects
   components:
-  - {fileID: 8163805316640149730, guid: 29d67df0d215ac74a8f1b9a51cf3289f, type: 3}
-  - {fileID: 6831807020580179623, guid: ccd60639e634f6d4d8c3f5f7a4bb4b37, type: 3}
+  - {fileID: 7675649282225712179, guid: 0a3c185b7b5a330479f880b0f9ecc74d, type: 3}
+  - {fileID: 8236535394124785080, guid: fd617507f1c9133479d1a3f82241e076, type: 3}
+  - {fileID: 1670016831012326952, guid: ef6b563b02cf21249864e95be4dabbe2, type: 3}
+  - {fileID: 4811152457702047935, guid: 88975455b107a2f4581b298ae0e02298, type: 3}
+  - {fileID: 8271845996125492583, guid: 0c7254012d101024e9754ec8dc1626b1, type: 3}
+  - {fileID: 4086327194792922562, guid: e92aeea5e101dd145981b3849e2b1293, type: 3}
+  - {fileID: 3034614382386111013, guid: a49131739721a2e43ae900f1bf478983, type: 3}
+  - {fileID: 6903643717632588658, guid: f7fb321ad331c20419af41efe31e500a, type: 3}
+  - {fileID: 7429091949107983615, guid: ebc0ad3011859224abaafb36288e9088, type: 3}
+  - {fileID: 4701425450080422987, guid: f89ad4b6f8ea7f747867b18b89181dd1, type: 3}
+  - {fileID: 5098204118508266221, guid: 4afa12f6959484446ae1e3c341f66c99, type: 3}
+  - {fileID: 5961565431538393480, guid: 881e8a80893f6d64e8b79293390a7d5f, type: 3}
+  - {fileID: 1161831353661913276, guid: 5fd164e86e8d9ba409074bd66b07e4ed, type: 3}
+  - {fileID: 3660805687161055875, guid: e80cb29bf6f02914cb9c8f74695b256d, type: 3}
+  - {fileID: 500626952350270608, guid: 85e2b3403ce34d9418241da18c26e0f0, type: 3}
+  - {fileID: 3545033742530903929, guid: 3801670e81b11034f9d97e1d19f827cb, type: 3}
 --- !u!1 &887580410
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +819,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0

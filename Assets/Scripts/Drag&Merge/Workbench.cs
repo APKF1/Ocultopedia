@@ -7,7 +7,7 @@ public class Workbench : MonoBehaviour
     public GameObject defaultResultPrefab; // Prefab do item padrão (caso não haja combinação)
 
     public List<string> components = new List<string>(); // Lista utilizada para ordenar em ordem alfabética
-    public List<string> combinacao = new List<string>() {{"Objeto1Objeto2"}};
+    public List<string> combinacao = new List<string>();
     public GameObject[] resultados ;
 
     public string comps;
@@ -19,9 +19,7 @@ public class Workbench : MonoBehaviour
         {
             string AWOOOBA = other.gameObject.name;
             components.Add(AWOOOBA);
-            Debug.Log($"Componente adicionado: {AWOOOBA}");
         }
-        Debug.Log(components[0]);
     }
 
     // Quando um componente sai da área
@@ -31,7 +29,6 @@ public class Workbench : MonoBehaviour
         {
             string AWOOOBA = other.gameObject.name;
             components.Remove(AWOOOBA);
-            Debug.Log($"Componente removido: {AWOOOBA}");
         }
     }
 
@@ -77,9 +74,6 @@ public class Workbench : MonoBehaviour
             }
         }
         comps = components[0] + components[1];
-        Debug.Log(comps);
-        Debug.Log(components[0]);
-        Debug.Log(components[1]);
         int indexResult = combinacao.IndexOf(comps);
         Debug.Log(indexResult);
 
