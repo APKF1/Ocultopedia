@@ -9,7 +9,8 @@ public class SpawnObjects : MonoBehaviour
     // Start é chamado uma vez ao iniciar o script
     void Start()
     {
-        SpawnObjetos(30); // Spawna 10 objetos ao iniciar
+        SpawnSpecificObjects(new int[] {0, 1});
+        SpawnObjetos(20); // Spawna 10 objetos ao iniciar
     }
 
     // Update é chamado a cada frame, mas não está sendo usado agora
@@ -37,4 +38,24 @@ public class SpawnObjects : MonoBehaviour
             );
         }
     }
+    void SpawnSpecificObjects(int[] items)
+    {
+        foreach (int i in items)
+        {
+            float x = Random.Range(-9f, 9f);
+            float y = Random.Range(-0.7f, 4.22f);
+            float rot = Random.Range(0f, 0f); // Isso sempre será 0 (depende da fase)
+
+            int index = Random.Range(0, components.Count);
+
+            // Instancia o objeto escolhido na posição e rotação dadas
+            Instantiate(
+                components[i],
+                new Vector3(x, y, 0),
+                Quaternion.Euler(0f, 0f, rot)
+            );
+        }
+    }
 }
+
+
