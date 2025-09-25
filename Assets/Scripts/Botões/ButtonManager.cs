@@ -5,6 +5,7 @@ public class ButtonManager : MonoBehaviour
 {
    public GameObject seletorDeFases;
    public GameObject settingsMenu;
+   public GameObject colecao;
 	
 	public void BtnPlay()
 	{
@@ -25,9 +26,14 @@ public class ButtonManager : MonoBehaviour
 	public void BtnBackToMenu()
 	{
 		seletorDeFases.SetActive(false);
+		colecao.SetActive(false);
 	}
 	public void BtnSettings()
 	{
 		settingsMenu.SetActive(true);
+	}
+	public void BtnCollection()
+	{
+		colecao.SetActive(true);
 	}
 }
