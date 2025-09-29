@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 73ef49df74f56b740a4acc383a26e06a
+guid: dbc6269ca524bae479361cb6d74d528d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5356702664758741337
-    second: "268 Sem Ti\u0301tulo_20250923204538_0"
+      213: 2607611677628039351
+    second: Bancada_0
   - first:
-      213: -6586839021048029369
-    second: "268 Sem Ti\u0301tulo_20250923204538_1"
+      213: -5201710022325601239
+    second: Bancada_1
+  - first:
+      213: 2559291121862643173
+    second: Bancada_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "268 Sem Ti\u0301tulo_20250923204538_0"
+      name: Bancada_0
       rect:
         serializedVersion: 2
-        x: 229
-        y: 572
-        width: 1922
-        height: 1522
+        x: 111
+        y: 210
+        width: 1821
+        height: 1247
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 959455c41b4d65a40800000000000000
-      internalID: 5356702664758741337
+      spriteID: 7b00e2d4109103420800000000000000
+      internalID: 2607611677628039351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "268 Sem Ti\u0301tulo_20250923204538_1"
+      name: Bancada_1
       rect:
         serializedVersion: 2
-        x: 1718
-        y: 509
-        width: 9
-        height: 13
+        x: 1935
+        y: 974
+        width: 8
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 74f10c51fc8d694a0800000000000000
-      internalID: -6586839021048029369
+      spriteID: 92c71b66b40dfc7b0800000000000000
+      internalID: -5201710022325601239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bancada_2
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 198
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed0f6337bd648320800000000000000
+      internalID: 2559291121862643173
       vertices: []
       indices: 
       edges: []
@@ -150,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 811c6ec16cac98e4bbc450cc12c295e7
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "268 Sem Ti\u0301tulo_20250923204538_0": 5356702664758741337
-      "268 Sem Ti\u0301tulo_20250923204538_1": -6586839021048029369
+      Bancada_0: 2607611677628039351
+      Bancada_1: -5201710022325601239
+      Bancada_2: 2559291121862643173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
