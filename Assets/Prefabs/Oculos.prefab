@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3354322747381957475}
   m_Layer: 0
   m_Name: Oculos
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 98
   m_Sprite: {fileID: 21300000, guid: b9325662cf2cbe24eaaa4edd0f68a9d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.21117783, y: 0.3680004}
+  m_Offset: {x: -0.09934807, y: 0.20025635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -137,7 +137,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.805073, y: 7.3548594}
+  m_Size: {x: 16.910439, y: 5.006443}
   m_EdgeRadius: 0
 --- !u!50 &6890626331603231945
 Rigidbody2D:

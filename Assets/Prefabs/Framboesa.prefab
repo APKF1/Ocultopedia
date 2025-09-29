@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2117941524322009303}
   - component: {fileID: 7189540851154034024}
-  - component: {fileID: 5578925461136205732}
+  - component: {fileID: 5778682843122036616}
   - component: {fileID: 6051486179298229460}
-  - component: {fileID: 2277463072811364873}
+  - component: {fileID: 7200484307296649712}
   m_Layer: 0
   m_Name: Framboesa
   m_TagString: Component
@@ -93,8 +93,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5578925461136205732
-CapsuleCollider2D:
+--- !u!61 &5778682843122036616
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,9 +127,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.66245186, y: -1.9070525}
-  m_Size: {x: 5.540547, y: 11.290748}
-  m_Direction: 0
+  m_Offset: {x: -0.68046045, y: -1.6586273}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 1.8, z: 0, w: 4.8199997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.8, y: 19.2}
+    newSize: {x: 10.8, y: 19.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.7443743, y: 11.799969}
+  m_EdgeRadius: 0
 --- !u!50 &6051486179298229460
 Rigidbody2D:
   serializedVersion: 5
@@ -157,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2277463072811364873
+--- !u!114 &7200484307296649712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

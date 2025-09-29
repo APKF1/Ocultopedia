@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9145143772655550214}
   - component: {fileID: 2823781776524845849}
-  - component: {fileID: 4478309398706033702}
+  - component: {fileID: 3842776442423607690}
   - component: {fileID: 8001101194776583478}
-  - component: {fileID: 1261275285523259010}
+  - component: {fileID: 4986685688399835959}
   m_Layer: 0
   m_Name: Cartao
   m_TagString: Component
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 98
   m_Sprite: {fileID: 7293328328458793707, guid: 3c201dfdcb8fd244cb99e947a4ea87fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,8 +93,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4478309398706033702
-CapsuleCollider2D:
+--- !u!61 &3842776442423607690
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,9 +127,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 17.74, y: 11.23}
-  m_Direction: 1
+  m_Offset: {x: -0.08139515, y: 0.00000023841858}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.74, y: 11.23}
+    newSize: {x: 17.74, y: 11.23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 17.251612, y: 10.758039}
+  m_EdgeRadius: 0
 --- !u!50 &8001101194776583478
 Rigidbody2D:
   serializedVersion: 5
@@ -157,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1261275285523259010
+--- !u!114 &4986685688399835959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,5 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 8001101194776583478}
+  rb: {fileID: 0}
   cameraPrincipal: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8034114612820194061}
   m_Layer: 0
   m_Name: Moedas
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 97
   m_Sprite: {fileID: 21300000, guid: 9f418a68c3a2db445b6ab5c6e8077f06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,9 +127,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.022327611, y: 1.5969307}
-  m_Size: {x: 9.20362, y: 9.20362}
-  m_Direction: 0
+  m_Offset: {x: -0.14039609, y: 1.3017619}
+  m_Size: {x: 7.196461, y: 5.3073645}
+  m_Direction: 1
 --- !u!50 &7109573962026574390
 Rigidbody2D:
   serializedVersion: 5
