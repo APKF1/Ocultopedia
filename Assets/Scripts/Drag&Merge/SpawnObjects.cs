@@ -24,8 +24,8 @@ public class SpawnObjects : MonoBehaviour
     {
         for (int i = 0; i < n; i++)
         {
-            float x = Random.Range(-9f, 9f);
-            float y = Random.Range(-0.7f, 4.22f);
+            float x = Random.Range(-9.95f, 9.95f);
+            float y = Random.Range(1f, 4.22f);
             float rot = Random.Range(0f, 0f); // Isso sempre será 0 (depende da fase)
 
             int index = Random.Range(0, components.Count);
