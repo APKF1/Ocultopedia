@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6987b49382f71ce4097db0902ca09db4
+guid: 8132260bc10cbff4e9a1ad4be5ea773e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2778608992856074559
-    second: "9 Sem T\xEDtulo_20250924195404_0"
+      213: -8705888203721130433
+    second: "SELE\xC7\xC3ODEFASES_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "9 Sem T\xEDtulo_20250924195404_0"
+      name: "SELE\xC7\xC3ODEFASES_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c69b1bb7d56079d0800000000000000
-      internalID: -2778608992856074559
+      spriteID: f3e30f2fdc87e2780800000000000000
+      internalID: -8705888203721130433
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "9 Sem T\xEDtulo_20250924195404_0": -2778608992856074559
+      "SELE\xC7\xC3ODEFASES_0": -8705888203721130433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
