@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1231196824173484332}
   - component: {fileID: 5198629421212629737}
-  - component: {fileID: 7189343295538881167}
+  - component: {fileID: 4671359048416525401}
   - component: {fileID: 1424786017369127286}
-  - component: {fileID: 3520939348141212960}
+  - component: {fileID: 2827452900607498087}
   m_Layer: 0
   m_Name: Adaga
   m_TagString: Component
@@ -93,8 +93,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &7189343295538881167
-CapsuleCollider2D:
+--- !u!61 &4671359048416525401
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,9 +127,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -8.320966e-19, y: 0.13165401}
-  m_Size: {x: 4.548771, y: 13.833003}
-  m_Direction: 0
+  m_Offset: {x: 0.0049932003, y: -0.027686596}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.58, y: 15.3}
+    newSize: {x: 6.58, y: 15.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.983684, y: 15.060046}
+  m_EdgeRadius: 0
 --- !u!50 &1424786017369127286
 Rigidbody2D:
   serializedVersion: 5
@@ -157,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3520939348141212960
+--- !u!114 &2827452900607498087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
