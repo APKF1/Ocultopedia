@@ -1,61 +1,115 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sistema de spawn otimizado e flexível para objetos em posições fixas.
+/// Permite configurar pontos de spawn no Inspector, spawnar objetos específicos ou aleatórios.
+/// </summary>
 public class SpawnObjects : MonoBehaviour
 {
-    // Lista de objetos que podem ser instanciados
+    [Header("Objetos disponíveis para spawn")]
+    [Tooltip("Lista de prefabs que podem ser instanciados na cena.")]
     public List<GameObject> components = new List<GameObject>();
 
-    // Start é chamado uma vez ao iniciar o script
+    [Header("Pontos de spawn")]
+    [Tooltip("Pontos fixos onde os objetos podem aparecer.")]
+    public List<Transform> spawnPoints = new List<Transform>();
+
+    [Header("Configuração de spawn inicial")]
+    [Tooltip("Número de objetos aleatórios para spawnar no início.")]
+    [Range(0, 50)]
+    public int initialSpawnCount = 10;
+
+    [Tooltip("Se verdadeiro, spawna objetos aleatórios automaticamente no Start.")]
+    public bool spawnOnStart = true;
+
     void Start()
     {
-        SpawnSpecificObjects(new int[] {0, 1});
-        SpawnObjetos(20); // Spawna 10 objetos ao iniciar
+        // Spawna objetos específicos (exemplo: índice 0 e 1)
+        SpawnSpecificObjects(new int[] { 0, 1 });
+
+        // Spawna um número configurado de objetos aleatórios
+        if (spawnOnStart)
+            SpawnRandomObjects(initialSpawnCount);
     }
 
-    // Update é chamado a cada frame, mas não está sendo usado agora
-    void Update()
+    /// <summary>
+    /// Spawna 'n' objetos aleatórios em pontos de spawn diferentes.
+    /// </summary>
+    /// <param name="n">Número de objetos a spawnar.</param>
+    public void SpawnRandomObjects(int n)
     {
-        
-    }
-
-    // Função para spawnar "n" objetos aleatoriamente posicionados
-    void SpawnObjetos(int n)
-    {
-        for (int i = 0; i < n; i++)
+        if (components.Count == 0 || spawnPoints.Count == 0)
         {
-            float x = Random.Range(-9.95f, 9.95f);
-            float y = Random.Range(1f, 4.22f);
-            float rot = Random.Range(0f, 0f); // Isso sempre será 0 (depende da fase)
+            Debug.LogWarning("SpawnObjects: Nenhum prefab ou ponto de spawn definido!");
+            return;
+        }
 
-            int index = Random.Range(0, components.Count);
+        // Garantir que não spawne mais objetos do que pontos disponíveis
+        int spawnCount = Mathf.Min(n, spawnPoints.Count);
 
-            // Instancia o objeto escolhido na posição e rotação dadas
-            Instantiate(
-                components[index],
-                new Vector3(x, y, 0),
-                Quaternion.Euler(0f, 0f, rot)
-            );
+        // Lista temporária para não repetir spawnPoints
+        List<Transform> availablePoints = new List<Transform>(spawnPoints);
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            // Escolhe um ponto aleatório e remove da lista
+            int pointIndex = Random.Range(0, availablePoints.Count);
+            Transform point = availablePoints[pointIndex];
+            availablePoints.RemoveAt(pointIndex);
+
+            // Escolhe um prefab aleatório
+            int prefabIndex = Random.Range(0, components.Count);
+            GameObject prefab = components[prefabIndex];
+
+            // Instancia o objeto
+            Instantiate(prefab, point.position, point.rotation);
         }
     }
-    void SpawnSpecificObjects(int[] items)
+
+    /// <summary>
+    /// Spawna objetos específicos (por índice) em pontos de spawn fixos.
+    /// </summary>
+    /// <param name="objectIndices">Índices dos objetos na lista 'components'.</param>
+    public void SpawnSpecificObjects(int[] objectIndices)
     {
-        foreach (int i in items)
+        if (spawnPoints.Count == 0)
         {
-            float x = Random.Range(-9f, 9f);
-            float y = Random.Range(-0.7f, 4.22f);
-            float rot = Random.Range(0f, 0f); // Isso sempre será 0 (depende da fase)
+            Debug.LogWarning("SpawnObjects: Nenhum ponto de spawn definido!");
+            return;
+        }
 
-            int index = Random.Range(0, components.Count);
+        // Evita index fora do limite
+        int count = Mathf.Min(objectIndices.Length, spawnPoints.Count);
 
-            // Instancia o objeto escolhido na posição e rotação dadas
-            Instantiate(
-                components[i],
-                new Vector3(x, y, 0),
-                Quaternion.Euler(0f, 0f, rot)
-            );
+        for (int i = 0; i < count; i++)
+        {
+            int objIndex = objectIndices[i];
+            if (objIndex < 0 || objIndex >= components.Count)
+            {
+                Debug.LogWarning($"SpawnObjects: Índice {objIndex} fora do limite da lista de objetos!");
+                continue;
+            }
+
+            GameObject prefab = components[objIndex];
+            Transform point = spawnPoints[i];
+
+            Instantiate(prefab, point.position, point.rotation);
+        }
+    }
+
+    /// <summary>
+    /// Gizmos no Editor — desenha esferas para visualizar os pontos de spawn.
+    /// </summary>
+    void OnDrawGizmosSelected()
+    {
+        if (spawnPoints == null) return;
+
+        Gizmos.color = Color.green;
+        foreach (var p in spawnPoints)
+        {
+            if (p != null)
+                Gizmos.DrawWireSphere(p.position, 0.3f);
         }
     }
 }
-
-
