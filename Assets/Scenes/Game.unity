@@ -272,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 241338387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2257, y: -0.6115, z: 0}
+  m_LocalPosition: {x: -3.27, y: -2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -871,8 +871,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 670.19556
+  MinDistance: 1334.6913
+  MaxDistance: 1353.4603
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1051,7 +1051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 726, y: -426}
+  m_AnchoredPosition: {x: 378, y: -234}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077756006
@@ -1097,7 +1097,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1077756007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7295997370953304413}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1077756007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,7 +2062,7 @@ MonoBehaviour:
   - {fileID: 195570720}
   - {fileID: 1640112667}
   - {fileID: 1022028894}
-  spawnAleatorio: 0
+  spawnAleatorio: 1
   spawnSound: {fileID: 8300000, guid: c2c12be36531bc949952e8cdd2fe393f, type: 3}
 --- !u!114 &5143266637896262434
 MonoBehaviour:
@@ -2314,11 +2326,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6de430fe3a156249b0d682e0e6d5b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
-  speechBubble: {fileID: 0}
-  speechText: {fileID: 0}
-  requestedItemIcon: {fileID: 0}
-  itemDesejado: {fileID: 0}
+  speechBubble: {fileID: 900361901572869, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
+  speechText: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+  requestedItemIcon: {fileID: 100238604139274935, guid: 8cae3ddb6937ae84989a77b5da6c17b5, type: 3}
   okButton: {fileID: 1077756006}
+  falas:
+  - "Ol\xE1, Bom dia! Desculpe o encomodo."
+  - "Gostaria de um novo artefato no qual pudesse me ajudar a preparar o meu bel\xEDssimo
+    caf\xE9 da manh\xE3."
+  - "Vi que essa \xE9 uma das \xFAnicas lojas que estavam abertas e que parecia ser
+    de boa qualidade. Poderia me ajudar?"
+  itensPedidos:
+  - {fileID: 21300000, guid: 6d4dcad56899fcc4c9deaa05eedfc533, type: 3}
   timer: {fileID: 7295997370953304414}
 --- !u!114 &7295997370953304416
 MonoBehaviour:

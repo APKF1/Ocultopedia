@@ -4,21 +4,26 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Controla o diálogo do cliente e inicia o timer ao clicar em "Ok".
+/// Sistema de diálogo modular para clientes.
+/// Permite qualquer número de falas, mostrando o botão "OK!" apenas no final.
 /// </summary>
 public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 {
     [Header("Referências de UI")]
     public GameObject speechBubble;      // Balão de fala
     public TMP_Text speechText;          // Texto do balão
-    public Image requestedItemIcon;      // Ícone do item desejado
-    public Sprite itemDesejado;          // Sprite do item
+    public SpriteRenderer requestedItemIcon;      // Ícone do item desejado
     public Button okButton;              // Botão "Ok!"
+
+    [Header("Diálogo do cliente")]
+    [TextArea]
+    public string[] falas;               // Array de falas do cliente
+    public Sprite[] itensPedidos;        // Ícones opcionais para cada fala (-1 se nenhum)
 
     [Header("Referências externas")]
     public Timer timer;                  // Script do Timer
 
-    private int etapaConversa = 0;       // controla qual etapa da conversa
+    private int etapaConversa = 0;
 
     private void Start()
     {
@@ -34,30 +39,31 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 
     private void AvancarConversa()
     {
-        switch (etapaConversa)
+        if (etapaConversa < falas.Length)
         {
-            case 0:
-                // Primeira fala
-                speechBubble.SetActive(true);
-                speechText.text = "Olá! Tudo bem? Eu gostaria de um artefato!";
-                etapaConversa++;
-                break;
+            // Mostra o balão e o texto atual
+            speechBubble.SetActive(true);
+            speechText.text = falas[etapaConversa];
 
-            case 1:
-                // Pedido do item
+            // Mostra ícone do item, se houver
+            if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
+            {
                 requestedItemIcon.enabled = true;
-                requestedItemIcon.sprite = itemDesejado;
-                speechText.text = "Você pode criar esse item para mim?";
-                etapaConversa++;
-                break;
+                requestedItemIcon.sprite = itensPedidos[etapaConversa];
+            }
+            else
+            {
+                requestedItemIcon.enabled = false;
+            }
 
-            case 2:
-                // Fim da conversa -> mostra botão OK
-                okButton.gameObject.SetActive(true);
-                okButton.onClick.RemoveAllListeners();
-                okButton.onClick.AddListener(OnOkClicked);
-                etapaConversa++;
-                break;
+            etapaConversa++;
+        }
+        else
+        {
+            // Conversa terminou -> mostra botão OK
+            okButton.gameObject.SetActive(true);
+            okButton.onClick.RemoveAllListeners();
+            okButton.onClick.AddListener(OnOkClicked);
         }
     }
 
