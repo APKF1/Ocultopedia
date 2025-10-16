@@ -1,47 +1,78 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.EventSystems;
 
 /// <summary>
-/// Controla a interação com o cliente (fala e pedido).
+/// Controla o diÃ¡logo do cliente e inicia o timer ao clicar em "Ok".
 /// </summary>
-public class CustomerInteraction : MonoBehaviour
+public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 {
-    [Header("Referências da UI do cliente")]
-    public GameObject speechBubble;  // balão de fala
-    public Text speechText;          // texto dentro do balão
-    public Image requestedItemIcon;  // ícone do item desejado
-    public Sprite itemDesejado;      // qual item ele quer
+    [Header("ReferÃªncias de UI")]
+    public GameObject speechBubble;      // BalÃ£o de fala
+    public TMP_Text speechText;          // Texto do balÃ£o
+    public Image requestedItemIcon;      // Ãcone do item desejado
+    public Sprite itemDesejado;          // Sprite do item
+    public Button okButton;              // BotÃ£o "Ok!"
 
-    private bool falou = false;
+    [Header("ReferÃªncias externas")]
+    public Timer timer;                  // Script do Timer
+
+    private int etapaConversa = 0;       // controla qual etapa da conversa
 
     private void Start()
     {
         speechBubble.SetActive(false);
         requestedItemIcon.enabled = false;
+        okButton.gameObject.SetActive(false);
     }
 
-    private void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        MostrarFala();
+        AvancarConversa();
     }
 
-    private void MostrarFala()
+    private void AvancarConversa()
     {
-        if (!falou)
+        switch (etapaConversa)
         {
-            speechBubble.SetActive(true);
-            speechText.text = "Olá! Tudo bem? Eu gostaria de um item especial!";
-            falou = true;
+            case 0:
+                // Primeira fala
+                speechBubble.SetActive(true);
+                speechText.text = "OlÃ¡! Tudo bem? Eu gostaria de um artefato!";
+                etapaConversa++;
+                break;
 
-            // Após 1.5s mostra o item desejado
-            Invoke(nameof(MostrarPedido), 1.5f);
+            case 1:
+                // Pedido do item
+                requestedItemIcon.enabled = true;
+                requestedItemIcon.sprite = itemDesejado;
+                speechText.text = "VocÃª pode criar esse item para mim?";
+                etapaConversa++;
+                break;
+
+            case 2:
+                // Fim da conversa -> mostra botÃ£o OK
+                okButton.gameObject.SetActive(true);
+                okButton.onClick.RemoveAllListeners();
+                okButton.onClick.AddListener(OnOkClicked);
+                etapaConversa++;
+                break;
         }
     }
 
-    private void MostrarPedido()
+    private void OnOkClicked()
     {
-        requestedItemIcon.enabled = true;
-        requestedItemIcon.sprite = itemDesejado;
-        speechText.text = "Você tem esse item?";
+        okButton.gameObject.SetActive(false);
+        speechBubble.SetActive(false);
+        requestedItemIcon.enabled = false;
+
+        if (timer != null)
+        {
+            timer.ResetarTimer();
+            timer.IniciarTimer();
+        }
+
+        Debug.Log("ðŸŽ¯ Timer iniciado, fase comeÃ§ou!");
     }
 }

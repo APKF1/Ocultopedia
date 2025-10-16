@@ -1,13 +1,13 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Sistema de spawn otimizado e flexível para objetos em posições fixas.
-/// Permite configurar pontos de spawn no Inspector, spawnar objetos específicos ou aleatórios.
+/// Sistema de spawn otimizado e controlado â€” 
+/// Gera os componentes/ingredientes da fase apÃ³s o inÃ­cio do jogo.
 /// </summary>
 public class SpawnObjects : MonoBehaviour
 {
-    [Header("Objetos disponíveis para spawn")]
+    [Header("Objetos disponÃ­veis para spawn")]
     [Tooltip("Lista de prefabs que podem ser instanciados na cena.")]
     public List<GameObject> components = new List<GameObject>();
 
@@ -15,29 +15,25 @@ public class SpawnObjects : MonoBehaviour
     [Tooltip("Pontos fixos onde os objetos podem aparecer.")]
     public List<Transform> spawnPoints = new List<Transform>();
 
-    [Header("Configuração de spawn inicial")]
-    [Tooltip("Número de objetos aleatórios para spawnar no início.")]
-    [Range(0, 50)]
-    public int initialSpawnCount = 10;
+    [Header("ConfiguraÃ§Ãµes")]
+    [Tooltip("Se verdadeiro, o spawn serÃ¡ aleatÃ³rio (ordem e posiÃ§Ã£o).")]
+    public bool spawnAleatorio = true;
 
-    [Tooltip("Se verdadeiro, spawna objetos aleatórios automaticamente no Start.")]
-    public bool spawnOnStart = true;
+    [Tooltip("Som opcional reproduzido ao spawnar os objetos.")]
+    public AudioClip spawnSound;
 
-    void Start()
+    private AudioSource audioSource;
+
+    private void Awake()
     {
-        // Spawna objetos específicos (exemplo: índice 0 e 1)
-        SpawnSpecificObjects(new int[] { 0, 1 });
-
-        // Spawna um número configurado de objetos aleatórios
-        if (spawnOnStart)
-            SpawnRandomObjects(initialSpawnCount);
+        // Configura o Ã¡udio, se existir
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
-    /// Spawna 'n' objetos aleatórios em pontos de spawn diferentes.
+    /// MÃ©todo chamado no inÃ­cio da fase (apÃ³s o jogador clicar em "Ok!").
     /// </summary>
-    /// <param name="n">Número de objetos a spawnar.</param>
-    public void SpawnRandomObjects(int n)
+    public void SpawnarFase()
     {
         if (components.Count == 0 || spawnPoints.Count == 0)
         {
@@ -45,53 +41,28 @@ public class SpawnObjects : MonoBehaviour
             return;
         }
 
-        // Garantir que não spawne mais objetos do que pontos disponíveis
-        int spawnCount = Mathf.Min(n, spawnPoints.Count);
+        if (spawnAleatorio)
+            SpawnRandomObjects(components.Count);
+        else
+            SpawnSpecificObjects();
 
-        // Lista temporária para não repetir spawnPoints
-        List<Transform> availablePoints = new List<Transform>(spawnPoints);
+        // Reproduz som (se houver)
+        if (spawnSound != null && audioSource != null)
+            audioSource.PlayOneShot(spawnSound);
 
-        for (int i = 0; i < spawnCount; i++)
-        {
-            // Escolhe um ponto aleatório e remove da lista
-            int pointIndex = Random.Range(0, availablePoints.Count);
-            Transform point = availablePoints[pointIndex];
-            availablePoints.RemoveAt(pointIndex);
-
-            // Escolhe um prefab aleatório
-            int prefabIndex = Random.Range(0, components.Count);
-            GameObject prefab = components[prefabIndex];
-
-            // Instancia o objeto
-            Instantiate(prefab, point.position, point.rotation);
-        }
+        Debug.Log("ðŸ§© Objetos da fase spawnados com sucesso!");
     }
 
     /// <summary>
-    /// Spawna objetos específicos (por índice) em pontos de spawn fixos.
+    /// Spawna todos os objetos da lista em pontos fixos (um por ponto).
     /// </summary>
-    /// <param name="objectIndices">Índices dos objetos na lista 'components'.</param>
-    public void SpawnSpecificObjects(int[] objectIndices)
+    private void SpawnSpecificObjects()
     {
-        if (spawnPoints.Count == 0)
-        {
-            Debug.LogWarning("SpawnObjects: Nenhum ponto de spawn definido!");
-            return;
-        }
-
-        // Evita index fora do limite
-        int count = Mathf.Min(objectIndices.Length, spawnPoints.Count);
+        int count = Mathf.Min(components.Count, spawnPoints.Count);
 
         for (int i = 0; i < count; i++)
         {
-            int objIndex = objectIndices[i];
-            if (objIndex < 0 || objIndex >= components.Count)
-            {
-                Debug.LogWarning($"SpawnObjects: Índice {objIndex} fora do limite da lista de objetos!");
-                continue;
-            }
-
-            GameObject prefab = components[objIndex];
+            GameObject prefab = components[i];
             Transform point = spawnPoints[i];
 
             Instantiate(prefab, point.position, point.rotation);
@@ -99,9 +70,31 @@ public class SpawnObjects : MonoBehaviour
     }
 
     /// <summary>
-    /// Gizmos no Editor — desenha esferas para visualizar os pontos de spawn.
+    /// Spawna objetos em ordem aleatÃ³ria, em pontos de spawn diferentes.
     /// </summary>
-    void OnDrawGizmosSelected()
+    private void SpawnRandomObjects(int n)
+    {
+        int spawnCount = Mathf.Min(n, spawnPoints.Count);
+
+        List<Transform> availablePoints = new List<Transform>(spawnPoints);
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            int pointIndex = Random.Range(0, availablePoints.Count);
+            Transform point = availablePoints[pointIndex];
+            availablePoints.RemoveAt(pointIndex);
+
+            int prefabIndex = Random.Range(0, components.Count);
+            GameObject prefab = components[prefabIndex];
+
+            Instantiate(prefab, point.position, point.rotation);
+        }
+    }
+
+    /// <summary>
+    /// Visualiza os pontos de spawn no Editor (em verde).
+    /// </summary>
+    private void OnDrawGizmosSelected()
     {
         if (spawnPoints == null) return;
 

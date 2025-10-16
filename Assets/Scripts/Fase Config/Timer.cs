@@ -1,68 +1,56 @@
-using UnityEngine;
-using UnityEngine.UI; // Necessário se for mostrar o tempo em um Text (UI antiga)
-using TMPro;          // Necessário se for usar TextMeshPro
+ï»¿using UnityEngine;
+using TMPro;
+using UnityEngine.Events;
 
+/// <summary>
+/// Controla o tempo da fase (contagem regressiva).
+/// </summary>
 public class Timer : MonoBehaviour
 {
-    [Header("Configurações")]
-    public float tempoInicial = 60f;   // Valor inicial (60 segundos, por exemplo)
-    public bool contarParaCima = false; // Define se o timer conta pra cima ou para baixo
-    public bool iniciarAutomatico = true;
-
-    [Header("Referências de UI (opcional)")]
-    public TextMeshProUGUI textoTMP; // Arraste aqui um TextMeshProUGUI
-    public Text textoUI;             // Ou um Text normal da UI antiga
-
-    private float tempoAtual;
+    [Header("ConfiguraÃ§Ãµes de Tempo")]
+    public float tempoTotal = 60f;
+    private float tempoRestante;
     private bool ativo = false;
 
-    void Start()
-    {
-        tempoAtual = tempoInicial;
+    [Header("UI")]
+    public TMP_Text textoTimer;           // ReferÃªncia ao texto "Timer"
 
-        if (iniciarAutomatico)
-            ativo = true;
-    }
+    [Header("Evento de Fim")]
+    public UnityEvent OnTempoAcabou;
 
-    void Update()
+    private void Update()
     {
         if (!ativo) return;
 
-        // Atualiza o tempo
-        if (contarParaCima)
-            tempoAtual += Time.deltaTime;
-        else
-            tempoAtual -= Time.deltaTime;
-
-        // Se for regressivo, trava no zero
-        if (!contarParaCima && tempoAtual <= 0)
+        tempoRestante -= Time.deltaTime;
+        if (tempoRestante <= 0)
         {
-            tempoAtual = 0;
+            tempoRestante = 0;
             ativo = false;
-            Debug.Log("Tempo acabou!");
+            OnTempoAcabou?.Invoke();
+            Debug.Log("â° Tempo esgotado!");
         }
 
-        // Atualiza a UI, se existir
+        AtualizarTexto();
+    }
+
+    public void IniciarTimer()
+    {
+        tempoRestante = tempoTotal;
+        ativo = true;
+        AtualizarTexto();
+    }
+
+    public void ResetarTimer()
+    {
+        tempoRestante = tempoTotal;
         AtualizarTexto();
     }
 
     private void AtualizarTexto()
     {
-        // Converte para minutos:segundos
-        int minutos = Mathf.FloorToInt(tempoAtual / 60);
-        int segundos = Mathf.FloorToInt(tempoAtual % 60);
-
-        string tempoFormatado = string.Format("{0:00}:{1:00}", minutos, segundos);
-
-        if (textoTMP != null)
-            textoTMP.text = tempoFormatado;
-
-        if (textoUI != null)
-            textoUI.text = tempoFormatado;
+        int minutos = Mathf.FloorToInt(tempoRestante / 60f);
+        int segundos = Mathf.FloorToInt(tempoRestante % 60f);
+        textoTimer.text = $"{minutos:00}:{segundos:00}";
     }
-
-    // Métodos extras para controlar o timer
-    public void IniciarTimer() => ativo = true;
-    public void PausarTimer() => ativo = false;
-    public void ResetarTimer() => tempoAtual = tempoInicial;
 }
