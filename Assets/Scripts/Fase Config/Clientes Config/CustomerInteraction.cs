@@ -1,7 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /// <summary>
 /// Sistema de diálogo modular para clientes.
@@ -22,6 +24,11 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 
     [Header("Referências externas")]
     public Timer timer;                  // Script do Timer
+    public SpawnObjects spawn;
+    public int specificObjects;
+
+    public List<int> items = new List<int>();
+
 
     private int etapaConversa = 0;
 
@@ -33,6 +40,11 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData eventData)
+    {
+        //AvancarConversa();
+    }
+
+    private void OnMouseDown()
     {
         AvancarConversa();
     }
@@ -67,11 +79,13 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void OnOkClicked()
+    public void OnOkClicked()
     {
         okButton.gameObject.SetActive(false);
         speechBubble.SetActive(false);
         requestedItemIcon.enabled = false;
+
+        spawn.SpawnarFase(specificObjects, items);
 
         if (timer != null)
         {

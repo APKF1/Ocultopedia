@@ -30,6 +30,6 @@ public class CustomerManager : MonoBehaviour
 
         int index = Random.Range(0, customerPrefabs.Length);
         clienteAtual = Instantiate(customerPrefabs[index], spawnPoint.position, Quaternion.identity);
-        Debug.Log($"🧍 Novo cliente gerado: {clienteAtual.name}");
+        //Debug.Log($"🧍 Novo cliente gerado: {clienteAtual.name}");
     }
 }

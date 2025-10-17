@@ -37,7 +37,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
     // IPointerClickHandler -> captura cliques via EventSystem / UI (se porta estiver sob Canvas como UI element)
     public void OnPointerClick(PointerEventData eventData)
     {
-        TryOpenDoor("UI PointerClick");
+        //TryOpenDoor("UI PointerClick");
     }
 
     // OnMouseDown -> captura clicks em GameObjects com Collider (desktop/browser)

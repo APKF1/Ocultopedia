@@ -23,6 +23,7 @@ public class SpawnObjects : MonoBehaviour
     public AudioClip spawnSound;
 
     private AudioSource audioSource;
+    int counter = 0;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class SpawnObjects : MonoBehaviour
     /// <summary>
     /// Método chamado no início da fase (após o jogador clicar em "Ok!").
     /// </summary>
-    public void SpawnarFase()
+    public void SpawnarFase(int n, List<int> items)
     {
         if (components.Count == 0 || spawnPoints.Count == 0)
         {
@@ -41,10 +42,8 @@ public class SpawnObjects : MonoBehaviour
             return;
         }
 
-        if (spawnAleatorio)
-            SpawnRandomObjects(components.Count);
-        else
-            SpawnSpecificObjects();
+        SpawnSpecificObjects(n, items);
+        SpawnRandomObjects(spawnPoints.Count - n);
 
         // Reproduz som (se houver)
         if (spawnSound != null && audioSource != null)
@@ -56,14 +55,17 @@ public class SpawnObjects : MonoBehaviour
     /// <summary>
     /// Spawna todos os objetos da lista em pontos fixos (um por ponto).
     /// </summary>
-    private void SpawnSpecificObjects()
+    private void SpawnSpecificObjects(int n, List<int> items)
     {
-        int count = Mathf.Min(components.Count, spawnPoints.Count);
+        // int count = Mathf.Min(components.Count, spawnPoints.Count);
 
-        for (int i = 0; i < count; i++)
+        
+       // for (int i = 0; i < n; i++)
+        foreach (int i in items)
         {
             GameObject prefab = components[i];
-            Transform point = spawnPoints[i];
+            Transform point = spawnPoints[counter];
+            counter++;
 
             Instantiate(prefab, point.position, point.rotation);
         }
@@ -74,15 +76,17 @@ public class SpawnObjects : MonoBehaviour
     /// </summary>
     private void SpawnRandomObjects(int n)
     {
-        int spawnCount = Mathf.Min(n, spawnPoints.Count);
+        // int spawnCount = Mathf.Min(n, spawnPoints.Count);
 
         List<Transform> availablePoints = new List<Transform>(spawnPoints);
 
-        for (int i = 0; i < spawnCount; i++)
+        for (int i = 0; i < n; i++)
         {
-            int pointIndex = Random.Range(0, availablePoints.Count);
-            Transform point = availablePoints[pointIndex];
-            availablePoints.RemoveAt(pointIndex);
+            //int pointIndex = Random.Range(0, availablePoints.Count);
+            // Transform point = availablePoints[pointIndex];
+            // availablePoints.RemoveAt(pointIndex);
+            Transform point = spawnPoints[counter];
+            counter++;
 
             int prefabIndex = Random.Range(0, components.Count);
             GameObject prefab = components[prefabIndex];
