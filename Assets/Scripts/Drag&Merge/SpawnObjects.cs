@@ -1,61 +1,112 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sistema de spawn otimizado e controlado ‚Äî 
+/// Gera os componentes/ingredientes da fase ap√≥s o in√≠cio do jogo.
+/// </summary>
 public class SpawnObjects : MonoBehaviour
 {
-    // Lista de objetos que podem ser instanciados
+    [Header("Objetos dispon√≠veis para spawn")]
+    [Tooltip("Lista de prefabs que podem ser instanciados na cena.")]
     public List<GameObject> components = new List<GameObject>();
 
-    // Start È chamado uma vez ao iniciar o script
-    void Start()
+    [Header("Pontos de spawn")]
+    [Tooltip("Pontos fixos onde os objetos podem aparecer.")]
+    public List<Transform> spawnPoints = new List<Transform>();
+
+    [Header("Configura√ß√µes")]
+    [Tooltip("Se verdadeiro, o spawn ser√° aleat√≥rio (ordem e posi√ß√£o).")]
+    public bool spawnAleatorio = true;
+
+    [Tooltip("Som opcional reproduzido ao spawnar os objetos.")]
+    public AudioClip spawnSound;
+
+    private AudioSource audioSource;
+    int counter = 0;
+
+    private void Awake()
     {
-        SpawnSpecificObjects(new int[] {0, 1});
-        SpawnObjetos(20); // Spawna 10 objetos ao iniciar
+        // Configura o √°udio, se existir
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update È chamado a cada frame, mas n„o est· sendo usado agora
-    void Update()
+    /// <summary>
+    /// M√©todo chamado no in√≠cio da fase (ap√≥s o jogador clicar em "Ok!").
+    /// </summary>
+    public void SpawnarFase(int n, List<int> items)
     {
-        
-    }
-
-    // FunÁ„o para spawnar "n" objetos aleatoriamente posicionados
-    void SpawnObjetos(int n)
-    {
-        for (int i = 0; i < n; i++)
+        if (components.Count == 0 || spawnPoints.Count == 0)
         {
-            float x = Random.Range(-9f, 9f);
-            float y = Random.Range(-0.7f, 4.22f);
-            float rot = Random.Range(0f, 0f); // Isso sempre ser· 0 (depende da fase)
-
-            int index = Random.Range(0, components.Count);
-
-            // Instancia o objeto escolhido na posiÁ„o e rotaÁ„o dadas
-            Instantiate(
-                components[index],
-                new Vector3(x, y, 0),
-                Quaternion.Euler(0f, 0f, rot)
-            );
+            Debug.LogWarning("SpawnObjects: Nenhum prefab ou ponto de spawn definido!");
+            return;
         }
+
+        SpawnSpecificObjects(n, items);
+        SpawnRandomObjects(spawnPoints.Count - n);
+
+        // Reproduz som (se houver)
+        if (spawnSound != null && audioSource != null)
+            audioSource.PlayOneShot(spawnSound);
+
+        Debug.Log("üß© Objetos da fase spawnados com sucesso!");
     }
-    void SpawnSpecificObjects(int[] items)
+
+    /// <summary>
+    /// Spawna todos os objetos da lista em pontos fixos (um por ponto).
+    /// </summary>
+    private void SpawnSpecificObjects(int n, List<int> items)
     {
+        // int count = Mathf.Min(components.Count, spawnPoints.Count);
+
+        
+       // for (int i = 0; i < n; i++)
         foreach (int i in items)
         {
-            float x = Random.Range(-9f, 9f);
-            float y = Random.Range(-0.7f, 4.22f);
-            float rot = Random.Range(0f, 0f); // Isso sempre ser· 0 (depende da fase)
+            GameObject prefab = components[i];
+            Transform point = spawnPoints[counter];
+            counter++;
 
-            int index = Random.Range(0, components.Count);
+            Instantiate(prefab, point.position, point.rotation);
+        }
+    }
 
-            // Instancia o objeto escolhido na posiÁ„o e rotaÁ„o dadas
-            Instantiate(
-                components[i],
-                new Vector3(x, y, 0),
-                Quaternion.Euler(0f, 0f, rot)
-            );
+    /// <summary>
+    /// Spawna objetos em ordem aleat√≥ria, em pontos de spawn diferentes.
+    /// </summary>
+    private void SpawnRandomObjects(int n)
+    {
+        // int spawnCount = Mathf.Min(n, spawnPoints.Count);
+
+        List<Transform> availablePoints = new List<Transform>(spawnPoints);
+
+        for (int i = 0; i < n; i++)
+        {
+            //int pointIndex = Random.Range(0, availablePoints.Count);
+            // Transform point = availablePoints[pointIndex];
+            // availablePoints.RemoveAt(pointIndex);
+            Transform point = spawnPoints[counter];
+            counter++;
+
+            int prefabIndex = Random.Range(0, components.Count);
+            GameObject prefab = components[prefabIndex];
+
+            Instantiate(prefab, point.position, point.rotation);
+        }
+    }
+
+    /// <summary>
+    /// Visualiza os pontos de spawn no Editor (em verde).
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        if (spawnPoints == null) return;
+
+        Gizmos.color = Color.green;
+        foreach (var p in spawnPoints)
+        {
+            if (p != null)
+                Gizmos.DrawWireSphere(p.position, 0.3f);
         }
     }
 }
-
-
