@@ -37,6 +37,7 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
         speechBubble.SetActive(false);
         requestedItemIcon.enabled = false;
         okButton.gameObject.SetActive(false);
+        speechText.gameObject.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -55,6 +56,7 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
         {
             // Mostra o balão e o texto atual
             speechBubble.SetActive(true);
+            speechText.gameObject.SetActive(true);
             speechText.text = falas[etapaConversa];
 
             // Mostra ícone do item, se houver
@@ -83,6 +85,7 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
     {
         okButton.gameObject.SetActive(false);
         speechBubble.SetActive(false);
+        speechText.gameObject.SetActive(false);
         requestedItemIcon.enabled = false;
 
         spawn.SpawnarFase(specificObjects, items);
