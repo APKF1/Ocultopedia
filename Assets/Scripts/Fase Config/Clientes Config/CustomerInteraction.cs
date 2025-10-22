@@ -14,7 +14,7 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
     [Header("Referências de UI")]
     public GameObject speechBubble;      // Balão de fala
     public TMP_Text speechText;          // Texto do balão
-    public SpriteRenderer requestedItemIcon;      // Ícone do item desejado
+    // public SpriteRenderer requestedItemIcon;      // Ícone do item desejado
     public Button okButton;              // Botão "Ok!"
 
     [Header("Diálogo do cliente")]
@@ -35,7 +35,6 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         speechBubble.SetActive(false);
-        requestedItemIcon.enabled = false;
         okButton.gameObject.SetActive(false);
         speechText.gameObject.SetActive(false);
     }
@@ -60,15 +59,15 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
             speechText.text = falas[etapaConversa];
 
             // Mostra ícone do item, se houver
-            if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
+            /* if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
             {
                 requestedItemIcon.enabled = true;
                 requestedItemIcon.sprite = itensPedidos[etapaConversa];
             }
-            else
+            /*else
             {
                 requestedItemIcon.enabled = false;
-            }
+            } */
 
             etapaConversa++;
         }
@@ -86,7 +85,7 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
         okButton.gameObject.SetActive(false);
         speechBubble.SetActive(false);
         speechText.gameObject.SetActive(false);
-        requestedItemIcon.enabled = false;
+        // requestedItemIcon.enabled = false;
 
         spawn.SpawnarFase(specificObjects, items);
 
