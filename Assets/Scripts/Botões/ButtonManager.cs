@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-   public GameObject seletorDeFases;
-   public GameObject settingsMenu;
-   public GameObject colecao;
-	
+	public GameObject seletorDeFases;
+	public GameObject settingsMenu;
+	public GameObject colecao;
+
 	public void BtnPlay()
 	{
 		SceneManager.LoadScene("Game");
@@ -15,9 +15,9 @@ public class ButtonManager : MonoBehaviour
 	public void BtnQuit()
 	{
 		Application.Quit();
-		#if UNITY_EDITOR
+#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
-		#endif
+#endif
 	}
 	public void BtnSeletorDeFases()
 	{
@@ -36,4 +36,9 @@ public class ButtonManager : MonoBehaviour
 	{
 		colecao.SetActive(true);
 	}
+
+	public void BtnFase1()
+	{
+        SceneManager.LoadScene("Game");
+    }
 }

@@ -52,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,12 +109,12 @@ TextureImporter:
       name: "262 Sem Ti\u0301tulo_20250923204453_0"
       rect:
         serializedVersion: 2
-        x: 172
+        x: 210
         y: 311
-        width: 661
+        width: 455
         height: 1216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -123,50 +123,6 @@ TextureImporter:
       bones: []
       spriteID: 82c0111cd61d3a180800000000000000
       internalID: -9105203752292250584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "262 Sem Ti\u0301tulo_20250923204453_1"
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 1314
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2513a70c257bb0d40800000000000000
-      internalID: 5551732531708703058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "262 Sem Ti\u0301tulo_20250923204453_2"
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 737
-        width: 7
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be20f4ff0dc64cb40800000000000000
-      internalID: 5459608293172249323
       vertices: []
       indices: 
       edges: []
