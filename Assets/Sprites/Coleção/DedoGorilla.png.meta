@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f472a539fc1dfd34bbe9e94c710c03a0
+guid: 698946b5334ae53458725c52e581a802
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7941232622142625574
-    second: Captura de tela 2025-10-06 213136_0
+      213: -2223413124444338150
+    second: DedoGorilla_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura de tela 2025-10-06 213136_0
+      name: DedoGorilla_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 340
-        height: 608
+        x: 235
+        y: 529
+        width: 2058
+        height: 1716
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6271e81defce43e60800000000000000
-      internalID: 7941232622142625574
+      spriteID: a18cd802b89d421e0800000000000000
+      internalID: -2223413124444338150
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Captura de tela 2025-10-06 213136_0: 7941232622142625574
+      DedoGorilla_0: -2223413124444338150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
