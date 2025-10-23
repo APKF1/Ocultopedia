@@ -4,7 +4,10 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    // Exemplo de string que define quais botões estão visíveis
+    private string botoesVisiveis;
     private GameDatabase db;
+
     void Start()
     {
         db = GetComponent<GameDatabase>();
@@ -14,17 +17,23 @@ public class GameManager : MonoBehaviour
 
         // Teste: carregar dados
         var cfg = db.CarregarConfiguracoes();
-        Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
+        //Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
 
         var prog = db.CarregarProgresso();
-        List<string> result = prog.IngredientesPerdidos.Split(new char[] { ',' }).ToList();
-        foreach (var item in result)
-        {
-            Debug.Log(item);
-        }
+        botoesVisiveis = prog.IngredientesPerdidos;
         //Testando Parse
         //Debug.Log($"Progresso -> Nível: {prog.NivelAtual}, Pontos: {prog.Pontos}, Itens: {prog.Itens}");
     }
+    
+    // Método público para recuperar isso como array
+    public string[] GetBotoesVisiveis()
+    {
+        return botoesVisiveis
+            .Split(',') // separa por vírgula
+            .Select(b => b.Trim()) // remove espaços
+            .ToArray();
+    }
+    
     void Update()
     {
         
