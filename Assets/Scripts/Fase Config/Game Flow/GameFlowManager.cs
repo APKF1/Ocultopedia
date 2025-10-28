@@ -14,7 +14,7 @@ public class GameFlowManager : MonoBehaviour
     [Header("Áudio / Hint")]
     public AudioSource audioSource;      // arraste ou será buscado automaticamente
     public AudioClip knockSound;
-    public GameObject clickHint;         // seta + "Clique para abrir a porta"
+    //public GameObject clickHint;         // seta + "Clique para abrir a porta"
 
     [Header("Timings")]
     public float initialDelay = 2.5f;
@@ -25,19 +25,19 @@ public class GameFlowManager : MonoBehaviour
 
     void Awake()
     {
-        if (audioSource == null)
+       /* if (audioSource == null)
         {
             // tenta encontrar um AudioSource na cena
-            audioSource = FindObjectOfType<AudioSource>();
+           // audioSource = FindObjectOfType<AudioSource>();
             if (audioSource == null) Debug.LogWarning("GameFlowManager: AudioSource não encontrado - audio não tocará.");
         }
 
-        if (clickHint == null) Debug.LogWarning("GameFlowManager: clickHint não atribuído.");
+        //if (clickHint == null) Debug.LogWarning("GameFlowManager: clickHint não atribuído.");*/
     }
 
     void Start()
     {
-        if (clickHint != null) clickHint.SetActive(false);
+       // if (clickHint != null) clickHint.SetActive(false);
         introCoroutine = StartCoroutine(IntroSequence());
     }
 
@@ -50,7 +50,7 @@ public class GameFlowManager : MonoBehaviour
         PlayKnock();
 
         // mostra hint
-        if (clickHint != null) clickHint.SetActive(true);
+        //if (clickHint != null) clickHint.SetActive(true);
 
         // repete até abrir a porta
         while (!doorOpened)
@@ -79,7 +79,7 @@ public class GameFlowManager : MonoBehaviour
         if (doorOpened) return;
         doorOpened = true;
 
-        if (clickHint != null) clickHint.SetActive(false);
+        //if (clickHint != null) clickHint.SetActive(false);
         Debug.Log("GameFlowManager: PortaAberta() chamado.");
     }
 
@@ -87,7 +87,7 @@ public class GameFlowManager : MonoBehaviour
     public void ResetFlow()
     {
         doorOpened = false;
-        if (clickHint != null) clickHint.SetActive(false);
+        //if (clickHint != null) clickHint.SetActive(false);
         if (introCoroutine != null) StopCoroutine(introCoroutine);
         introCoroutine = StartCoroutine(IntroSequence());
     }
