@@ -23,7 +23,7 @@ public class GameDatabase : MonoBehaviour
 
         if (db.Table<Progresso>().Count() == 0)
         {
-            SalvarProgresso(1, "", "");
+            SalvarProgresso(1, 1, "");
         }
     }
 
@@ -46,15 +46,24 @@ public class GameDatabase : MonoBehaviour
     }
 
     // ---------------- PROGRESSO ----------------
-    public void SalvarProgresso(int nivel, string ingredientes, string artefatos)
+    public void SalvarProgresso(int maiorNivel, int nivelJogado,  string desbloqueaveis)
     {
         db.DeleteAll<Progresso>(); // garante só 1 linha
-        db.Insert(new Progresso
+        if(maiorNivel > nivelJogado)
         {
-            NivelAtual = nivel,
-            IngredientesPerdidos = ingredientes,
-            ArtefatosInesperados = artefatos
-        });
+            db.Insert(new Progresso
+            {
+                NivelAtual = maiorNivel,
+                Desbloqueaveis = desbloqueaveis
+            });
+        }else{
+            db.Insert(new Progresso
+            {
+                NivelAtual = nivelJogado,
+                Desbloqueaveis = desbloqueaveis
+            });
+        }
+
     }
 
     public Progresso CarregarProgresso()
@@ -84,6 +93,5 @@ public class Progresso
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public int NivelAtual { get; set; }
-    public string IngredientesPerdidos { get; set; } 
-    public string ArtefatosInesperados { get; set; }
+    public string Desbloqueaveis { get; set; } 
 }
