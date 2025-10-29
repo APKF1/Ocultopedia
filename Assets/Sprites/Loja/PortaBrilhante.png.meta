@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 085d8157b732a3b40868f5307ce2fd51
+guid: 6d88f9675c1ac6a4196bbd9fa129c7b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2801765683036971440
-    second: "14 Sem T\xEDtulo_20251022193253_0"
+      213: -5821977896991637659
+    second: PortaBrilhante_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "14 Sem T\xEDtulo_20251022193253_0"
+      name: PortaBrilhante_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 28
-        width: 176
+        x: 546
+        y: 376
+        width: 175
         height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05e93b6a4f02e19d0800000000000000
-      internalID: -2801765683036971440
+      spriteID: 56f33a7e2fd243fa0800000000000000
+      internalID: -5821977896991637659
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "14 Sem T\xEDtulo_20251022193253_0": -2801765683036971440
+      PortaBrilhante_0: -5821977896991637659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
