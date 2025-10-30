@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Component
   - SpawnPoint
+  - Artefato
   layers:
   - Default
   - TransparentFX
