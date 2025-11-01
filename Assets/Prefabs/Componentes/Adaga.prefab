@@ -18,7 +18,7 @@ GameObject:
   m_Layer: 0
   m_Name: Adaga
   m_TagString: Component
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 3d73885c7e265d44fa53babc2602ea8c, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_Size: {x: 6.58, y: 15.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &7189343295538881167
