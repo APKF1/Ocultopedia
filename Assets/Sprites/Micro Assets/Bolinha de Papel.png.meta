@@ -3,8 +3,8 @@ guid: d5868ad66fbe5d1449afa92e7d8ae164
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5380612006787739653
-    second: BolinhaPapel_0
+      213: 4619297778478851829
+    second: Bolinha de Papel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BolinhaPapel_0
+      name: Bolinha de Papel_0
       rect:
         serializedVersion: 2
-        x: 182
-        y: 238
-        width: 1637
-        height: 1589
+        x: 16
+        y: 22
+        width: 163
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 500f8cacc16cbaa40800000000000000
-      internalID: 5380612006787739653
+      spriteID: 5f6abfdfada0b1040800000000000000
+      internalID: 4619297778478851829
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BolinhaPapel_0: 5380612006787739653
+      Bolinha de Papel_0: 4619297778478851829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

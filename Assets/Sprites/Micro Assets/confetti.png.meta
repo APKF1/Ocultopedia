@@ -5,15 +5,6 @@ TextureImporter:
   - first:
       213: -8305358921124636501
     second: confetti_0
-  - first:
-      213: -3669871625027106796
-    second: confetti_1
-  - first:
-      213: -7470921316310872362
-    second: confetti_2
-  - first:
-      213: 3161764022972267380
-    second: confetti_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: confetti_2
+      name: confetti_0
       rect:
         serializedVersion: 2
-        x: 360
-        y: 217
-        width: 1287
-        height: 1709
+        x: 9
+        y: 3
+        width: 169
+        height: 197
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6de856c35a4f15890800000000000000
-      internalID: -7470921316310872362
+      spriteID: ba89e3e90107dbc80800000000000000
+      internalID: -8305358921124636501
       vertices: []
       indices: 
       edges: []
@@ -134,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -145,9 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       confetti_0: -8305358921124636501
-      confetti_1: -3669871625027106796
-      confetti_2: -7470921316310872362
-      confetti_3: 3161764022972267380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

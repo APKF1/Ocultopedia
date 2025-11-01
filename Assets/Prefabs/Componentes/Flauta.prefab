@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.13052596, w: 0.99144495}
   m_LocalPosition: {x: -1.1011, y: -0.2511, z: 0}
-  m_LocalScale: {x: 0.113173224, y: 0.113173224, z: 0.113173224}
+  m_LocalScale: {x: 0.5771787, y: 0.6399585, z: 0.6399585}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,13 +81,13 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: c201267fec28e2a4ea92cf474a1cb352, type: 3}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: -1709671930105321908, guid: c201267fec28e2a4ea92cf474a1cb352, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 1.92, y: 1.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,8 +127,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.61237514, y: 0.1294875}
-  m_Size: {x: 12.571937, y: 15.504268}
+  m_Offset: {x: -0.050000023, y: -0.02097947}
+  m_Size: {x: 1.1374017, y: 1.3956598}
   m_Direction: 0
 --- !u!50 &5845600245540838715
 Rigidbody2D:

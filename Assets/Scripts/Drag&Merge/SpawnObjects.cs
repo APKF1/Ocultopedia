@@ -59,15 +59,16 @@ public class SpawnObjects : MonoBehaviour
     {
         // int count = Mathf.Min(components.Count, spawnPoints.Count);
 
-        
-       // for (int i = 0; i < n; i++)
+
+        // for (int i = 0; i < n; i++)
         foreach (int i in items)
         {
             GameObject prefab = components[i];
             Transform point = spawnPoints[counter];
             counter++;
 
-            Instantiate(prefab, point.position, point.rotation);
+            GameObject obj = Instantiate(prefab, point.position, point.rotation);
+            ScaleObject(point.GetComponent<ScaleSet>().scale, obj);
         }
     }
 
@@ -91,8 +92,15 @@ public class SpawnObjects : MonoBehaviour
             int prefabIndex = Random.Range(0, components.Count);
             GameObject prefab = components[prefabIndex];
 
-            Instantiate(prefab, point.position, point.rotation);
+            GameObject obj = Instantiate(prefab, point.position, point.rotation);
+            ScaleObject(point.GetComponent<ScaleSet>().scale, obj);
         }
+    }
+
+    private void ScaleObject(float scale, GameObject g)
+    {
+        Vector3 newScale = new Vector3(g.transform.localScale.x * scale, g.transform.localScale.y * scale, g.transform.localScale.z);
+        g.transform.localScale = newScale;
     }
 
     /// <summary>

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6636042664700101432}
   m_Layer: 0
   m_Name: "Po\xE7\xE3o de DLC"
-  m_TagString: Untagged
+  m_TagString: Artefato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.36, y: -3.36, z: 0}
-  m_LocalScale: {x: 0.072176605, y: 0.072176605, z: 0.072176605}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -6626705504865212469, guid: beca7f1180e274d46a896a86efe18bfd, type: 3}
+  m_Sprite: {fileID: 4306121186132424112, guid: 87b7efa5a200e3a4da27378066756871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.41, y: 21.25}
+  m_Size: {x: 3.1, y: 3.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,17 +127,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.2805519, y: -0.14028168}
+  m_Offset: {x: -0.012023926, y: -0.0060207844}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.41, y: 21.25}
-    newSize: {x: 17.41, y: 21.25}
+    oldSize: {x: 3.1, y: 3.76}
+    newSize: {x: 3.1, y: 3.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14.043247, y: 18.444378}
+  m_Size: {x: 2.7650695, y: 3.4963121}
   m_EdgeRadius: 0
 --- !u!50 &3472176010292990195
 Rigidbody2D:

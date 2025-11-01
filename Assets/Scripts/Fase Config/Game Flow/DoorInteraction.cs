@@ -16,8 +16,8 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
     public FadeController fade;
     public CustomerManager customerManager;
     public GameFlowManager flowManager;
-    public AudioSource clickAudioSource;    // som da porta (opcional)
-    public AudioClip clickClip;             // clip para PlayOneShot (opcional)
+   // public AudioSource clickAudioSource;    // som da porta (opcional)
+    //public AudioClip clickClip;             // clip para PlayOneShot (opcional)
 
     [Header("Raycast (para toque)")]
     public LayerMask clickableLayers = ~0;  // quais layers respondem ao clique (por padrão, todos)
@@ -94,11 +94,11 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
         if (flowManager != null) flowManager.PortaAberta();
 
         // Toca som
-        if (clickAudioSource != null)
+        /*if (clickAudioSource != null)
         {
             if (clickClip != null) clickAudioSource.PlayOneShot(clickClip);
             else clickAudioSource.Play();
-        }
+        } */
 
         // Inicia fade e cliente (se atribuídos)
         if (fade != null) fade.StartFadeSequence();
