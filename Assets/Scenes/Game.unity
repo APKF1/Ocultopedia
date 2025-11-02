@@ -1950,6 +1950,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9183949816390831536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &706808601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8238132775753901105, guid: 51da75350f907a94b8309ee005824b1d, type: 3}
+  m_PrefabInstance: {fileID: 4738985104052450521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &755384769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6585,7 +6590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnObjects
   components:
-  - {fileID: 7675649282225712179, guid: 0a3c185b7b5a330479f880b0f9ecc74d, type: 3}
+  - {fileID: 706808601}
   - {fileID: 8236535394124785080, guid: fd617507f1c9133479d1a3f82241e076, type: 3}
   - {fileID: 1670016831012326952, guid: ef6b563b02cf21249864e95be4dabbe2, type: 3}
   - {fileID: 4811152457702047935, guid: 88975455b107a2f4581b298ae0e02298, type: 3}
@@ -6713,7 +6718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510499949243220200, guid: 51da75350f907a94b8309ee005824b1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5510499949243220200, guid: 51da75350f907a94b8309ee005824b1d, type: 3}
       propertyPath: m_LocalRotation.w
