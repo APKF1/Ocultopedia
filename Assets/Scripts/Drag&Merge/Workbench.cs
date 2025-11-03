@@ -63,8 +63,21 @@ public class Workbench : MonoBehaviour
 
     // Decide o que criar dependendo dos componentes
     private GameObject GetResultFromComponents()
-    {
-        for (int i = 0; i < 2; i++)
+    {   
+        foreach (string sim in components)
+        {
+
+            string compName = sim;
+            if (compName.Contains("(Clone)"))
+            {
+                compName = compName.Replace("(Clone)", "");
+                
+            }
+
+            comps = comps + compName;
+
+        }
+        /*for (int i = 0; i < 2; i++)
         {
             string compName = components[i];
             if (compName.Contains("(Clone)"))
@@ -72,8 +85,9 @@ public class Workbench : MonoBehaviour
                 compName =  compName.Replace("(Clone)", "");
                 components[i] = compName;
             }
-        }
-        comps = components[0] + components[1];
+        } */
+        // comps = components[0] + components[1];
+        Debug.Log(comps);
         int indexResult = combinacao.IndexOf(comps);
         Debug.Log(indexResult);
 

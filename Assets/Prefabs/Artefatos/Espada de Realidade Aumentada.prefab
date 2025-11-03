@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4676032383540303245}
   m_Layer: 0
   m_Name: Espada de Realidade Aumentada
-  m_TagString: Untagged
+  m_TagString: Artefato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
