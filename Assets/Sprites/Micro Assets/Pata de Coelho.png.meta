@@ -3,8 +3,8 @@ guid: aabaa257ab37d584aace338075ef4b4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5081026420105336704
-    second: PataCoelho_0
+      213: 4505778324275784911
+    second: Pata de Coelho_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PataCoelho_0
+      name: Pata de Coelho_0
       rect:
         serializedVersion: 2
-        x: 370
-        y: 365
-        width: 1707
-        height: 1796
+        x: 16
+        y: 14
+        width: 178
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 087d0c0db9e638640800000000000000
-      internalID: 5081026420105336704
+      spriteID: fccec17638db78e30800000000000000
+      internalID: 4505778324275784911
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PataCoelho_0: 5081026420105336704
+      Pata de Coelho_0: 4505778324275784911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5100190491885080963}
   m_Layer: 0
   m_Name: Amuleto do Quase
-  m_TagString: Untagged
+  m_TagString: Artefato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.08, y: -3.34, z: 0}
-  m_LocalScale: {x: 0.072790086, y: 0.072790086, z: 0.072790086}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1339306687478790141, guid: a410a09d118efba4ba118813a8884dac, type: 3}
+  m_Sprite: {fileID: 1043669157903361234, guid: db7456eb49345ef438e68c44f14b46f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.18, y: 22.22}
+  m_Size: {x: 3.52, y: 3.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,8 +127,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.22, y: -0.1934637}
-  m_Radius: 10.5296135
+  m_Offset: {x: 0.1, y: -0.07}
+  m_Radius: 2.03
 --- !u!50 &2483274111221677329
 Rigidbody2D:
   serializedVersion: 5

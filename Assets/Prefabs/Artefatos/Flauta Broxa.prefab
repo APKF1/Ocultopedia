@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5070412255613967748}
   m_Layer: 0
   m_Name: Flauta Broxa
-  m_TagString: Untagged
+  m_TagString: Artefato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36, y: -2.35, z: 0}
-  m_LocalScale: {x: 0.08499518, y: 0.08499518, z: 0.08499518}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -4815664976284772563, guid: fcc2abcf6ddeaa34b9d3bed4f53dd092, type: 3}
+  m_Sprite: {fileID: -8446832171103120398, guid: 59f873160ee8fbc4689c698eed39fa6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.53, y: 13.01}
+  m_Size: {x: 3.78, y: 2.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,17 +127,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.54135704, y: 2.406026}
+  m_Offset: {x: -0.101389766, y: 0.11784452}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.53, y: 13.01}
-    newSize: {x: 20.53, y: 13.01}
+    oldSize: {x: 3.78, y: 2.51}
+    newSize: {x: 3.78, y: 2.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.447289, y: 8.197948}
+  m_Size: {x: 3.4557397, y: 1.8733193}
   m_EdgeRadius: 0
 --- !u!50 &5565254292900520028
 Rigidbody2D:

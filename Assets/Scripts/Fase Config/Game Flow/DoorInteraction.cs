@@ -1,4 +1,4 @@
-ï»¿using UnityEngine;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
@@ -6,32 +6,32 @@ using UnityEngine.EventSystems;
 /// - Suporta UI (IPointerClickHandler) quando a porta for parte do Canvas (GraphicRaycaster).
 /// - Suporta OnMouseDown (3D/2D collider) para GameObjects na cena.
 /// - Suporta toque/mobile via raycast manual (Update).
-/// - Evita mÃºltiplos cliques/ativaÃ§Ã£o dupla.
+/// - Evita múltiplos cliques/ativação dupla.
 /// - Reproduz som opcional e chama FadeController / CustomerManager / GameFlowManager.
 /// </summary>
-[RequireComponent(typeof(Collider))] // requer um Collider 3D; se for 2D, remova e coloque Collider2D em outra versÃ£o
+[RequireComponent(typeof(Collider))] // requer um Collider 3D; se for 2D, remova e coloque Collider2D em outra versão
 public class DoorInteraction : MonoBehaviour, IPointerClickHandler
 {
-    [Header("ReferÃªncias (arraste no Inspector)")]
+    [Header("Referências (arraste no Inspector)")]
     public FadeController fade;
     public CustomerManager customerManager;
     public GameFlowManager flowManager;
-    public AudioSource clickAudioSource;    // som da porta (opcional)
-    public AudioClip clickClip;             // clip para PlayOneShot (opcional)
+   // public AudioSource clickAudioSource;    // som da porta (opcional)
+    //public AudioClip clickClip;             // clip para PlayOneShot (opcional)
 
     [Header("Raycast (para toque)")]
-    public LayerMask clickableLayers = ~0;  // quais layers respondem ao clique (por padrÃ£o, todos)
+    public LayerMask clickableLayers = ~0;  // quais layers respondem ao clique (por padrão, todos)
 
     bool opened = false;
 
     void Start()
     {
         /* Small sanity checks with friendly logs
-        if (fade == null) Debug.LogWarning("DoorInteraction: FadeController nÃ£o atribuÃ­do.");
-        if (customerManager == null) Debug.LogWarning("DoorInteraction: CustomerManager nÃ£o atribuÃ­do.");
-        if (flowManager == null) Debug.LogWarning("DoorInteraction: GameFlowManager nÃ£o atribuÃ­do.");
+        if (fade == null) Debug.LogWarning("DoorInteraction: FadeController não atribuído.");
+        if (customerManager == null) Debug.LogWarning("DoorInteraction: CustomerManager não atribuído.");
+        if (flowManager == null) Debug.LogWarning("DoorInteraction: GameFlowManager não atribuído.");
         if (clickAudioSource == null && clickClip != null)
-            Debug.LogWarning("DoorInteraction: clickClip definido mas clickAudioSource estÃ¡ nulo."); */
+            Debug.LogWarning("DoorInteraction: clickClip definido mas clickAudioSource está nulo."); */
     }
 
     // IPointerClickHandler -> captura cliques via EventSystem / UI (se porta estiver sob Canvas como UI element)
@@ -44,6 +44,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
     private void OnMouseDown()
     {
         TryOpenDoor("OnMouseDown");
+        this.gameObject.SetActive(false);
     }
 
     // Touch fallback: checa toques e faz um Physics.Raycast para este objeto
@@ -93,18 +94,18 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
         if (flowManager != null) flowManager.PortaAberta();
 
         // Toca som
-        if (clickAudioSource != null)
+        /*if (clickAudioSource != null)
         {
             if (clickClip != null) clickAudioSource.PlayOneShot(clickClip);
             else clickAudioSource.Play();
-        }
+        } */
 
-        // Inicia fade e cliente (se atribuÃ­dos)
+        // Inicia fade e cliente (se atribuídos)
         if (fade != null) fade.StartFadeSequence();
         if (customerManager != null) customerManager.NovoCliente();
     }
 
-    // MÃ©todo pÃºblico para (re)resetar a porta se quiser reutilizar o objeto entre fases
+    // Método público para (re)resetar a porta se quiser reutilizar o objeto entre fases
     public void ResetDoor()
     {
         opened = false;

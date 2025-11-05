@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2781761532371710273}
   m_Layer: 0
   m_Name: Potedeolhos
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.706, y: 3.697, z: 0}
-  m_LocalScale: {x: 0.106961265, y: 0.106961265, z: 0.106961265}
+  m_LocalScale: {x: 0.5771787, y: 0.6399585, z: 0.6399585}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,13 +81,13 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
-  m_Sprite: {fileID: -4585537766002867494, guid: ea6100ffaa256824eb335e2dea6d9ed6, type: 3}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 2857466273750972382, guid: 136ba176942a0e049915af7426b722b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.62, y: 12.4}
+  m_Size: {x: 1.22, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,8 +131,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.62, y: 12.4}
-    newSize: {x: 8.62, y: 12.4}
+    oldSize: {x: 1.22, y: 1.75}
+    newSize: {x: 1.22, y: 1.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
