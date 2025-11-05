@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     public TMP_Text textoTimer;           // Referência ao texto "Timer"
 
     [Header("Evento de Fim")]
+    public GameObject TelaGameOver;
     public UnityEvent OnTempoAcabou;
 
     private void Update()
@@ -29,6 +30,9 @@ public class Timer : MonoBehaviour
             ativo = false;
             OnTempoAcabou?.Invoke();
             Debug.Log("⏰ Tempo esgotado!");
+            TelaGameOver.SetActive(true);
+            Time.timeScale = 0f;
+
         }
 
         AtualizarTexto();

@@ -25,8 +25,8 @@ public class ButtonManager : MonoBehaviour
 	}
 	public void BtnBackToMenu()
 	{
-		seletorDeFases.SetActive(false);
 		colecao.SetActive(false);
+		seletorDeFases.SetActive(false);
 	}
 	public void BtnSettings()
 	{
