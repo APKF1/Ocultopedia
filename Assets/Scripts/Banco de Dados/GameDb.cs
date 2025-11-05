@@ -18,7 +18,7 @@ public class GameDatabase : MonoBehaviour
         // Se ainda não existir dados, cria com valores padrão
         if (db.Table<Configuracoes>().Count() == 0)
         {
-            SalvarConfiguracoes(1f, 1f, "1920x1080", true);
+            SalvarConfiguracoes(1f, true);
         }
 
         if (db.Table<Progresso>().Count() == 0)
@@ -28,14 +28,12 @@ public class GameDatabase : MonoBehaviour
     }
 
     // ---------------- CONFIGURAÇÕES ----------------
-    public void SalvarConfiguracoes(float volumeMusica, float volumeEfeitos, string resolucao, bool telaCheia)
+    public void SalvarConfiguracoes(float volumeMusica, bool telaCheia)
     {
         db.DeleteAll<Configuracoes>(); // garante só 1 linha
         db.Insert(new Configuracoes
         {
             VolumeMusica = volumeMusica,
-            VolumeEfeitos = volumeEfeitos,
-            Resolucao = resolucao,
             TelaCheia = telaCheia ? 1 : 0
         });
     }
@@ -83,8 +81,6 @@ public class Configuracoes
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public float VolumeMusica { get; set; }
-    public float VolumeEfeitos { get; set; }
-    public string Resolucao { get; set; }
     public int TelaCheia { get; set; } // 0 ou 1
 }
 

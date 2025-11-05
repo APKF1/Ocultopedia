@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     {
         db = GetComponent<GameDatabase>();
         // Teste: salvar dados
-        db.SalvarConfiguracoes(0.7f, 0.9f, "1280x720", false);
-        db.SalvarProgresso(2, 3, "Chifre, Gorila, Pedras");
+        db.SalvarConfiguracoes(0.7f, false);
+        db.SalvarProgresso(2, 3, "Chifre, Gorila, Pedras, Sabotagem");
 
         // Teste: carregar dados
         var cfg = db.CarregarConfiguracoes();
