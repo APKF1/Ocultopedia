@@ -8,7 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Redimensionamento : MonoBehaviour
 {
-    [Header("Arrasto")]
     private Rigidbody2D rb;
     private Camera cameraPrincipal;
     private bool estaArrastando = false;
@@ -20,11 +19,9 @@ public class Redimensionamento : MonoBehaviour
     [Header("Área Permitida (via Layer)")]
     public LayerMask areaPermitidaLayer;
 
-    // Dados originais (preenchidos pelo SpawnObjects)
     [HideInInspector] public Vector3 escalaOriginalSpawn;
     [HideInInspector] public Vector3 posicaoOriginalSpawn;
 
-    // Backup local (em caso de spawn sem referência)
     private Vector3 escalaInicial;
     private Vector3 posicaoInicial;
 
@@ -42,7 +39,6 @@ public class Redimensionamento : MonoBehaviour
 
     private void Update()
     {
-        // Início do arrasto (ao clicar sobre o objeto)
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = cameraPrincipal.ScreenToWorldPoint(Input.mousePosition);
@@ -52,24 +48,19 @@ public class Redimensionamento : MonoBehaviour
             {
                 estaArrastando = true;
                 offset = transform.position - (Vector3)mousePos;
-
-                // Aplica escala configurada durante o arrasto
                 transform.localScale = escalaDuranteArrasto;
             }
         }
 
-        // Solta o objeto
         if (Input.GetMouseButtonUp(0) && estaArrastando)
         {
             estaArrastando = false;
 
-            // Verifica se está em uma área válida
             Collider2D areaValida = Physics2D.OverlapPoint(transform.position, areaPermitidaLayer);
             if (areaValida == null)
             {
-                // Volta ao ponto e escala originais
-                Vector3 posVoltar = posicaoOriginalSpawn != Vector3.zero ? posicaoOriginalSpawn : posicaoInicial;
-                Vector3 escalaVoltar = escalaOriginalSpawn != Vector3.zero ? escalaOriginalSpawn : escalaInicial;
+                Vector3 posVoltar = (posicaoOriginalSpawn != default(Vector3)) ? posicaoOriginalSpawn : posicaoInicial;
+                Vector3 escalaVoltar = (escalaOriginalSpawn != default(Vector3)) ? escalaOriginalSpawn : escalaInicial;
 
                 transform.position = posVoltar;
                 transform.localScale = escalaVoltar;
@@ -84,5 +75,15 @@ public class Redimensionamento : MonoBehaviour
             Vector2 mousePos = cameraPrincipal.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(mousePos + (Vector2)offset);
         }
+    }
+
+    /// <summary>
+    /// Recebe a posição e escala originais do objeto ao ser spawnado.
+    /// Chamado automaticamente pelo SpawnObjects.
+    /// </summary>
+    public void RegistrarEscalaEPosicaoOriginais(Vector3 pos, Vector3 escala)
+    {
+        posicaoOriginalSpawn = pos;
+        escalaOriginalSpawn = escala;
     }
 }
