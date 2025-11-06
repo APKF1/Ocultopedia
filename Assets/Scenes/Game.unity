@@ -1625,7 +1625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1969322092}
+  m_Father: {fileID: 7613791734503436448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2956,8 +2956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.052856445, y: 0.37823486}
-  m_SizeDelta: {x: 4.7678223, y: 4.8132324}
+  m_AnchoredPosition: {x: 0.05279541, y: 0.37823486}
+  m_SizeDelta: {x: 4.7677, y: 4.8132324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941719695
 MonoBehaviour:
@@ -6201,7 +6201,6 @@ RectTransform:
   - {fileID: 772792652}
   - {fileID: 1469620313}
   - {fileID: 2019604807}
-  - {fileID: 464311437}
   m_Father: {fileID: 7613791734503436448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7876,7 +7875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8af22fca6b7017439c022cea444879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  tempoTotal: 60
+  tempoTotal: 1
   textoTimer: {fileID: 282422357}
   TelaGameOver: {fileID: 1969322091}
   OnTempoAcabou:
@@ -7946,8 +7945,9 @@ RectTransform:
   - {fileID: 1124394812196881388}
   - {fileID: 652958222}
   - {fileID: 282422356}
-  - {fileID: 1023527760}
   - {fileID: 941719694}
+  - {fileID: 1023527760}
+  - {fileID: 464311437}
   - {fileID: 1969322092}
   m_Father: {fileID: 68764540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

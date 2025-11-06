@@ -102,7 +102,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
 
         // Inicia fade e cliente (se atribuídos)
         if (fade != null) fade.StartFadeSequence();
-        if (customerManager != null) customerManager.NovoCliente();
+        //if (customerManager != null) customerManager.NovoCliente();
     }
 
     // Método público para (re)resetar a porta se quiser reutilizar o objeto entre fases

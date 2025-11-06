@@ -54,7 +54,9 @@ public class FadeController : MonoBehaviour
 
         // 2️⃣ Tocar som
         if (bellSound != null)
+        {
             audioSource.PlayOneShot(bellSound);
+        }
 
         // 3️⃣ Esperar antes de clarear
         yield return new WaitForSeconds(0.6f);
@@ -63,11 +65,14 @@ public class FadeController : MonoBehaviour
         yield return StartCoroutine(Fade(1f, 0f));
 
         if (disableAfterFade)
+        {
             gameObject.SetActive(false);
+        }   
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
+        
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {
