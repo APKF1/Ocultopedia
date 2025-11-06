@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8756189052318032366}
   - component: {fileID: 3942964867272064013}
   - component: {fileID: 3105418450133575420}
-  - component: {fileID: 8657470714219802723}
   - component: {fileID: -832578333700608374}
   - component: {fileID: 605253403531561683}
+  - component: {fileID: 2464629762148986519}
   m_Layer: 0
   m_Name: Garrafa
   m_TagString: Component
@@ -168,20 +168,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8657470714219802723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010092166600301886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 3105418450133575420}
-  cameraPrincipal: {fileID: 0}
 --- !u!114 &-832578333700608374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,3 +277,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2464629762148986519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010092166600301886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bb4d5915d4a2c43835dadecde5a959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 1.2, y: 1.2, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
