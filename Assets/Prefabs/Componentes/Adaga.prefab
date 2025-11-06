@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7358767995063245214}
   - component: {fileID: 5065602841622142284}
   - component: {fileID: 5722535255463557755}
-  - component: {fileID: 527757638675432565}
+  - component: {fileID: 5721956040231759798}
   m_Layer: 0
   m_Name: Adaga
   m_TagString: Component
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &527757638675432565
+--- !u!114 &5721956040231759798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,8 +166,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8238132775753901105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
+  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 5722535255463557755}
-  cameraPrincipal: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

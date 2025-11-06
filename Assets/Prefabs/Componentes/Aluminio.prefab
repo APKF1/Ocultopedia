@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3500036824530225968}
   - component: {fileID: 2038504153771910298}
   - component: {fileID: 1372198826275323477}
-  - component: {fileID: 4367162519445289809}
   - component: {fileID: -6062496526612480622}
   - component: {fileID: 4440521167828167242}
+  - component: {fileID: 7179295894468250529}
   m_Layer: 0
   m_Name: Aluminio
   m_TagString: Component
@@ -168,20 +168,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4367162519445289809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173973900390939660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 1372198826275323477}
-  cameraPrincipal: {fileID: 0}
 --- !u!114 &-6062496526612480622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,3 +277,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7179295894468250529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173973900390939660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

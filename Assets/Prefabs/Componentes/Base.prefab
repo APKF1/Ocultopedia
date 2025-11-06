@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1619940718967215112}
   - component: {fileID: 4656389374183499497}
   - component: {fileID: 6292739541485930675}
-  - component: {fileID: 9003168340006512574}
+  - component: {fileID: 3460400723310029871}
   m_Layer: 0
   m_Name: Base
   m_TagString: Component
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9003168340006512574
+--- !u!114 &3460400723310029871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,8 +166,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4811152457702047935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
+  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 6292739541485930675}
-  cameraPrincipal: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

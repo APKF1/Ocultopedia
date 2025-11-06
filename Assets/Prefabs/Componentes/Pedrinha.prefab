@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1541841893613451777}
   - component: {fileID: 7879287146400661483}
   - component: {fileID: 7824566243432217387}
-  - component: {fileID: 7959591149843723192}
   - component: {fileID: 6768700974130921343}
   - component: {fileID: 6849026038829907668}
+  - component: {fileID: -1954401383250400165}
   m_Layer: 0
   m_Name: Pedrinha
   m_TagString: Component
@@ -168,20 +168,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7959591149843723192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840340485907827937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 7824566243432217387}
-  cameraPrincipal: {fileID: 0}
 --- !u!82 &6768700974130921343
 AudioSource:
   m_ObjectHideFlags: 0
@@ -291,3 +277,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e82f895f52229458c6baea6b6056e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlay
+--- !u!114 &-1954401383250400165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840340485907827937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3416190380131521400}
   - component: {fileID: 1738034253193800365}
   - component: {fileID: 4028952369741082627}
-  - component: {fileID: 1330376268145927243}
   - component: {fileID: 3087217056016216191}
+  - component: {fileID: 2506769066523087230}
   m_Layer: 0
   m_Name: Caneca
   m_TagString: Component
@@ -130,20 +130,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.016784651, y: -0.07862463}
   m_Size: {x: 1.5968415, y: 1.1261978}
   m_Direction: 1
---- !u!114 &1330376268145927243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4086327194792922562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
-  rb: {fileID: 3087217056016216191}
-  cameraPrincipal: {fileID: 0}
 --- !u!50 &3087217056016216191
 Rigidbody2D:
   serializedVersion: 5
@@ -171,3 +157,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2506769066523087230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086327194792922562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
+  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  areaPermitidaLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
+  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
