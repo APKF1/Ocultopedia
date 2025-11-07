@@ -37,12 +37,15 @@ public class GameFlowManager : MonoBehaviour
 
     void Start()
     {
-       // if (clickHint != null) clickHint.SetActive(false);
-        introCoroutine = StartCoroutine(IntroSequence());
+        doorOpened = false;
+        // if (clickHint != null) clickHint.SetActive(false);
+        //introCoroutine = StartCoroutine(IntroSequence());
+        ResetFlow();
     }
 
     IEnumerator IntroSequence()
     {
+        //Debug.Log("INICIANDO A COROUTINE"); // OK rodando no respawn
         // delay inicial de silêncio
         yield return new WaitForSeconds(initialDelay);
 
@@ -86,6 +89,7 @@ public class GameFlowManager : MonoBehaviour
     // método público para forçar reinício (útil para debug)
     public void ResetFlow()
     {
+        Debug.Log("REINICIANDO");
         doorOpened = false;
         //if (clickHint != null) clickHint.SetActive(false);
         if (introCoroutine != null) StopCoroutine(introCoroutine);

@@ -18,10 +18,10 @@ public class CustomerManager : MonoBehaviour
         fadeController.OnFadeFullDark.AddListener(SpawnarNovoCliente);
     }
 
-    public void NovoCliente()
+    /*public void NovoCliente()
     {
         fadeController.StartFadeSequence();
-    }
+    }*/
 
     private void SpawnarNovoCliente()
     {
