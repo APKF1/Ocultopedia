@@ -8063,7 +8063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8af22fca6b7017439c022cea444879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  tempoTotal: 1
+  tempoTotal: 60
   textoTimer: {fileID: 282422357}
   TelaGameOver: {fileID: 1969322091}
   OnTempoAcabou:
