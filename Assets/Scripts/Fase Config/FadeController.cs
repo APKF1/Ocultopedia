@@ -46,6 +46,7 @@ public class FadeController : MonoBehaviour
 
     private IEnumerator FadeSequence()
     {
+        
         // 1️⃣ Escurecer
         yield return StartCoroutine(Fade(0f, 1f));
 
@@ -72,11 +73,13 @@ public class FadeController : MonoBehaviour
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
-        
+
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {
+
             elapsed += Time.deltaTime;
+            //Debug.Log(Time.deltaTime);
             float t = Mathf.Clamp01(elapsed / fadeDuration);
 
             Color newColor = fadeColor;
