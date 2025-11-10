@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9044031884211851849}
   - component: {fileID: 6116182770091477705}
   - component: {fileID: 8870940846591311811}
-  - component: {fileID: 5101184966602074916}
+  - component: {fileID: 8966903876851246676}
   m_Layer: 0
   m_Name: Assistente
   m_TagString: Artefato
@@ -166,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5101184966602074916
+--- !u!114 &8966903876851246676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,12 +175,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3183898639600126806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Script: {fileID: 11500000, guid: 17cc8b789d075024db800268f88b3378, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
-  escalaDuranteArrasto: {x: 0.45, y: 0.45, z: 1}
-  areaPermitidaLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  escalaOriginalSpawn: {x: 0, y: 0, z: 0}
-  posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DragAndDropSprite
+  rb: {fileID: 8870940846591311811}
+  cameraPrincipal: {fileID: 0}

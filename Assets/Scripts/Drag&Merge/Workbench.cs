@@ -1,186 +1,97 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class Workbench : MonoBehaviour
 {
-    [Header("Configurações de Craft")]
-    public Transform spawnPoint;
-    public GameObject defaultResultPrefab;
-    public List<string> combinacoes = new();
-    public GameObject[] resultados;
-    public float tempoDeCraft = 5f;
+    public Transform spawnPoint;   // Onde o item final vai nascer
+    public GameObject defaultResultPrefab; // Prefab do item padrão (caso não haja combinação)
 
-    [Header("Animação e Som")]
-    public Animator animCaldeirao;
-    [Range(1f, 3f)] public float velocidadeInicial = 1f;
-    [Range(1f, 10f)] public float velocidadeFinal = 3f;
-    public AudioSource audioCaldeirao;
-    public AudioClip somBorbulhando;
-    [Range(0f, 1f)] public float volumeInicial = 0.4f;
-    [Range(0f, 1f)] public float volumeFinal = 1f;
-    [Range(0.5f, 2f)] public float pitchInicial = 1f;
-    [Range(0.5f, 3f)] public float pitchFinal = 2f;
+    public List<string> components = new List<string>(); // Lista utilizada para ordenar em ordem alfabética
+    public List<string> combinacao = new List<string>();
+    public GameObject[] resultados ;
 
-    // dados por componente inserido
-    private List<string> nomesComps = new();
-    private List<Vector3> posicoesOriginais = new();
-    private List<Vector3> escalasOriginais = new();
+    public string comps;
 
-    private Coroutine craftRoutine;
-    private bool craftAtivo = false;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    // Quando um componente entra na área da Workbench
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Component")) return;
-
-        GameObject comp = other.gameObject;
-        string nome = LimparNome(comp.name);
-
-        Redimensionamento redim = comp.GetComponent<Redimensionamento>();
-        Vector3 posOriginal = redim ? redim.posicaoOriginalSpawn : comp.transform.position;
-        Vector3 escalaOriginal = redim ? redim.escalaOriginalSpawn : comp.transform.localScale;
-
-        // Guarda dados do componente (um por um)
-        nomesComps.Add(nome);
-        posicoesOriginais.Add(posOriginal);
-        escalasOriginais.Add(escalaOriginal);
-
-        Destroy(comp);
-
-        if (!craftAtivo)
+        if (other.CompareTag("Component"))
         {
-            craftAtivo = true;
-
-            if (animCaldeirao)
-            {
-                animCaldeirao.SetBool("Ativo", true);
-                animCaldeirao.speed = velocidadeInicial;
-            }
-
-            if (audioCaldeirao && somBorbulhando)
-            {
-                audioCaldeirao.clip = somBorbulhando;
-                audioCaldeirao.loop = true;
-                audioCaldeirao.volume = volumeInicial;
-                audioCaldeirao.pitch = pitchInicial;
-                audioCaldeirao.Play();
-            }
-
-            craftRoutine = StartCoroutine(ProcessoDeCraft());
+            string AWOOOBA = other.gameObject.name;
+            components.Add(AWOOOBA);
         }
     }
 
-    private string LimparNome(string original) =>
-        original.Replace("(Clone)", "").Trim();
-
-    private IEnumerator ProcessoDeCraft()
+    // Quando um componente sai da área
+    void OnTriggerExit2D(Collider2D other)
     {
-        float tempo = tempoDeCraft;
-
-        while (tempo > 0f)
+        if (other.CompareTag("Component"))
         {
-            tempo -= Time.deltaTime;
-            float progresso = 1f - (tempo / tempoDeCraft);
-
-            if (animCaldeirao)
-                animCaldeirao.speed = Mathf.Lerp(velocidadeInicial, velocidadeFinal, progresso);
-
-            if (audioCaldeirao)
-            {
-                audioCaldeirao.pitch = Mathf.Lerp(pitchInicial, pitchFinal, progresso);
-                audioCaldeirao.volume = Mathf.Lerp(volumeInicial, volumeFinal, progresso);
-            }
-
-            yield return null;
+            string AWOOOBA = other.gameObject.name;
+            components.Remove(AWOOOBA);
         }
-
-        // define resultado
-        List<string> copiaNomes = new(nomesComps);
-        copiaNomes.Sort();
-        string combinacaoFinal = string.Join("", copiaNomes);
-        int idx = combinacoes.IndexOf(combinacaoFinal);
-
-        GameObject resultado = (idx >= 0 && idx + 1 < resultados.Length) ? resultados[idx + 1] : defaultResultPrefab;
-        Instantiate(resultado, spawnPoint.position, Quaternion.identity);
-
-        // Respawn por componente com os dados individuais
-        RespawnarComponentesUsados();
-
-        // finalizar efeitos
-        if (animCaldeirao)
-        {
-            animCaldeirao.speed = 1f;
-            animCaldeirao.SetBool("Ativo", false);
-        }
-
-        if (audioCaldeirao)
-            StartCoroutine(EncerrarSomGradualmente());
-
-        nomesComps.Clear();
-        posicoesOriginais.Clear();
-        escalasOriginais.Clear();
-        craftAtivo = false;
     }
 
-    private IEnumerator EncerrarSomGradualmente()
+    // Método chamado pelo botão
+    public void Craft()
     {
-        if (audioCaldeirao == null) yield break;
-
-        float dur = 0.8f;
-        float start = audioCaldeirao.volume;
-        float t = 0f;
-        while (t < dur)
+        if (components.Count <= 1)
         {
-            t += Time.deltaTime;
-            audioCaldeirao.volume = Mathf.Lerp(start, 0f, t / dur);
-            yield return null;
-        }
-        audioCaldeirao.Stop();
-        audioCaldeirao.volume = volumeInicial;
-        audioCaldeirao.pitch = pitchInicial;
-    }
-
-    private void RespawnarComponentesUsados()
-    {
-        SpawnObjects spawner = FindObjectOfType<SpawnObjects>();
-        if (spawner == null)
-        {
-            Debug.LogWarning("SpawnObjects não encontrado — não é possível respawnar componentes.");
+            Debug.Log("Componentes faltando na Workbench!");
             return;
         }
 
-        for (int i = 0; i < nomesComps.Count; i++)
+
+        components.Sort();
+
+
+        GameObject resultPrefab = GetResultFromComponents(); // escolhe o resultado
+        Instantiate(resultPrefab, spawnPoint.position, Quaternion.identity);
+
+        Debug.Log("Item criado!");
+
+        // Aqui destruímos os componentes usados (opcional)
+        GameObject[] compsInWorkbench = GameObject.FindGameObjectsWithTag("Component");
+        foreach (var c in compsInWorkbench)
         {
-            string nome = nomesComps[i];
-            Vector3 pos = posicoesOriginais[i];
-            Vector3 escala = escalasOriginais[i];
-
-            GameObject prefab = BuscarPrefabPorNome(spawner, nome);
-            if (prefab == null)
-            {
-                Debug.LogWarning($"Prefab não encontrado para '{nome}'");
-                continue;
-            }
-
-            GameObject novo = Instantiate(prefab, pos, Quaternion.identity);
-            novo.transform.localScale = escala;
-
-            Redimensionamento redim = novo.GetComponent<Redimensionamento>();
-            if (redim)
-                redim.RegistrarEscalaEPosicaoOriginais(pos, escala);
+            if (c.GetComponent<Collider2D>().IsTouching(GetComponent<Collider2D>()))
+                Destroy(c);
         }
+
+        components.Clear(); // limpa a lista
     }
 
-    private GameObject BuscarPrefabPorNome(SpawnObjects spawner, string nomeLimpo)
-    {
-        // busca case-insensitive e sem espaços
-        foreach (GameObject prefab in spawner.componentes)
+    // Decide o que criar dependendo dos componentes
+    private GameObject GetResultFromComponents()
+    {   
+        foreach (string sim in components)
         {
-            string p = LimparNome(prefab.name);
-            if (string.Equals(p, nomeLimpo, System.StringComparison.OrdinalIgnoreCase))
-                return prefab;
+
+            string compName = sim;
+            if (compName.Contains("(Clone)"))
+            {
+                compName = compName.Replace("(Clone)", "");
+                
+            }
+
+            comps = comps + compName;
+
         }
-        return null;
+        /*for (int i = 0; i < 2; i++)
+        {
+            string compName = components[i];
+            if (compName.Contains("(Clone)"))
+            {
+                compName =  compName.Replace("(Clone)", "");
+                components[i] = compName;
+            }
+        } */
+        // comps = components[0] + components[1];
+        Debug.Log(comps);
+        int indexResult = combinacao.IndexOf(comps);
+        Debug.Log(indexResult);
+
+        // Se não bate com nenhuma receita, retorna o item padrão
+        return resultados[indexResult + 1]; // Sempre index + 1 pq index 0 é o item faltando
     }
 }
