@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3304f861945948a4fba0f8bf513d17a1
+guid: a8f65d158d28ec24f845dfcaacbbcfcc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3471634124512644579
-    second: "14 Sem T\xEDtulo_20251022182213_0"
+      213: -8071888437814714055
+    second: aberto_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "14 Sem T\xEDtulo_20251022182213_0"
+      name: aberto_0
       rect:
         serializedVersion: 2
-        x: 255
-        y: 0
-        width: 1313
-        height: 132
+        x: 38
+        y: 6
+        width: 334
+        height: 392
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ed43bdb7d8bd2030800000000000000
-      internalID: 3471634124512644579
+      spriteID: 931a8758b34eaff80800000000000000
+      internalID: -8071888437814714055
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8b81fbd246b026a428c6afd1f07d907f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "14 Sem T\xEDtulo_20251022182213_0": 3471634124512644579
+      aberto_0: -8071888437814714055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
