@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class DragAndDropSprite : MonoBehaviour
 {
-    [Header("Referências")]
+    [Header("Referï¿½ncias")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Camera cameraPrincipal;
 
@@ -31,13 +31,13 @@ public class DragAndDropSprite : MonoBehaviour
         {
             estaArrastando = true;
 
-            // Calcula offset para não "teleportar" ao centro
+            // Calcula offset para nï¿½o "teleportar" ao centro
             Vector3 mouseWorld = cameraPrincipal.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = transform.position.z;
             offset = transform.position - mouseWorld;
         }
 
-        // Para ao soltar botão
+        // Para ao soltar botï¿½o
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             estaArrastando = false;
@@ -49,13 +49,13 @@ public class DragAndDropSprite : MonoBehaviour
         if (estaArrastando)
         {
             Vector3 mouseWorld = cameraPrincipal.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorld.z = transform.position.z; // mantém o Z do objeto
+            mouseWorld.z = transform.position.z; // mantï¿½m o Z do objeto
             rb.MovePosition(mouseWorld + offset);
         }
     }
 
-    private void OnMouseOver()  { estaDentro = true; }
-    private void OnMouseExit()  { estaDentro = false; }
+    private void OnMouseOver() { estaDentro = true; }
+    private void OnMouseExit() { estaDentro = false; }
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

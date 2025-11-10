@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff1ce94915babd84e8a0d6e21f20f61b
+guid: 510400946aa3c9543bf2788658c408cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6246888447345854242
-    second: Loja_0
+      213: -4953110600705050415
+    second: "14 Sem T\xEDtulo_20251107194138_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Loja_0
+      name: "14 Sem T\xEDtulo_20251107194138_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2278a8702f761b650800000000000000
-      internalID: 6246888447345854242
+      spriteID: 1d8f0cfb624034bb0800000000000000
+      internalID: -4953110600705050415
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Loja_0: 6246888447345854242
+      "14 Sem T\xEDtulo_20251107194138_0": -4953110600705050415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
