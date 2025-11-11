@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     // Exemplo de string que define quais botões estão visíveis
+    public float volume;
+    public int telaCheia;
     private string botoesVisiveis;
     private GameDatabase db;
 
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
 
         // Teste: carregar dados
         var cfg = db.CarregarConfiguracoes();
+        volume = cfg.VolumeMusica;
+        telaCheia = cfg.TelaCheia;
+
         //Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
 
         var prog = db.CarregarProgresso();
