@@ -19,7 +19,8 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 
     [Header("Diálogo do cliente")]
     [TextArea]
-    public string[] falas;               // Array de falas do cliente
+    public string[] falas1;               // Array de falas do cliente
+    public string[] falas2;
     public Sprite[] itensPedidos;        // Ícones opcionais para cada fala (-1 se nenhum)
 
     [Header("Referências externas")]
@@ -51,12 +52,12 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 
     private void AvancarConversa()
     {
-        if (etapaConversa < falas.Length)
+        if (etapaConversa < falas1.Length)
         {
             // Mostra o balão e o texto atual
             speechBubble.SetActive(true);
             speechText.gameObject.SetActive(true);
-            speechText.text = falas[etapaConversa];
+            speechText.text = falas1[etapaConversa];
 
             // Mostra ícone do item, se houver
             /* if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
@@ -97,4 +98,43 @@ public class CustomerInteraction : MonoBehaviour, IPointerClickHandler
 
         Debug.Log("🎯 Timer iniciado, fase começou!");
     }
+
+    public void AvancarConversa2()
+    {
+        if (etapaConversa < falas2.Length)
+        {
+            // Mostra o balão e o texto atual
+            speechBubble.SetActive(true);
+            speechText.gameObject.SetActive(true);
+            speechText.text = falas2[etapaConversa];
+
+            // Mostra ícone do item, se houver
+            /* if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
+            {
+                requestedItemIcon.enabled = true;
+                requestedItemIcon.sprite = itensPedidos[etapaConversa];
+            }
+            /*else
+            {
+                requestedItemIcon.enabled = false;
+            } */
+
+            etapaConversa++;
+        }
+        else
+        {
+            // Conversa terminou -> mostra botão OK
+            okButton.gameObject.SetActive(true);
+            okButton.onClick.RemoveAllListeners();
+            okButton.onClick.AddListener(OnOkClicked2);
+        }
+    }
+    public void OnOkClicked2()
+    {
+        okButton.gameObject.SetActive(false);
+        speechBubble.SetActive(false);
+        speechText.gameObject.SetActive(false);
+        // requestedItemIcon.enabled = false;
+    }
+
 }
