@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 01d7000efb0fa044fab60a64fd68ff63
+guid: 1b4fbaa166e49884894a8af3c3c95c52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4324916434052743398
-    second: pngtree-new-x-sign-on-isolated-background-png-image_15692977_0
+      213: -3171110699576674040
+    second: "Bot\xE3oVolume_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngtree-new-x-sign-on-isolated-background-png-image_15692977_0
+      name: "Bot\xE3oVolume_0"
       rect:
         serializedVersion: 2
-        x: 47
-        y: 42
-        width: 266
-        height: 270
+        x: 9
+        y: 15
+        width: 181
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1f7909ea6fcaf3c0800000000000000
-      internalID: -4324916434052743398
+      spriteID: 809ba48be93fdf3d0800000000000000
+      internalID: -3171110699576674040
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pngtree-new-x-sign-on-isolated-background-png-image_15692977_0: -4324916434052743398
+      "Bot\xE3oVolume_0": -3171110699576674040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
