@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         db = GetComponent<GameDatabase>();
         // Teste: salvar dados
         db.SalvarConfiguracoes(0.7f, false);
-        db.SalvarProgresso(2, 3, "Chifre, Gorila, Pedras, Sabotagem");
+        db.SalvarProgresso(2, 3, "Chifre, Gorila, Pedras, Sabotagem, Canino, Multa, Dedezio, GuardaChuva, Elmo, Orbe, Pedras, Cerebro, Sapo, Eduardo, Urso, Gemeos, Fado, Unicornio, Pernas, ");
 
         // Teste: carregar dados
         var cfg = db.CarregarConfiguracoes();
