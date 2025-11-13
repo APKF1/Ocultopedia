@@ -28,10 +28,9 @@ public class CustomerManager : MonoBehaviour
         /*if (clienteAtual != null)
             Destroy(clienteAtual);
         */
-
         //int index = Random.Range(0, customerPrefabs.Length);
         //clienteAtual = Instantiate(customerPrefabs[index], spawnPoint.position, Quaternion.identity);
-        clienteAtual.transform.position = new Vector3(-3.06999993f, -1.70001221f, 0f);
+        clienteAtual.transform.position = new Vector3(-2.8f, -1.35f, 0);
         //Debug.Log($"🧍 Novo cliente gerado: {clienteAtual.name}");
     }
 }
