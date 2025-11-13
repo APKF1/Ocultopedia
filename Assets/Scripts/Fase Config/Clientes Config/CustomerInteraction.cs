@@ -31,6 +31,7 @@ public class CustomerInteraction : MonoBehaviour
     public int specificObjects;
     public GameObject panel;
     private FadeController fadeScript;
+    GameObject[] gos;
 
     public List<int> items = new List<int>();
 
@@ -71,6 +72,7 @@ public class CustomerInteraction : MonoBehaviour
         {
             verificarConversa();
         }
+        gos = GameObject.FindGameObjectsWithTag("Cliente");
     }
     private void verificarConversa()
     {
@@ -178,8 +180,12 @@ public class CustomerInteraction : MonoBehaviour
 
     public void DestruirCliente()
     {
-        Destroy(gameObject);
-
+        if(estadoDaFase == 2)
+        {
+            foreach (GameObject go in gos)
+                Destroy(go);
+            Debug.Log("Cliente Destruido");
+        }
     }
 
 }

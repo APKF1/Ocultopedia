@@ -10,7 +10,7 @@ public class CustomerManager : MonoBehaviour
     public Transform spawnPoint;               // Onde o cliente aparece
     public GameObject[] customerPrefabs;       // Lista de clientes
 
-    private GameObject clienteAtual;
+    public GameObject clienteAtual;
 
     private void Start()
     {
@@ -25,11 +25,13 @@ public class CustomerManager : MonoBehaviour
 
     private void SpawnarNovoCliente()
     {
-        if (clienteAtual != null)
+        /*if (clienteAtual != null)
             Destroy(clienteAtual);
+        */
 
-        int index = Random.Range(0, customerPrefabs.Length);
-        clienteAtual = Instantiate(customerPrefabs[index], spawnPoint.position, Quaternion.identity);
+        //int index = Random.Range(0, customerPrefabs.Length);
+        //clienteAtual = Instantiate(customerPrefabs[index], spawnPoint.position, Quaternion.identity);
+        clienteAtual.transform.position = new Vector3(-3.06999993f, -1.70001221f, 0f);
         //Debug.Log($"🧍 Novo cliente gerado: {clienteAtual.name}");
     }
 }
