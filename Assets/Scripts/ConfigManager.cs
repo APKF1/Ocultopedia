@@ -8,10 +8,8 @@ public class ConfiguracoesUI : MonoBehaviour
     public Slider sliderVolume;
     public Toggle toggleTelaCheia;
     public float volume;
-    public bool telaCheia;
+    public int telaCheia;
     public GameObject configuracoes;
-
-    private GameDatabase db;
 
     private void Start()
     {
@@ -36,15 +34,13 @@ public class ConfiguracoesUI : MonoBehaviour
 
     public void OnTelaCheiaAlterada(bool isFull)
     {
-        //telaCheia = isFull ? 1 : 0;
+        telaCheia = isFull ? 1 : 0;
         Screen.fullScreen = isFull; // aplica imediatamente
     }
 
     public void SairConfiguracoes()
     {
-        db = GetComponent<GameDatabase>();
-        Debug.Log("Aqui foi");
-        db.SalvarConfiguracoes(sliderVolume.value, toggleTelaCheia.isOn);
+        gameManager.db.SalvarConfiguracoes(sliderVolume.value, toggleTelaCheia.isOn);
         configuracoes.SetActive(false);
     }
 }

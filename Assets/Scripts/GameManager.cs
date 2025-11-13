@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     // Exemplo de string que define quais botões estão visíveis
     public float volume;
     public int telaCheia;
+    public int nivelAtual;
     private string botoesVisiveis;
-    private GameDatabase db;
+    public GameDatabase db;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
 
         var prog = db.CarregarProgresso();
         botoesVisiveis = prog.Desbloqueaveis;
+        nivelAtual = prog.NivelAtual;
+
         //Testando Parse
         //Debug.Log($"Progresso -> Nível: {prog.NivelAtual}, Pontos: {prog.Pontos}, Itens: {prog.Itens}");
     }
