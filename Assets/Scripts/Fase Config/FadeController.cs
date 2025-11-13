@@ -71,7 +71,6 @@ public class FadeController : MonoBehaviour
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
-        Debug.Log("cu");
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {

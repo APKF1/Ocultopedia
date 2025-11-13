@@ -173,6 +173,13 @@ public class CustomerInteraction : MonoBehaviour
         okButton.gameObject.SetActive(false);
         speechBubble.SetActive(false);
         speechText.gameObject.SetActive(false);
-        fade.StartFadeSequence();    }
+        fade.StartFadeSequence();    
+    }
+
+    public void DestruirCliente()
+    {
+        Destroy(gameObject);
+
+    }
 
 }
