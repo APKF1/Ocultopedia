@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3105418450133575420}
   - component: {fileID: -832578333700608374}
   - component: {fileID: 605253403531561683}
-  - component: {fileID: 3997499626031690459}
+  - component: {fileID: -5893362952398150703}
+  - component: {fileID: -8105154663496118419}
   m_Layer: 0
   m_Name: Garrafa
   m_TagString: Component
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 2010092166600301886}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2638, y: -0.9462, z: 0}
-  m_LocalScale: {x: 0.5771787, y: 0.6399585, z: 0.6399585}
+  m_LocalPosition: {x: 0.7004, y: -0.8191, z: 0}
+  m_LocalScale: {x: 1.212878, y: 1.3448027, z: 1.3448027}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -869484587163473175, guid: 8430c49ed18080f4aaaabe71d61e9eb7, type: 3}
+  m_Sprite: {fileID: -8599549827035140495, guid: efadd9d6a0e81244b822f609a2114d85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,17 +130,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.004440248, y: -0.10893667}
+  m_Offset: {x: -0.010993242, y: -0.08457774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.04, y: 1.82}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.04, y: 1.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.93700707, y: 1.4457419}
+  m_Size: {x: 0.50487053, y: 0.7149718}
   m_EdgeRadius: 0
 --- !u!50 &3105418450133575420
 Rigidbody2D:
@@ -277,7 +278,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3997499626031690459
+--- !u!95 &-5893362952398150703
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010092166600301886}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1163675c5a6c87d41a62252ec5ae7abf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8105154663496118419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,12 +309,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010092166600301886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Script: {fileID: 11500000, guid: 66b95fe11ba8d7746b783bbb3d22ed88, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
-  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  m_EditorClassIdentifier: Assembly-CSharp::CompAnimation
+  escalaDuranteArrasto: {x: 1.2, y: 1.2, z: 1}
   areaPermitidaLayer:
     serializedVersion: 2
     m_Bits: 8
+  animator: {fileID: -5893362952398150703}
+  triggerAnimacao: Anim
+  tempoMin: 1
+  tempoMax: 5
   escalaOriginalSpawn: {x: 0, y: 0, z: 0}
   posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

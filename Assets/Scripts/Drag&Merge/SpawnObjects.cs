@@ -79,10 +79,15 @@ public class SpawnObjects : MonoBehaviour
         if (scaleSet)
             obj.transform.localScale *= scaleSet.scale;
 
-        // Registra posição e escala originais no Redimensionamento
+        // Registra posição e escala originais (funciona para Redimensionamento ou CompAnimation)
         Redimensionamento redim = obj.GetComponent<Redimensionamento>();
+        CompAnimation compAnim = obj.GetComponent<CompAnimation>();
+
         if (redim)
             redim.RegistrarEscalaEPosicaoOriginais(spawnPoint.position, obj.transform.localScale);
+        else if (compAnim)
+            compAnim.RegistrarEscalaEPosicaoOriginais(spawnPoint.position, obj.transform.localScale);
+
     }
 
     private void OnDrawGizmosSelected()

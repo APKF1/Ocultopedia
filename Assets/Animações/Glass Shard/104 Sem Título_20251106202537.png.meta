@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: d00faace811136444b823eed9a752b64
+guid: 7c529d9a93382c045a2d8b199c2e3c62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7293127931951658118
-    second: lus_0
+      213: -6028777260648645030
+    second: "104 Sem T\xEDtulo_20251106202537_0"
   - first:
-      213: -4685889275821945197
-    second: lus_1
+      213: -2396294113698043533
+    second: "104 Sem T\xEDtulo_20251106202537_1"
   - first:
-      213: -6477665255341360524
-    second: lus_2
+      213: -6472299956525681987
+    second: "104 Sem T\xEDtulo_20251106202537_2"
   - first:
-      213: -8290778653519192006
-    second: lus_3
+      213: 6226435713472350957
+    second: "104 Sem T\xEDtulo_20251106202537_3"
   - first:
-      213: -7039226609342080638
-    second: lus_4
+      213: 7785072435775804802
+    second: "104 Sem T\xEDtulo_20251106202537_4"
   - first:
-      213: 2581261468083889559
-    second: lus_5
+      213: 3894452512120938680
+    second: "104 Sem T\xEDtulo_20251106202537_5"
   - first:
-      213: -6784631536526569289
-    second: lus_6
+      213: 1656690449115474146
+    second: "104 Sem T\xEDtulo_20251106202537_6"
   - first:
-      213: 2697609487795152646
-    second: lus_7
+      213: 943119203439242689
+    second: "104 Sem T\xEDtulo_20251106202537_7"
   - first:
-      213: -1889875464651421349
-    second: lus_8
+      213: -3707834738682339412
+    second: "104 Sem T\xEDtulo_20251106202537_8"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,199 +124,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lus_0
+      name: "104 Sem T\xEDtulo_20251106202537_0"
       rect:
         serializedVersion: 2
-        x: 19
-        y: 206
-        width: 59
-        height: 94
+        x: 0
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7bca8a59ca99ca90800000000000000
-      internalID: -7293127931951658118
+      spriteID: a5eb515f50b755ca0800000000000000
+      internalID: -6028777260648645030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_1
+      name: "104 Sem T\xEDtulo_20251106202537_1"
       rect:
         serializedVersion: 2
-        x: 118
-        y: 206
-        width: 60
-        height: 94
+        x: 100
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39e02d1d78068feb0800000000000000
-      internalID: -4685889275821945197
+      spriteID: 3792baf1337aebed0800000000000000
+      internalID: -2396294113698043533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_2
+      name: "104 Sem T\xEDtulo_20251106202537_2"
       rect:
         serializedVersion: 2
-        x: 219
-        y: 206
-        width: 59
-        height: 94
+        x: 200
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47afc7935c5ba16a0800000000000000
-      internalID: -6477665255341360524
+      spriteID: db2b2833b75cd26a0800000000000000
+      internalID: -6472299956525681987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_3
+      name: "104 Sem T\xEDtulo_20251106202537_3"
       rect:
         serializedVersion: 2
-        x: 19
-        y: 106
-        width: 59
-        height: 95
+        x: 0
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a30e895bdbc31fc80800000000000000
-      internalID: -8290778653519192006
+      spriteID: dea4356da4eb86650800000000000000
+      internalID: 6226435713472350957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_4
+      name: "104 Sem T\xEDtulo_20251106202537_4"
       rect:
         serializedVersion: 2
-        x: 118
-        y: 106
-        width: 60
-        height: 95
+        x: 100
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28910b8b1b4af4e90800000000000000
-      internalID: -7039226609342080638
+      spriteID: 2851a1d12222a0c60800000000000000
+      internalID: 7785072435775804802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_5
+      name: "104 Sem T\xEDtulo_20251106202537_5"
       rect:
         serializedVersion: 2
-        x: 219
-        y: 106
-        width: 59
-        height: 95
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7952b8d01ab72d320800000000000000
-      internalID: 2581261468083889559
+      spriteID: 8b0a8931defdb0630800000000000000
+      internalID: 3894452512120938680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_6
+      name: "104 Sem T\xEDtulo_20251106202537_6"
       rect:
         serializedVersion: 2
-        x: 19
-        y: 6
-        width: 59
-        height: 95
+        x: 0
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b0db65609528d1a0800000000000000
-      internalID: -6784631536526569289
+      spriteID: 2e86f4a9f2fbdf610800000000000000
+      internalID: 1656690449115474146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_7
+      name: "104 Sem T\xEDtulo_20251106202537_7"
       rect:
         serializedVersion: 2
-        x: 118
-        y: 6
-        width: 60
-        height: 95
+        x: 100
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 607e0ce5985df6520800000000000000
-      internalID: 2697609487795152646
+      spriteID: 1cd68dd2be1a61d00800000000000000
+      internalID: 943119203439242689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lus_8
+      name: "104 Sem T\xEDtulo_20251106202537_8"
       rect:
         serializedVersion: 2
-        x: 219
-        y: 6
-        width: 59
-        height: 95
+        x: 200
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b59c9b32740d5c5e0800000000000000
-      internalID: -1889875464651421349
+      spriteID: caf5cfa33ff1b8cc0800000000000000
+      internalID: -3707834738682339412
       vertices: []
       indices: 
       edges: []
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f0c70c4ab362ee043bd5736caacbd022
     internalID: 0
     vertices: []
     indices: 
@@ -333,17 +333,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      lus_0: -7293127931951658118
-      lus_1: -4685889275821945197
-      lus_2: -6477665255341360524
-      lus_3: -8290778653519192006
-      lus_4: -7039226609342080638
-      lus_5: 2581261468083889559
-      lus_6: -6784631536526569289
-      lus_7: 2697609487795152646
-      lus_8: -1889875464651421349
+      "104 Sem T\xEDtulo_20251106202537_0": -6028777260648645030
+      "104 Sem T\xEDtulo_20251106202537_1": -2396294113698043533
+      "104 Sem T\xEDtulo_20251106202537_2": -6472299956525681987
+      "104 Sem T\xEDtulo_20251106202537_3": 6226435713472350957
+      "104 Sem T\xEDtulo_20251106202537_4": 7785072435775804802
+      "104 Sem T\xEDtulo_20251106202537_5": 3894452512120938680
+      "104 Sem T\xEDtulo_20251106202537_6": 1656690449115474146
+      "104 Sem T\xEDtulo_20251106202537_7": 943119203439242689
+      "104 Sem T\xEDtulo_20251106202537_8": -3707834738682339412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
