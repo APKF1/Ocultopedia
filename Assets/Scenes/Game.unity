@@ -3186,6 +3186,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fadeAconteceu: 0
+  customerInteraction: {fileID: 1866865479}
+  telaVitoria: {fileID: 709531629}
 --- !u!82 &941719696
 AudioSource:
   m_ObjectHideFlags: 0

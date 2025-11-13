@@ -24,14 +24,12 @@ public class CustomerInteraction : MonoBehaviour
     public Sprite[] itensPedidos;        // Ícones opcionais para cada fala (-1 se nenhum)
 
     [Header("Referências externas")]
-    public Timer timer;                  // Script do Timer
-    public SpawnObjects spawn;
-    public FadeController fade;
-    public CustomerManager customerManager;
-    public int specificObjects;
-    public GameObject panel;
-    private FadeController fadeScript;
-    GameObject[] gos;
+    public Timer timer;                         //Script do Timer
+    public SpawnObjects spawn;                  //Script do Spawn
+    public FadeController fade;                 //Script do Fade
+    public CustomerManager customerManager;     //Script do customerManager
+    public int specificObjects;                 //variavel dos ingredientes
+    public GameObject panel;                    //variavel do painel que tem o fade                          
 
     public List<int> items = new List<int>();
 
@@ -39,7 +37,7 @@ public class CustomerInteraction : MonoBehaviour
 
     private int etapaConversa2 = 0;
 
-    private int estadoDaFase;
+    public int estadoDaFase;
     /*
     0 = introducao
     1 = gameplay
@@ -51,7 +49,7 @@ public class CustomerInteraction : MonoBehaviour
         speechBubble.SetActive(false);
         okButton.gameObject.SetActive(false);
         speechText.gameObject.SetActive(false);
-        fadeScript = panel.GetComponent<FadeController>();
+        fade= panel.GetComponent<FadeController>();
     }
 
     /*public void OnPointerClick(PointerEventData eventData)
@@ -72,11 +70,10 @@ public class CustomerInteraction : MonoBehaviour
         {
             verificarConversa();
         }
-        gos = GameObject.FindGameObjectsWithTag("Cliente");
     }
     private void verificarConversa()
     {
-        if (estadoDaFase == 0 & fadeScript.fadeAconteceu == true)
+        if (estadoDaFase == 0 & fade.fadeAconteceu == true)
         {
             AvancarConversa();
         }
@@ -182,8 +179,7 @@ public class CustomerInteraction : MonoBehaviour
     {
         if(estadoDaFase == 2)
         {
-            foreach (GameObject go in gos)
-                Destroy(go);
+            Destroy(gameObject);
             Debug.Log("Cliente Destruido");
         }
     }
