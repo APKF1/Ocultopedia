@@ -25,6 +25,14 @@ public class FadeController : MonoBehaviour
     private Image fadeImage;
     private AudioSource audioSource;
 
+    [Header("Controle do Fade")]
+    public bool fadeAconteceu = false;
+    public CustomerInteraction customerInteraction;
+
+    [Header("Referencias externas")]
+    public GameObject telaVitoria;
+
+
     private void Awake()
     {
         fadeImage = GetComponent<Image>();
@@ -46,7 +54,6 @@ public class FadeController : MonoBehaviour
 
     private IEnumerator FadeSequence()
     {
-        
         // 1️⃣ Escurecer
         yield return StartCoroutine(Fade(0f, 1f));
 
@@ -55,9 +62,7 @@ public class FadeController : MonoBehaviour
 
         // 2️⃣ Tocar som
         if (bellSound != null)
-        {
             audioSource.PlayOneShot(bellSound);
-        }
 
         // 3️⃣ Esperar antes de clarear
         yield return new WaitForSeconds(0.6f);
@@ -66,20 +71,20 @@ public class FadeController : MonoBehaviour
         yield return StartCoroutine(Fade(1f, 0f));
 
         if (disableAfterFade)
-        {
             gameObject.SetActive(false);
-        }   
+            fadeAconteceu = true;
+            if(customerInteraction.estadoDaFase == 2)
+            {
+                telaVitoria.SetActive(true);
+            }
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
-
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {
-
             elapsed += Time.deltaTime;
-            //Debug.Log(Time.deltaTime);
             float t = Mathf.Clamp01(elapsed / fadeDuration);
 
             Color newColor = fadeColor;
