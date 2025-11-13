@@ -25,6 +25,8 @@ public class FadeController : MonoBehaviour
     private Image fadeImage;
     private AudioSource audioSource;
 
+    public bool fadeAconteceu = false;
+
     private void Awake()
     {
         fadeImage = GetComponent<Image>();
@@ -64,10 +66,12 @@ public class FadeController : MonoBehaviour
 
         if (disableAfterFade)
             gameObject.SetActive(false);
+            fadeAconteceu = true;
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
     {
+        Debug.Log("cu");
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {

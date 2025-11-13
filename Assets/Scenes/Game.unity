@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CaixaBtnScript
   dialogo: {fileID: 1866865479}
-  artefato: {fileID: 8326785133480120207, guid: 8cae3ddb6937ae84989a77b5da6c17b5, type: 3}
+  timer: {fileID: 7295997370953304414}
 --- !u!1 &678749960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fadeAconteceu: 0
 --- !u!82 &941719696
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6531,7 +6532,10 @@ MonoBehaviour:
   - {fileID: 8659984552620174791, guid: 6d4dcad56899fcc4c9deaa05eedfc533, type: 3}
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
+  fade: {fileID: 941719695}
+  customerManager: {fileID: 7295997370953304416}
   specificObjects: 2
+  panel: {fileID: 941719693}
   items: 0000000001000000
 --- !u!212 &1866865480
 SpriteRenderer:
