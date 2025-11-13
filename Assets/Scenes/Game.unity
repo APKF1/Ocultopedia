@@ -8562,7 +8562,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 241338388}
   customerPrefabs:
   - {fileID: 1866865477}
-  clienteAtual: {fileID: 0}
+  clienteAtual: {fileID: 1866865477}
 --- !u!82 &7295997370953304417
 AudioSource:
   m_ObjectHideFlags: 0
