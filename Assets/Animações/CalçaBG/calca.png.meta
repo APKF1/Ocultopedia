@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: ead6f50dd8ba0764d8b3cb3fe756f818
+guid: 614e3620fe5668f42b0beb461182389b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7326071109545938583
-    second: "104 Sem T\xEDtulo_20251106201228_0"
+      213: 3108031902901412303
+    second: calca_0
   - first:
-      213: -7225319196947216153
-    second: "104 Sem T\xEDtulo_20251106201228_1"
+      213: -3502746389968935118
+    second: calca_1
   - first:
-      213: -5876524942715606691
-    second: "104 Sem T\xEDtulo_20251106201228_2"
+      213: 5711680149642782399
+    second: calca_2
   - first:
-      213: 643973439589476036
-    second: "104 Sem T\xEDtulo_20251106201228_3"
+      213: -6905303294988046454
+    second: calca_3
   - first:
-      213: -1360575484037933921
-    second: "104 Sem T\xEDtulo_20251106201228_4"
+      213: 7067610780267455249
+    second: calca_4
   - first:
-      213: 2416726043513929620
-    second: "104 Sem T\xEDtulo_20251106201228_5"
+      213: 9092363518447527299
+    second: calca_5
   - first:
-      213: -8638581702441278131
-    second: "104 Sem T\xEDtulo_20251106201228_6"
+      213: 5936575811924892367
+    second: calca_6
   - first:
-      213: -6523618245401756811
-    second: "104 Sem T\xEDtulo_20251106201228_7"
-  - first:
-      213: 5400848013669608995
-    second: "104 Sem T\xEDtulo_20251106201228_8"
+      213: 8408027977208313522
+    second: calca_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_0"
+      name: calca_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 238
-        width: 90
-        height: 32
+        x: 14
+        y: 222
+        width: 94
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79eccb3ebde6ba560800000000000000
-      internalID: 7326071109545938583
+      spriteID: fc125037c82f12b20800000000000000
+      internalID: 3108031902901412303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_1"
+      name: calca_1
       rect:
         serializedVersion: 2
-        x: 105
-        y: 239
-        width: 90
-        height: 32
+        x: 135
+        y: 224
+        width: 97
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e88625c8728abb90800000000000000
-      internalID: -7225319196947216153
+      spriteID: 237ae9777beb36fc0800000000000000
+      internalID: -3502746389968935118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_2"
+      name: calca_2
       rect:
         serializedVersion: 2
-        x: 203
-        y: 238
-        width: 90
-        height: 32
+        x: 259
+        y: 223
+        width: 96
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d59a6b323b3627ea0800000000000000
-      internalID: -5876524942715606691
+      spriteID: fb6ab1695d6f34f40800000000000000
+      internalID: 5711680149642782399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_3"
+      name: calca_3
       rect:
         serializedVersion: 2
-        x: 4
-        y: 169
-        width: 90
-        height: 32
+        x: 387
+        y: 222
+        width: 98
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c6648f6e6adfe800800000000000000
-      internalID: 643973439589476036
+      spriteID: a8f27e33d3f6b20a0800000000000000
+      internalID: -6905303294988046454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_4"
+      name: calca_4
       rect:
         serializedVersion: 2
-        x: 103
-        y: 169
-        width: 90
-        height: 32
+        x: 12
+        y: 22
+        width: 98
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9450df4ec34e1de0800000000000000
-      internalID: -1360575484037933921
+      spriteID: 11320901f82351260800000000000000
+      internalID: 7067610780267455249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_5"
+      name: calca_5
       rect:
         serializedVersion: 2
-        x: 203
-        y: 170
-        width: 90
-        height: 32
+        x: 135
+        y: 24
+        width: 97
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49f351f388fe98120800000000000000
-      internalID: 2416726043513929620
+      spriteID: 38529c552709e2e70800000000000000
+      internalID: 9092363518447527299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_6"
+      name: calca_6
       rect:
         serializedVersion: 2
-        x: 6
-        y: 109
-        width: 90
-        height: 32
+        x: 262
+        y: 21
+        width: 98
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d456cc6f5b79d1880800000000000000
-      internalID: -8638581702441278131
+      spriteID: fca95f36f34f26250800000000000000
+      internalID: 5936575811924892367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_7"
+      name: calca_7
       rect:
         serializedVersion: 2
-        x: 105
-        y: 109
-        width: 90
-        height: 32
+        x: 389
+        y: 22
+        width: 94
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,30 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57b3298f4c37775a0800000000000000
-      internalID: -6523618245401756811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "104 Sem T\xEDtulo_20251106201228_8"
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 109
-        width: 90
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32ea6ac47aaa3fa40800000000000000
-      internalID: 5400848013669608995
+      spriteID: 2b63c0bc5e05fa470800000000000000
+      internalID: 8408027977208313522
       vertices: []
       indices: 
       edges: []
@@ -335,15 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "104 Sem T\xEDtulo_20251106201228_0": 7326071109545938583
-      "104 Sem T\xEDtulo_20251106201228_1": -7225319196947216153
-      "104 Sem T\xEDtulo_20251106201228_2": -5876524942715606691
-      "104 Sem T\xEDtulo_20251106201228_3": 643973439589476036
-      "104 Sem T\xEDtulo_20251106201228_4": -1360575484037933921
-      "104 Sem T\xEDtulo_20251106201228_5": 2416726043513929620
-      "104 Sem T\xEDtulo_20251106201228_6": -8638581702441278131
-      "104 Sem T\xEDtulo_20251106201228_7": -6523618245401756811
-      "104 Sem T\xEDtulo_20251106201228_8": 5400848013669608995
+      calca_0: 3108031902901412303
+      calca_1: -3502746389968935118
+      calca_2: 5711680149642782399
+      calca_3: -6905303294988046454
+      calca_4: 7067610780267455249
+      calca_5: 9092363518447527299
+      calca_6: 5936575811924892367
+      calca_7: 8408027977208313522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

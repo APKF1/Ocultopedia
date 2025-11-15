@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 7824566243432217387}
   - component: {fileID: 6768700974130921343}
   - component: {fileID: 6849026038829907668}
-  - component: {fileID: -1954401383250400165}
+  - component: {fileID: 8904098519685702909}
+  - component: {fileID: -3297894100346914243}
   m_Layer: 0
   m_Name: Pedrinha
   m_TagString: Component
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 2840340485907827937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.46, y: 3.32, z: 0}
-  m_LocalScale: {x: 0.5771787, y: 0.6399585, z: 0.6399585}
+  m_LocalPosition: {x: -10.7946, y: 1.8403, z: 0}
+  m_LocalScale: {x: 0.1601332, y: 0.17755091, z: 0.17755091}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 7ae3ec2cc9f89d046aed7023e26bd7fa, type: 3}
+  m_Sprite: {fileID: -855298285791758126, guid: 580c3722de3f89c458243bf4269b30e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,17 +130,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.033636034, y: 0.059761167}
+  m_Offset: {x: -0.09873295, y: 0.029915094}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 6.4, y: 6.4}
     newSize: {x: 2.1, y: 2.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3186325, y: 1.6348257}
+  m_Size: {x: 4.054243, y: 5.514775}
   m_EdgeRadius: 0
 --- !u!50 &7824566243432217387
 Rigidbody2D:
@@ -277,7 +278,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e82f895f52229458c6baea6b6056e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlay
---- !u!114 &-1954401383250400165
+--- !u!95 &8904098519685702909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840340485907827937}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5806191af77cfcc4695ab879bb721882, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3297894100346914243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,12 +309,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2840340485907827937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491474235aab0c3458043855dd4dcf23, type: 3}
+  m_Script: {fileID: 11500000, guid: 66b95fe11ba8d7746b783bbb3d22ed88, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Redimensionamento
-  escalaDuranteArrasto: {x: 0.7, y: 0.7, z: 1}
+  m_EditorClassIdentifier: Assembly-CSharp::CompAnimation
+  escalaDuranteArrasto: {x: 0.5, y: 0.5, z: 1}
   areaPermitidaLayer:
     serializedVersion: 2
     m_Bits: 8
+  animator: {fileID: 8904098519685702909}
+  triggerAnimacao: Anim
+  tempoMin: 1.5
+  tempoMax: 4
   escalaOriginalSpawn: {x: 0, y: 0, z: 0}
   posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
