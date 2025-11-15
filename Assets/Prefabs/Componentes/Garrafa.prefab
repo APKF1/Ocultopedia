@@ -32,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 2010092166600301886}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6489, y: -0.8762, z: 0}
-  m_LocalScale: {x: 1.1099046, y: 1.230629, z: 1.230629}
+  m_LocalPosition: {x: 0.668, y: -0.868, z: 0}
+  m_LocalScale: {x: 1.1481719, y: 1.2469963, z: 1.2469963}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -312,13 +312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b95fe11ba8d7746b783bbb3d22ed88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompAnimation
-  escalaDuranteArrasto: {x: 1.2, y: 1.2, z: 1}
+  escalaDuranteArrasto: {x: 1.4, y: 1.45, z: 1}
   areaPermitidaLayer:
     serializedVersion: 2
     m_Bits: 8
   animator: {fileID: -5893362952398150703}
   triggerAnimacao: Anim
-  tempoMin: 1
+  tempoMin: 0
   tempoMax: 5
   escalaOriginalSpawn: {x: 0, y: 0, z: 0}
   posicaoOriginalSpawn: {x: 0, y: 0, z: 0}

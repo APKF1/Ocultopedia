@@ -201,13 +201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b95fe11ba8d7746b783bbb3d22ed88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompAnimation
-  escalaDuranteArrasto: {x: 1.2, y: 1.2, z: 1}
+  escalaDuranteArrasto: {x: 0.9, y: 0.9, z: 1}
   areaPermitidaLayer:
     serializedVersion: 2
     m_Bits: 8
   animator: {fileID: 878037976418119703}
   triggerAnimacao: Anim
-  tempoMin: 1.5
-  tempoMax: 4
+  tempoMin: 0
+  tempoMax: 0
   escalaOriginalSpawn: {x: 0, y: 0, z: 0}
   posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
