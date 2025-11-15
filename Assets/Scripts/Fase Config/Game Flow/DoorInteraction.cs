@@ -22,7 +22,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
     [Header("Raycast (para toque)")]
     public LayerMask clickableLayers = ~0;  // quais layers respondem ao clique (por padrão, todos)
 
-    bool opened = false;
+    public bool opened = false;
 
     void Start()
     {
@@ -85,7 +85,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    void TryOpenDoor(string source)
+    public void TryOpenDoor(string source)
     {
         if (opened) return;
         opened = true;
@@ -102,7 +102,7 @@ public class DoorInteraction : MonoBehaviour, IPointerClickHandler
 
         // Inicia fade e cliente (se atribuídos)
         if (fade != null) fade.StartFadeSequence();
-        if (customerManager != null) customerManager.NovoCliente();
+        //if (customerManager != null) customerManager.NovoCliente();
     }
 
     // Método público para (re)resetar a porta se quiser reutilizar o objeto entre fases

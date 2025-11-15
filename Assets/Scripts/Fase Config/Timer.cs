@@ -45,6 +45,11 @@ public class Timer : MonoBehaviour
         AtualizarTexto();
     }
 
+    public void PararTimer()
+    {
+        ativo = false;
+    }
+
     public void ResetarTimer()
     {
         tempoRestante = tempoTotal;

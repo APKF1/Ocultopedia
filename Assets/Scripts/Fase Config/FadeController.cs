@@ -25,6 +25,14 @@ public class FadeController : MonoBehaviour
     private Image fadeImage;
     private AudioSource audioSource;
 
+    [Header("Controle do Fade")]
+    public bool fadeAconteceu = false;
+    public CustomerInteraction customerInteraction;
+
+    [Header("Referencias externas")]
+    public GameObject telaVitoria;
+
+
     private void Awake()
     {
         fadeImage = GetComponent<Image>();
@@ -64,6 +72,11 @@ public class FadeController : MonoBehaviour
 
         if (disableAfterFade)
             gameObject.SetActive(false);
+            fadeAconteceu = true;
+            if(customerInteraction.estadoDaFase == 2)
+            {
+                telaVitoria.SetActive(true);
+            }
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)
