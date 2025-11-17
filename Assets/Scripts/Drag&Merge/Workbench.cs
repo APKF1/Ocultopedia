@@ -11,7 +11,7 @@ public class Workbench : MonoBehaviour
     public GameObject[] resultados;
     public float tempoDeCraft = 5f;
 
-    [Header("Animação e Som")]
+    [Header("Animação e Som do Caldeirão")]
     public Animator animCaldeirao;
     [Range(1f, 3f)] public float velocidadeInicial = 1f;
     [Range(1f, 10f)] public float velocidadeFinal = 3f;
@@ -22,7 +22,12 @@ public class Workbench : MonoBehaviour
     [Range(0.5f, 2f)] public float pitchInicial = 1f;
     [Range(0.5f, 3f)] public float pitchFinal = 2f;
 
-    // dados por componente inserido
+    [Header("Sons do Resultado Final")]
+    public AudioSource audioResultado;
+    public AudioClip somResultadoPadrao;   // toca quando gerar defaultResultPrefab
+    public AudioClip somResultadoCorreto;  // toca quando gerar qualquer item válido
+
+    // dados salvos por componente usado
     private List<string> nomesComps = new();
     private List<Vector3> posicoesOriginais = new();
     private List<Vector3> escalasOriginais = new();
@@ -38,10 +43,10 @@ public class Workbench : MonoBehaviour
         string nome = LimparNome(comp.name);
 
         Redimensionamento redim = comp.GetComponent<Redimensionamento>();
+
         Vector3 posOriginal = redim ? redim.posicaoOriginalSpawn : comp.transform.position;
         Vector3 escalaOriginal = redim ? redim.escalaOriginalSpawn : comp.transform.localScale;
 
-        // Guarda dados do componente (um por um)
         nomesComps.Add(nome);
         posicoesOriginais.Add(posOriginal);
         escalasOriginais.Add(escalaOriginal);
@@ -95,19 +100,31 @@ public class Workbench : MonoBehaviour
             yield return null;
         }
 
-        // define resultado
+        // --- Determinar resultado ---
         List<string> copiaNomes = new(nomesComps);
         copiaNomes.Sort();
         string combinacaoFinal = string.Join("", copiaNomes);
+
         int idx = combinacoes.IndexOf(combinacaoFinal);
 
-        GameObject resultado = (idx >= 0 && idx + 1 < resultados.Length) ? resultados[idx + 1] : defaultResultPrefab;
+        bool resultadoCorreto = (idx >= 0 && idx + 1 < resultados.Length);
+        GameObject resultado = resultadoCorreto ? resultados[idx + 1] : defaultResultPrefab;
+
         Instantiate(resultado, spawnPoint.position, Quaternion.identity);
 
-        // Respawn por componente com os dados individuais
+        // --- Tocar som adequado ---
+        if (audioResultado)
+        {
+            if (resultadoCorreto && somResultadoCorreto)
+                audioResultado.PlayOneShot(somResultadoCorreto);
+            else if (!resultadoCorreto && somResultadoPadrao)
+                audioResultado.PlayOneShot(somResultadoPadrao);
+        }
+
+        // --- Respawnar os componentes usados ---
         RespawnarComponentesUsados();
 
-        // finalizar efeitos
+        // --- Finalizar efeitos ---
         if (animCaldeirao)
         {
             animCaldeirao.speed = 1f;
@@ -130,12 +147,14 @@ public class Workbench : MonoBehaviour
         float dur = 0.8f;
         float start = audioCaldeirao.volume;
         float t = 0f;
+
         while (t < dur)
         {
             t += Time.deltaTime;
             audioCaldeirao.volume = Mathf.Lerp(start, 0f, t / dur);
             yield return null;
         }
+
         audioCaldeirao.Stop();
         audioCaldeirao.volume = volumeInicial;
         audioCaldeirao.pitch = pitchInicial;
@@ -167,14 +186,12 @@ public class Workbench : MonoBehaviour
             novo.transform.localScale = escala;
 
             Redimensionamento redim = novo.GetComponent<Redimensionamento>();
-            if (redim)
-                redim.RegistrarEscalaEPosicaoOriginais(pos, escala);
+            redim?.RegistrarEscalaEPosicaoOriginais(pos, escala);
         }
     }
 
     private GameObject BuscarPrefabPorNome(SpawnObjects spawner, string nomeLimpo)
     {
-        // busca case-insensitive e sem espaços
         foreach (GameObject prefab in spawner.componentes)
         {
             string p = LimparNome(prefab.name);
