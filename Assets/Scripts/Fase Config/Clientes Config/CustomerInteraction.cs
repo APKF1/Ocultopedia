@@ -1,79 +1,72 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /// <summary>
-/// Sistema de diálogo modular para clientes.
-/// Permite qualquer número de falas, mostrando o botão "OK!" apenas no final.
+/// Controla diálogo, estados da fase e spawn dos itens.
+/// Mostra nome do cliente em um TMP separado e a fala no balão.
 /// </summary>
 public class CustomerInteraction : MonoBehaviour
 {
-    [Header("Referências de UI")]
-    public GameObject speechBubble;      // Balão de fala
-    public TMP_Text speechText;          // Texto do balão
-    // public SpriteRenderer requestedItemIcon;      // Ícone do item desejado
-    public Button okButton;              // Botão "Ok!"
+    [Header("UI – Balão de Fala")]
+    public GameObject speechBubble;
+    public TMP_Text speechText;
+    public Button okButton;
 
-    [Header("Diálogo do cliente")]
-    [TextArea]
-    public string[] falas1;               // Array de falas do cliente
-    public string[] falas2;
-    public Sprite[] itensPedidos;        // Ícones opcionais para cada fala (-1 se nenhum)
+    [Header("UI – Nome do Cliente (Prefab Separado)")]
+    public TMP_Text customerNameText;
+    public string nomeDoCliente = "Cliente";
 
-    [Header("Referências externas")]
-    public Timer timer;                         //Script do Timer
-    public SpawnObjects spawn;                  //Script do Spawn
-    public FadeController fade;                 //Script do Fade
-    public CustomerManager customerManager;     //Script do customerManager
-    public int specificObjects;                 //variavel dos ingredientes
-    public GameObject panel;                    //variavel do painel que tem o fade                          
+    [Header("Fal falas do cliente")]
+    [TextArea] public string[] falas1; // Introdução
+    [TextArea] public string[] falas2; // Final
 
+    public Sprite[] itensPedidos;
+
+    [Header("Referências Externas")]
+    public Timer timer;
+    public SpawnObjects spawn;
+    public FadeController fade;
+    public CustomerManager customerManager;
+
+    public GameObject panel;
+
+    [Header("Objetos do Spawn")]
+    public int specificObjects;
     public List<int> items = new List<int>();
 
-    private int etapaConversa = 0;
-
-    private int etapaConversa2 = 0;
-
-    public int estadoDaFase;
     /*
-    0 = introducao
-    1 = gameplay
-    2 = final da fase
+        0 = conversando (introdução)
+        1 = gameplay acontecendo
+        2 = conversando final
     */
+    public int estadoDaFase = 0;
+
+    private int etapaConversa = 0;
+    private int etapaConversa2 = 0;
 
     private void Start()
     {
         speechBubble.SetActive(false);
         okButton.gameObject.SetActive(false);
         speechText.gameObject.SetActive(false);
-        fade= panel.GetComponent<FadeController>();
+
+        if (customerNameText)
+            customerNameText.gameObject.SetActive(false);
+
+        fade = panel.GetComponent<FadeController>();
     }
 
-    /*public void OnPointerClick(PointerEventData eventData)
-    {
-        AvancarConversa();
-    }
-    */
-
-    /*private void OnMouseDown()
-    {
-        AvancarConversa();
-    }
-    */
-
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            verificarConversa();
-        }
+            VerificarConversa();
     }
-    private void verificarConversa()
+
+    private void VerificarConversa()
     {
-        if (estadoDaFase == 0 & fade.fadeAconteceu == true)
+        if (estadoDaFase == 0 && fade.fadeAconteceu)
         {
             AvancarConversa();
         }
@@ -81,47 +74,69 @@ public class CustomerInteraction : MonoBehaviour
         {
             AvancarConversa2();
         }
-        
     }
 
+    // -----------------------------
+    // INTRODUÇÃO (falas1)
+    // -----------------------------
     private void AvancarConversa()
     {
         if (etapaConversa < falas1.Length)
         {
-            // Mostra o balão e o texto atual
-            speechBubble.SetActive(true);
-            speechText.gameObject.SetActive(true);
-            speechText.text = falas1[etapaConversa];
-
-            // Mostra ícone do item, se houver
-            /* if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
-            {
-                requestedItemIcon.enabled = true;
-                requestedItemIcon.sprite = itensPedidos[etapaConversa];
-            }
-            /*else
-            {
-                requestedItemIcon.enabled = false;
-            } */
-
+            MostrarNomeEFala(falas1[etapaConversa]);
             etapaConversa++;
         }
         else
         {
-            // Conversa terminou -> mostra botão OK
             okButton.gameObject.SetActive(true);
             okButton.onClick.RemoveAllListeners();
             okButton.onClick.AddListener(OnOkClicked1);
+
             estadoDaFase = 1;
         }
     }
 
-    public void OnOkClicked1()
+    // -----------------------------
+    // FINAL (falas2)
+    // -----------------------------
+    public void AvancarConversa2()
     {
-        okButton.gameObject.SetActive(false);
-        speechBubble.SetActive(false);
-        speechText.gameObject.SetActive(false);
-        // requestedItemIcon.enabled = false;
+        if (etapaConversa2 < falas2.Length)
+        {
+            MostrarNomeEFala(falas2[etapaConversa2]);
+            etapaConversa2++;
+        }
+        else
+        {
+            okButton.gameObject.SetActive(true);
+            okButton.onClick.RemoveAllListeners();
+            okButton.onClick.AddListener(OnOkClicked2);
+        }
+    }
+
+    // -----------------------------
+    // Mostra nome + fala
+    // -----------------------------
+    private void MostrarNomeEFala(string textoFala)
+    {
+        speechBubble.SetActive(true);
+        speechText.gameObject.SetActive(true);
+
+        if (customerNameText)
+        {
+            customerNameText.gameObject.SetActive(true);
+            customerNameText.text = nomeDoCliente;
+        }
+
+        speechText.text = textoFala;
+    }
+
+    // -----------------------------
+    // OK da introdução
+    // -----------------------------
+    private void OnOkClicked1()
+    {
+        FecharCaixaDeTexto();
 
         spawn.SpawnarFase(specificObjects, items);
 
@@ -130,58 +145,36 @@ public class CustomerInteraction : MonoBehaviour
             timer.ResetarTimer();
             timer.IniciarTimer();
         }
-
-        Debug.Log("🎯 Timer iniciado, fase começou!");
     }
 
-    public void AvancarConversa2()
+    // -----------------------------
+    // OK do final da fase
+    // -----------------------------
+    private void OnOkClicked2()
     {
-        estadoDaFase = 2;
-        if (etapaConversa2 < falas2.Length)
-        {
-            // Mostra o balão e o texto atual
-            speechBubble.SetActive(true);
-            speechText.gameObject.SetActive(true);
-            speechText.text = falas2[etapaConversa2];
-            
-
-
-            // Mostra ícone do item, se houver
-            /* if (itensPedidos != null && itensPedidos.Length > etapaConversa && itensPedidos[etapaConversa] != null)
-            {
-                requestedItemIcon.enabled = true;
-                requestedItemIcon.sprite = itensPedidos[etapaConversa];
-            }
-            /*else
-            {
-                requestedItemIcon.enabled = false;
-            } */
-
-            etapaConversa2++;
-        }
-        else
-        {
-            // Conversa terminou -> mostra botão OK
-            okButton.gameObject.SetActive(true);
-            okButton.onClick.RemoveAllListeners();
-            okButton.onClick.AddListener(OnOkClicked2);
-        }
+        FecharCaixaDeTexto();
+        fade.StartFadeSequence();
     }
-    public void OnOkClicked2()
+
+    // -----------------------------
+    // Esconde o balão e o nome
+    // -----------------------------
+    private void FecharCaixaDeTexto()
     {
         okButton.gameObject.SetActive(false);
         speechBubble.SetActive(false);
         speechText.gameObject.SetActive(false);
-        fade.StartFadeSequence();    
+
+        if (customerNameText)
+            customerNameText.gameObject.SetActive(false);
     }
 
+    // -----------------------------
+    // Chamado por outro script
+    // -----------------------------
     public void DestruirCliente()
     {
-        if(estadoDaFase == 2)
-        {
+        if (estadoDaFase == 2)
             Destroy(gameObject);
-            Debug.Log("Cliente Destruido");
-        }
     }
-
 }
