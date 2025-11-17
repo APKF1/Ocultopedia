@@ -1,51 +1,72 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class TriggerWin : MonoBehaviour
 {
     [Header("Caixa Registradora")]
-    public Animator animator;          // Animator da caixa
-    public string abrirTrigger = "Abrir";
-    public string fecharTrigger = "Fechar";
+    public Animator animator;
+    public string triggerAbrir = "Abrir";
+    public string triggerFechar = "Fechar";
 
-    [Header("¡udio")]
+    [Header("√Åudio")]
     public AudioSource audioSource;
     public AudioClip somAbrir;
     public AudioClip somFechar;
 
-    [Header("Bot„o da Caixa (opcional)")]
+    [Header("Bot√£o (Opcional)")]
     public GameObject CashierBtn;
+
+    private int objetosDentro = 0;
+    private bool caixaAberta = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Artefato")) return;
+        if (!collision.CompareTag("Artefato"))
+            return;
 
-        // Ativa o bot„o (se existir)
-        if (CashierBtn)
-            CashierBtn.SetActive(true);
+        objetosDentro++;
 
-        // Ativa animaÁ„o de abrir
-        if (animator && !string.IsNullOrEmpty(abrirTrigger))
-            animator.SetTrigger(abrirTrigger);
+        // S√≥ abre se estiver fechada
+        if (!caixaAberta)
+        {
+            caixaAberta = true;
 
-        // Toca som de abrir
-        if (audioSource && somAbrir)
-            audioSource.PlayOneShot(somAbrir);
+            if (animator)
+            {
+                animator.ResetTrigger(triggerFechar);
+                animator.SetTrigger(triggerAbrir);
+            }
+
+            if (audioSource && somAbrir)
+                audioSource.PlayOneShot(somAbrir);
+
+            if (CashierBtn)
+                CashierBtn.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Artefato")) return;
+        if (!collision.CompareTag("Artefato"))
+            return;
 
-        // Desativa o bot„o (se existir)
-        if (CashierBtn)
-            CashierBtn.SetActive(false);
+        objetosDentro--;
 
-        // Ativa animaÁ„o de fechar
-        if (animator && !string.IsNullOrEmpty(fecharTrigger))
-            animator.SetTrigger(fecharTrigger);
+        // S√≥ fecha se saiu o √∫ltimo objeto
+        if (objetosDentro <= 0 && caixaAberta)
+        {
+            caixaAberta = false;
 
-        // Toca som de fechar (se quiser)
-        if (audioSource && somFechar)
-            audioSource.PlayOneShot(somFechar);
+            if (animator)
+            {
+                animator.ResetTrigger(triggerAbrir);
+                animator.SetTrigger(triggerFechar);
+            }
+
+            if (audioSource && somFechar)
+                audioSource.PlayOneShot(somFechar);
+
+            if (CashierBtn)
+                CashierBtn.SetActive(false);
+        }
     }
 }
