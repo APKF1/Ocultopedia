@@ -3,30 +3,40 @@ using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    [Header("Configurações de Tempo")]
+    [Header("Configuração do Tempo")]
     public float tempoTotal = 60f;
-    public float tempoRestante { get; private set; }
-    public float tempoCritico = 10f;
-    private bool ativo = false;
+    public float tempoRestante;
+    public bool ativo = false;
+
+    [Header("Relógio Visual (Animação Sincronizada)")]
+    public Animator relogioAnimator;   // Animator do timer
+    private int totalFrames;           // Frames totais da animação
 
     [Header("UI")]
-    public GameObject timerTextObject; // AGORA É GAMEOBJECT
+    public GameObject timerUI;         // Objeto do timer para ativar/desativar
+    public GameObject TelaGameOver;    // Tela de Game Over
 
-    [Header("Animator (sincronizado)")]
-    public Animator animTimer;
-    public string nomeDaAnimacao = "TimerAnimation";
+    [Header("Eventos")]
+    public UnityEvent OnTempoAcabou;   // Evento chamado quando o tempo termina
 
-    [Header("Áudio")]
-    public AudioSource audioSource;
-    public AudioClip somTempoCritico;
-    public AudioClip somTempoAcabou;
+    private void Start()
+    {
+        if (timerUI != null)
+            timerUI.SetActive(false);
 
-    [Header("Eventos & GameOver")]
-    public UnityEvent OnTempoAcabou;
-    public GameObject TelaGameOver;
+        if (TelaGameOver != null)
+            TelaGameOver.SetActive(false);
 
-    private bool somCriticoTocado = false;
-    private bool somFinalTocado = false;
+        // Pegar a quantidade real de frames da animação
+        if (relogioAnimator != null)
+        {
+            AnimationClip clip = relogioAnimator.runtimeAnimatorController.animationClips[0];
+            totalFrames = Mathf.RoundToInt(clip.length * clip.frameRate);
+
+            // Congelar a animação para ser controlada pelo script
+            relogioAnimator.speed = 0f;
+        }
+    }
 
     private void Update()
     {
@@ -39,51 +49,29 @@ public class Timer : MonoBehaviour
             tempoRestante = 0;
             ativo = false;
 
-            if (!somFinalTocado)
-            {
-                somFinalTocado = true;
-                if (audioSource && somTempoAcabou)
-                    audioSource.PlayOneShot(somTempoAcabou);
-            }
+            Debug.Log("⏰ Tempo esgotado!");
+
+            if (TelaGameOver != null)
+                TelaGameOver.SetActive(true);
 
             OnTempoAcabou?.Invoke();
 
-            if (TelaGameOver)
-                TelaGameOver.SetActive(true);
-
+            // Parar tudo
             Time.timeScale = 0f;
+
+            return;
         }
 
         AtualizarAnimacao();
-        VerificarSomCritico();
     }
 
-    // ---------------------
-    // CONTROLES DO TIMER
-    // ---------------------
     public void IniciarTimer()
     {
         tempoRestante = tempoTotal;
         ativo = true;
 
-        somCriticoTocado = false;
-        somFinalTocado = false;
-
-        if (animTimer)
-            animTimer.speed = 0;
-
-        AtualizarAnimacao();
-    }
-
-    public void ResetarTimer()
-    {
-        tempoRestante = tempoTotal;
-
-        somCriticoTocado = false;
-        somFinalTocado = false;
-
-        if (animTimer)
-            animTimer.speed = 0;
+        if (timerUI != null)
+            timerUI.SetActive(true);
 
         AtualizarAnimacao();
     }
@@ -93,33 +81,26 @@ public class Timer : MonoBehaviour
         ativo = false;
     }
 
-    // ---------------------
-    // ANIMAÇÃO SINCRONIZADA
-    // ---------------------
-    private void AtualizarAnimacao()
+    public void ResetarTimer()
     {
-        if (!animTimer) return;
-
-        float progresso = 1f - (tempoRestante / tempoTotal);
-        progresso = Mathf.Clamp01(progresso);
-
-        animTimer.Play(nomeDaAnimacao, 0, progresso);
-        animTimer.speed = 0;
+        tempoRestante = tempoTotal;
+        AtualizarAnimacao();
     }
 
-    // ---------------------
-    // SOM CRÍTICO
-    // ---------------------
-    private void VerificarSomCritico()
+    private void AtualizarAnimacao()
     {
-        if (somCriticoTocado || tempoRestante <= 0) return;
+        if (relogioAnimator == null) return;
 
-        if (tempoRestante <= tempoCritico)
-        {
-            somCriticoTocado = true;
+        // 0 → 1 (proporção do tempo passado)
+        float progresso = 1f - (tempoRestante / tempoTotal);
 
-            if (audioSource && somTempoCritico)
-                audioSource.PlayOneShot(somTempoCritico);
-        }
+        // ir para o ponto exato da animação
+        relogioAnimator.Play(0, 0, progresso);
+    }
+
+    public void MostrarTimer(bool mostrar)
+    {
+        if (timerUI != null)
+            timerUI.SetActive(mostrar);
     }
 }

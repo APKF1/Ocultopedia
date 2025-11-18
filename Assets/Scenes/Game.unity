@@ -994,142 +994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleSet
   scale: 0.35
---- !u!1 &282422355
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 282422356}
-  - component: {fileID: 282422358}
-  - component: {fileID: 282422357}
-  m_Layer: 5
-  m_Name: Timer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &282422356
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282422355}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7613791734503436448}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1647, y: 291}
-  m_SizeDelta: {x: 167.17, y: 48.77}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &282422357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282422355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 00:00
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &282422358
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282422355}
-  m_CullTransparentMesh: 1
 --- !u!1 &299108985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,8 +1612,8 @@ MonoBehaviour:
   velocidadeMax: 1.5
   tempoMin: 2
   tempoMax: 8
-  audioSource: {fileID: 0}
-  somDaAnimacao: {fileID: 0}
+  audioSource: {fileID: 1317982277}
+  somDaAnimacao: {fileID: 8300000, guid: e28cc654f1808764784b9b5f0392cc49, type: 3}
   volumeSom: 1
 --- !u!1 &440933762
 GameObject:
@@ -2602,6 +2466,7 @@ GameObject:
   - component: {fileID: 709531630}
   - component: {fileID: 709531632}
   - component: {fileID: 709531631}
+  - component: {fileID: 709531633}
   m_Layer: 5
   m_Name: Vitoria
   m_TagString: Untagged
@@ -2671,6 +2536,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709531629}
   m_CullTransparentMesh: 1
+--- !u!114 &709531633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709531629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bc4a50c6dda7a448a0746c929815ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictorySound
+  audioSource: {fileID: 1317982277}
+  victoryClip: {fileID: 8300000, guid: f8f67b9e23da6ab44a07f182d0e60e51, type: 3}
+  telaVitoria: {fileID: 941719693}
 --- !u!1 &725658456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f65af06c284864882afb5d3bc92ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeController
-  fadeDuration: 1.45
+  fadeDuration: 1.4
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   bellSound: {fileID: 8300000, guid: c07c4f2bf23980e4d9ab463162a14603, type: 3}
   disableAfterFade: 1
@@ -4465,19 +4345,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1077756009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 725658456}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1077756008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8289,13 +8157,12 @@ MonoBehaviour:
   - Blah Blah Blah
   falas2:
   - mt obg  <3
-  itensPedidos: []
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
   fade: {fileID: 941719695}
   customerManager: {fileID: 7295997370953304416}
-  panel: {fileID: 941719693}
   specificObjects: 2
+  panel: {fileID: 941719693}
   items: 0000000001000000
   estadoDaFase: 0
 --- !u!114 &177477993603207595
@@ -9094,17 +8961,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   tempoTotal: 60
-  tempoCritico: 25
-  timerTextObject: {fileID: 725658456}
-  animTimer: {fileID: 725658457}
-  nomeDaAnimacao: TimerAnimation
-  audioSource: {fileID: 1317982277}
-  somTempoCritico: {fileID: 0}
-  somTempoAcabou: {fileID: 8300000, guid: 9a67a12febc848d439b878b33e70665a, type: 3}
+  tempoRestante: 0
+  ativo: 0
+  relogioAnimator: {fileID: 725658457}
+  timerUI: {fileID: 725658456}
+  TelaGameOver: {fileID: 1969322091}
   OnTempoAcabou:
     m_PersistentCalls:
       m_Calls: []
-  TelaGameOver: {fileID: 1969322091}
 --- !u!114 &7295997370953304416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9264,7 +9128,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 282422356}
   - {fileID: 1023527760}
   - {fileID: 941719694}
   - {fileID: 1969322092}
