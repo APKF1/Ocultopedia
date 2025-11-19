@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6271369232221640653}
   - component: {fileID: 878037976418119703}
   - component: {fileID: 4883825878686871874}
+  - component: {fileID: 7981986817552921529}
   m_Layer: 0
   m_Name: Asinhas
   m_TagString: Component
@@ -211,3 +212,15 @@ MonoBehaviour:
   tempoMax: 0
   escalaOriginalSpawn: {x: 0, y: 0, z: 0}
   posicaoOriginalSpawn: {x: 0, y: 0, z: 0}
+--- !u!114 &7981986817552921529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230287352820565321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e82f895f52229458c6baea6b6056e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlay
