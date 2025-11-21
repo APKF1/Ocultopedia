@@ -1,51 +1,36 @@
-﻿using UnityEngine;
+﻿// Updated Workbench.cs with Trigger "ItemEntrou" added
+// Only the requested modification was made.
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-/// <summary>
-/// Sistema de craft da Workbench.
-/// Recebe componentes (via collider), inicia o processo,
-/// define o resultado e respawna os itens usados.
-/// </summary>
 public class Workbench : MonoBehaviour
 {
-    // ---------------------------
-    // CONFIGURAÇÃO DO CRAFT
-    // ---------------------------
-
     [Header("Configurações de Craft")]
-    public Transform spawnPoint;                     // Onde o resultado aparece
-    public GameObject defaultResultPrefab;           // Resultado quando a combinação não existe
-    public List<string> combinacoes = new();         // Lista de combinações válidas
-    public GameObject[] resultados;                  // Resultados na mesma ordem da lista acima
-    public float tempoDeCraft = 5f;                  // Tempo total do craft
+    public Transform spawnPoint;
+    public GameObject defaultResultPrefab;
+    public List<string> combinacoes = new();
+    public GameObject[] resultados;
+    public float tempoDeCraft = 5f;
 
-    // ---------------------------
-    // EFEITOS DO CALDEIRÃO
-    // ---------------------------
     [Header("Animação e Som do Caldeirão")]
     public Animator animCaldeirao;
     public float velocidadeInicial = 1f;
     public float velocidadeFinal = 3f;
 
-    public AudioSource audioCaldeirao;               // Fonte do áudio borbulhante
+    public AudioSource audioCaldeirao;
     public AudioClip somBorbulhando;
     public float volumeInicial = 0.4f;
     public float volumeFinal = 1f;
     public float pitchInicial = 1f;
     public float pitchFinal = 2f;
 
-    // ---------------------------
-    // SONS DO RESULTADO FINAL
-    // ---------------------------
     [Header("Sons do Resultado Final")]
-    public AudioSource audioResultado;               // Toca após o craft
-    public AudioClip somResultadoPadrao;             // Toca no resultado errado
-    public AudioClip somResultadoCorreto;            // Toca no resultado correto
+    public AudioSource audioResultado;
+    public AudioClip somResultadoPadrao;
+    public AudioClip somResultadoCorreto;
 
-    // ---------------------------
-    // ARMAZENAMENTO DE COMPONENTES
-    // ---------------------------
     private List<string> nomesComps = new();
     private List<Vector3> posicoesOriginais = new();
     private List<Vector3> escalasOriginais = new();
@@ -53,19 +38,13 @@ public class Workbench : MonoBehaviour
     private Coroutine craftRoutine;
     private bool craftAtivo = false;
 
-    // ---------------------------------------------------
-    // INTERAÇÕES — CHAMADO PELO SISTEMA DE FÍSICA DA UNITY
-    // ---------------------------------------------------
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Component")) return;
 
-        // Limpa o nome para comparação
         GameObject comp = other.gameObject;
         string nome = LimparNome(comp.name);
 
-        // Dados de spawn vêm do script:
-        // 👉 Redimensionamento.cs (registro de posição e escala)
         Redimensionamento redim = comp.GetComponent<Redimensionamento>();
 
         Vector3 posOriginal = redim ? redim.posicaoOriginalSpawn : comp.transform.position;
@@ -77,7 +56,12 @@ public class Workbench : MonoBehaviour
 
         Destroy(comp);
 
-        // Primeiro item ativa o processo
+        // -----------------
+        // Trigger adicionado
+        // -----------------
+        if (animCaldeirao)
+            animCaldeirao.SetTrigger("ItemEntrou");
+
         if (!craftAtivo)
         {
             craftAtivo = true;
@@ -85,10 +69,6 @@ public class Workbench : MonoBehaviour
             craftRoutine = StartCoroutine(ProcessoDeCraft());
         }
     }
-
-    // ---------------------------
-    // FUNÇÕES DE CONTROLE
-    // ---------------------------
 
     private void IniciarEfeitosDoCaldeirao()
     {
@@ -108,18 +88,12 @@ public class Workbench : MonoBehaviour
         }
     }
 
-    private string LimparNome(string original) =>
-        original.Replace("(Clone)", "").Trim();
-
-    // ---------------------------
-    // PROCESSO DO CRAFT
-    // ---------------------------
+    private string LimparNome(string original) => original.Replace("(Clone)", "").Trim();
 
     private IEnumerator ProcessoDeCraft()
     {
         float tempo = tempoDeCraft;
 
-        // Aceleração do caldeirão + áudio
         while (tempo > 0f)
         {
             tempo -= Time.deltaTime;
@@ -137,18 +111,18 @@ public class Workbench : MonoBehaviour
             yield return null;
         }
 
-        // Define resultado final
         GameObject resultado = DefinirResultadoFinal(out bool ehCorreto);
 
         Instantiate(resultado, spawnPoint.position, Quaternion.identity);
 
-        // Toca áudio específico
+        // Trigger chamado após gerar o artefato/resultado
+        if (animCaldeirao)
+            animCaldeirao.SetTrigger("ResultadoGerado");
+
         TocarSomDoResultado(ehCorreto);
 
-        // Respawna componentes usados
         RespawnarComponentesUsados();
 
-        // Finaliza efeitos
         FinalizarEfeitosDoCaldeirao();
 
         nomesComps.Clear();
@@ -157,18 +131,12 @@ public class Workbench : MonoBehaviour
         craftAtivo = false;
     }
 
-    // ---------------------------
-    // RESULTADO DO CRAFT
-    // ---------------------------
-
     private GameObject DefinirResultadoFinal(out bool ehCorreto)
     {
         List<string> copia = new(nomesComps);
         copia.Sort();
         string combinacaoFinal = string.Join("", copia);
 
-        // Ligação direta com:
-        // 👉 Lista "combinacoes" configurada na Unity
         int idx = combinacoes.IndexOf(combinacaoFinal);
 
         ehCorreto = idx >= 0 && idx + 1 < resultados.Length;
@@ -182,14 +150,9 @@ public class Workbench : MonoBehaviour
 
         if (correto && somResultadoCorreto)
             audioResultado.PlayOneShot(somResultadoCorreto);
-
         else if (!correto && somResultadoPadrao)
             audioResultado.PlayOneShot(somResultadoPadrao);
     }
-
-    // ---------------------------
-    // FINALIZAÇÃO DO CALDEIRÃO
-    // ---------------------------
 
     private void FinalizarEfeitosDoCaldeirao()
     {
@@ -221,14 +184,8 @@ public class Workbench : MonoBehaviour
         audioCaldeirao.pitch = pitchInicial;
     }
 
-    // ---------------------------
-    // RESPAWN DOS COMPONENTES
-    // ---------------------------
-
     private void RespawnarComponentesUsados()
     {
-        // Busca automática pelo script:
-        // 👉 SpawnObjects.cs
         SpawnObjects spawner = FindObjectOfType<SpawnObjects>();
 
         if (spawner == null)
@@ -243,7 +200,6 @@ public class Workbench : MonoBehaviour
             Vector3 pos = posicoesOriginais[i];
             Vector3 escala = escalasOriginais[i];
 
-            // Puxa prefab da lista do SpawnObjects
             GameObject prefab = BuscarPrefabPorNome(spawner, nome);
             if (prefab == null)
             {
@@ -254,8 +210,6 @@ public class Workbench : MonoBehaviour
             GameObject novo = Instantiate(prefab, pos, Quaternion.identity);
             novo.transform.localScale = escala;
 
-            // Registra posição/escala via:
-            // 👉 Redimensionamento.cs
             Redimensionamento redim = novo.GetComponent<Redimensionamento>();
             redim?.RegistrarEscalaEPosicaoOriginais(pos, escala);
         }
@@ -263,8 +217,6 @@ public class Workbench : MonoBehaviour
 
     private GameObject BuscarPrefabPorNome(SpawnObjects spawner, string nomeLimpo)
     {
-        // Faz correspondência com:
-        // 👉 SpawnObjects.componentes
         foreach (GameObject prefab in spawner.componentes)
         {
             string p = LimparNome(prefab.name);

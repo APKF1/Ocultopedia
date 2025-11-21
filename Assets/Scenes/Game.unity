@@ -5967,7 +5967,7 @@ Transform:
   m_GameObject: {fileID: 1485085786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.87, y: -5.37, z: 0}
+  m_LocalPosition: {x: -5.12, y: -5.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7516,7 +7516,7 @@ Transform:
   m_GameObject: {fileID: 2006587496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.18, y: -4.43, z: 0}
+  m_LocalPosition: {x: -1.35, y: -4.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8275,10 +8275,10 @@ MonoBehaviour:
   velocidadeFinal: 3.5
   audioCaldeirao: {fileID: 1317982277}
   somBorbulhando: {fileID: 8300000, guid: c3a80b175141b6d4a9e5c8117fc38a2a, type: 3}
-  volumeInicial: 0.2
-  volumeFinal: 0.5
-  pitchInicial: 0.6
-  pitchFinal: 0.6
+  volumeInicial: 0.1
+  volumeFinal: 1
+  pitchInicial: 0.5
+  pitchFinal: 0.9
   audioResultado: {fileID: 1317982277}
   somResultadoPadrao: {fileID: 0}
   somResultadoCorreto: {fileID: 8300000, guid: 6c36c0135f723634986fb20973a61069, type: 3}
@@ -8459,12 +8459,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: dbc6269ca524bae479361cb6d74d528d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5480525755f6a7c49a3f3e10a2e0fdcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 0.33336157, y: 0.33336157}
+  m_Size: {x: 0.31919947, y: 0.2977462}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8530,7 +8530,7 @@ Transform:
   m_GameObject: {fileID: 6395845950424274701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -458.5, y: -122.4, z: 0}
+  m_LocalPosition: {x: -458.74, y: -122.76, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8937,17 +8937,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0052408874, y: 0.000726508}
+  m_Offset: {x: -0.0014943331, y: 0.035771552}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
-    newSize: {x: 0.33336157, y: 0.33336157}
+    oldSize: {x: 6.4, y: 6.4}
+    newSize: {x: 0.31919947, y: 0.2977462}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.16370624, y: 0.105796024}
+  m_Size: {x: 0.17119935, y: 0.07087111}
   m_EdgeRadius: 0
 --- !u!4 &6763317953702691426
 Transform:
@@ -9253,7 +9253,7 @@ Transform:
   m_GameObject: {fileID: 1384533390764001120}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -458.53, y: -123.9159, z: 6.5713}
+  m_LocalPosition: {x: -458.7951, y: -124.126, z: 6.5713}
   m_LocalScale: {x: 12.217525, y: 12.049756, z: 0.30124798}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9269,7 +9269,7 @@ Animator:
   m_GameObject: {fileID: 1384533390764001120}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c98eda8453841ea409e2c6e873ba8463, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3521e949de3cb26448e38a898cf92c55, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
