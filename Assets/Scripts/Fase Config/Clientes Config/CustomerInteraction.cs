@@ -35,6 +35,13 @@ public class CustomerInteraction : MonoBehaviour
 
     public List<int> items = new List<int>();
 
+    // -------------------------------------------------
+    // ✔ ADIÇÃO — Exatamente o que você pediu
+    // -------------------------------------------------
+    [Header("Extra")]
+    public GameObject objetoParaAtivar;
+    // -------------------------------------------------
+
     private int etapaConversa = 0;
     private int etapaConversa2 = 0;
 
@@ -128,6 +135,9 @@ public class CustomerInteraction : MonoBehaviour
             timer.ResetarTimer();
             timer.IniciarTimer();
         }
+
+        if (objetoParaAtivar != null)
+            objetoParaAtivar.SetActive(true);
 
         Debug.Log("🎯 Timer iniciado, fase começou!");
     }
