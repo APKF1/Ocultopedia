@@ -16849,6 +16849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966015833}
   - component: {fileID: 966015835}
+  - component: {fileID: 966015836}
   m_Layer: 0
   m_Name: -----Menu Principal-----
   m_TagString: Untagged
@@ -16890,6 +16891,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86ae207e83b3e54a8ed619486b2c48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDatabase
+--- !u!114 &966015836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966015832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e705169e13e3c04690600d1fd6fa1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  volume: 0
+  telaCheia: 0
+  nivelAtual: 0
+  db: {fileID: 966015835}
 --- !u!1 &966212727
 GameObject:
   m_ObjectHideFlags: 0
@@ -22368,7 +22385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColectionManager
   parentEmpty: {fileID: 162818604}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 966015836}
 --- !u!1 &1282840648
 GameObject:
   m_ObjectHideFlags: 0
