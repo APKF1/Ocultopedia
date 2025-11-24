@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using UnityEditor.PackageManager;
+using UnityEngine;
+
+using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -34,6 +37,13 @@ public class CustomerInteraction : MonoBehaviour
     public GameObject panel;                    // variavel do painel que tem o fade                          
 
     public List<int> items = new List<int>();
+
+    // -------------------------------------------------
+    // ✔ ADIÇÃO — Exatamente o que você pediu
+    // -------------------------------------------------
+    [Header("Extra")]
+    public GameObject objetoParaAtivar;
+    // -------------------------------------------------
 
     private int etapaConversa = 0;
     private int etapaConversa2 = 0;
@@ -128,6 +138,9 @@ public class CustomerInteraction : MonoBehaviour
             timer.ResetarTimer();
             timer.IniciarTimer();
         }
+
+        if (objetoParaAtivar != null)
+            objetoParaAtivar.SetActive(true);
 
         Debug.Log("🎯 Timer iniciado, fase começou!");
     }
