@@ -3017,7 +3017,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464757408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfiguracoesUI, Assembly-CSharp
         m_MethodName: SairConfiguracoes
         m_Mode: 1
@@ -16848,7 +16848,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966015833}
-  - component: {fileID: 966015834}
   - component: {fileID: 966015835}
   m_Layer: 0
   m_Name: -----Menu Principal-----
@@ -16879,22 +16878,6 @@ Transform:
   - {fileID: 633781029}
   m_Father: {fileID: 2035309986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &966015834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966015832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f684822a6f1b424faa850ab03539c53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  volume: 0
-  telaCheia: 0
-  nivelAtual: 0
-  db: {fileID: 0}
 --- !u!114 &966015835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17812,7 +17795,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464757408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfiguracoesUI, Assembly-CSharp
         m_MethodName: OnVolumeAlterado
         m_Mode: 4
@@ -22385,7 +22368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColectionManager
   parentEmpty: {fileID: 162818604}
-  gameManager: {fileID: 966015834}
+  gameManager: {fileID: 0}
 --- !u!1 &1282840648
 GameObject:
   m_ObjectHideFlags: 0
@@ -26249,7 +26232,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464757407}
-  - component: {fileID: 1464757408}
   m_Layer: 5
   m_Name: "-----Configura\xE7\xF5es-----"
   m_TagString: Untagged
@@ -26282,23 +26264,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1464757408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464757406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fa230d3b9c193e439474024d09fbc69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ConfigManager
-  sliderVolume: {fileID: 998369246}
-  toggleTelaCheia: {fileID: 1743758822}
-  volume: 0
-  telaCheia: 0
-  configuracoes: {fileID: 1464757406}
 --- !u!1 &1481611737
 GameObject:
   m_ObjectHideFlags: 0
@@ -31600,7 +31565,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464757408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfiguracoesUI, Assembly-CSharp
         m_MethodName: OnTelaCheiaAlterada
         m_Mode: 6
