@@ -3095,8 +3095,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 101.93}
-  m_SizeDelta: {x: 776.69, y: 59.25}
+  m_AnchoredPosition: {x: 0, y: 76}
+  m_SizeDelta: {x: 951.14, y: 59.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772792653
 MonoBehaviour:
@@ -3120,8 +3120,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Seu Cliente cansou de esperar e foi embora :(
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
+  m_sharedMaterial: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3398,8 +3398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 259.4}
-  m_SizeDelta: {x: 300.73, y: 45.76}
+  m_AnchoredPosition: {x: 0, y: 271}
+  m_SizeDelta: {x: 350.12, y: 45.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818438384
 MonoBehaviour:
@@ -3423,8 +3423,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: O Tempo Acabou!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
+  m_sharedMaterial: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4628,8 +4628,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
+  m_sharedMaterial: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4659,7 +4659,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5198,8 +5198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 372}
-  m_SizeDelta: {x: 1027.22, y: 172.09}
+  m_AnchoredPosition: {x: 34, y: 372}
+  m_SizeDelta: {x: 1130.42, y: 172.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096872673
 MonoBehaviour:
@@ -5223,8 +5223,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Vendido!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
+  m_sharedMaterial: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5289,7 +5289,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1096872674
@@ -8627,10 +8627,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Corta p\xE3o, mas s\xF3 de segunda-feira."
+  m_text: "Descri\xE7\xE3o:    Corta p\xE3o, mas s\xF3 de segunda-feira."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
+  m_sharedMaterial: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9867,8 +9867,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1023527760}
-  - {fileID: 941719694}
   - {fileID: 465806379}
+  - {fileID: 941719694}
   - {fileID: 1969322092}
   - {fileID: 709531630}
   m_Father: {fileID: 68764540}
