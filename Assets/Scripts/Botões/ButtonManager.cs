@@ -27,7 +27,8 @@ public class ButtonManager : MonoBehaviour
 	{
 		colecao.SetActive(false);
 		seletorDeFases.SetActive(false);
-	}
+        settingsMenu.SetActive(false);
+    }
 	public void BtnSettings()
 	{
 		settingsMenu.SetActive(true);

@@ -13,14 +13,16 @@ public class SoundSettings : MonoBehaviour
     
     public void SetVolume(float _value)
     {
-        if(_value < 1)
+        if(_value < 0.0001f)
         {
-            _value = .001f;
+            _value = 0.0001f;
         }
 
         RefreshSlider(_value);
         PlayerPrefs.SetFloat("SavedMasterVolume", _value);
-        masterMixer.SetFloat("MasterVolume", Mathf.Log10(_value / 100) * 20f);
+        float volume = Mathf.Log10(_value) * 20f;
+        Debug.Log(volume);
+        masterMixer.SetFloat("MasterVolume", volume);
     }
 
     public void SetVolumeFromSlider()
