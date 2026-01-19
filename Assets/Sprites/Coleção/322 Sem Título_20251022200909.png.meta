@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7e2a59a8375f09a4894e3c984ce88756
+guid: 1cbde501d9b58bc488643c2f8bf86d2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3784010049462987352
-    second: Orbe_0
+      213: 8500724259241520428
+    second: "322 Sem T\xEDtulo_20251022200909_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orbe_0
+      name: "322 Sem T\xEDtulo_20251022200909_0"
       rect:
         serializedVersion: 2
-        x: 346
-        y: 217
-        width: 1356
-        height: 1478
+        x: 6
+        y: 28
+        width: 190
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85aefb86711838430800000000000000
-      internalID: 3784010049462987352
+      spriteID: c2de2adcca3a8f570800000000000000
+      internalID: 8500724259241520428
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orbe_0: 3784010049462987352
+      "322 Sem T\xEDtulo_20251022200909_0": 8500724259241520428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

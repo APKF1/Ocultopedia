@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6cfbe3bb86f5ad14394d462ee4d78287
+guid: 6454a21198f1df343acc092d42d6ae29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7488215088407997643
-    second: ColecaoBG_0
+      213: -3023524223421643943
+    second: "323 Sem T\xEDtulo_20251022201608_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ColecaoBG_0
+      name: "323 Sem T\xEDtulo_20251022201608_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 20
+        y: 101
+        width: 364
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcc674ad2fb7be760800000000000000
-      internalID: 7488215088407997643
+      spriteID: 9530a25fcb84a06d0800000000000000
+      internalID: -3023524223421643943
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ColecaoBG_0: 7488215088407997643
+      "323 Sem T\xEDtulo_20251022201608_0": -3023524223421643943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

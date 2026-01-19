@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c5893085e0c22c4a9e7f2d24d8367bf
+guid: f358a779487e2294a96a62a714096e47
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5953094539209803565
-    second: Elmo_0
+      213: -9054803035762987305
+    second: "322 Sem T\xEDtulo_20251022201029_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Elmo_0
+      name: "322 Sem T\xEDtulo_20251022201029_0"
       rect:
         serializedVersion: 2
-        x: 390
-        y: 909
-        width: 1670
-        height: 1190
+        x: 2
+        y: 18
+        width: 196
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d270beb41f3ad9250800000000000000
-      internalID: 5953094539209803565
+      spriteID: 7dee7360d90e65280800000000000000
+      internalID: -9054803035762987305
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Elmo_0: 5953094539209803565
+      "322 Sem T\xEDtulo_20251022201029_0": -9054803035762987305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
