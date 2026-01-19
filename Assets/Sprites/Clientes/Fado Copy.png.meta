@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a15362788ab4b374da7b61b091229966
+guid: 5ce9439a8435e1545a9dd90ab140edfd
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: FadoSafado_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 1920
+        x: 887
+        y: 886
+        width: 193
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
