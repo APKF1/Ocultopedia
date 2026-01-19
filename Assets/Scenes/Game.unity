@@ -8939,6 +8939,9 @@ MonoBehaviour:
   audioResultado: {fileID: 1317982277}
   somResultadoPadrao: {fileID: 0}
   somResultadoCorreto: {fileID: 8300000, guid: 6c36c0135f723634986fb20973a61069, type: 3}
+  nomesComps: []
+  posicoesOriginais: []
+  escalasOriginais: []
 --- !u!212 &280275559570828938
 SpriteRenderer:
   m_ObjectHideFlags: 0
