@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class Workbench : MonoBehaviour
 {
@@ -31,9 +32,9 @@ public class Workbench : MonoBehaviour
     public AudioClip somResultadoPadrao;
     public AudioClip somResultadoCorreto;
 
-    private List<string> nomesComps = new();
-    private List<Vector3> posicoesOriginais = new();
-    private List<Vector3> escalasOriginais = new();
+    public List<string> nomesComps = new();
+    public List<Vector3> posicoesOriginais = new();
+    public List<Vector3> escalasOriginais = new();
 
     private Coroutine craftRoutine;
     private bool craftAtivo = false;
@@ -47,11 +48,29 @@ public class Workbench : MonoBehaviour
 
         Redimensionamento redim = comp.GetComponent<Redimensionamento>();
 
-        Vector3 posOriginal = redim ? redim.posicaoOriginalSpawn : comp.transform.position;
-        Vector3 escalaOriginal = redim ? redim.escalaOriginalSpawn : comp.transform.localScale;
+        CompAnimation compAnimation = comp.GetComponent<CompAnimation>();
+
+        Vector3 posOriginal;
+        Vector3 escalaOriginal;
+
+        if (redim != null)
+        {
+            posOriginal = redim ? redim.posicaoOriginalSpawn : comp.transform.position;
+            escalaOriginal = redim ? redim.escalaOriginalSpawn : comp.transform.localScale;
+        }
+        else if (compAnimation != null)
+        {
+            posOriginal = compAnimation ? compAnimation.posicaoOriginalSpawn : comp.transform.position;
+            escalaOriginal = compAnimation ? compAnimation.escalaOriginalSpawn : comp.transform.localScale;
+        }
+        else
+        {
+            return;
+        }
 
         nomesComps.Add(nome);
         posicoesOriginais.Add(posOriginal);
+        Debug.Log(posOriginal);
         escalasOriginais.Add(escalaOriginal);
 
         Destroy(comp);
@@ -194,9 +213,11 @@ public class Workbench : MonoBehaviour
             return;
         }
 
+
         for (int i = 0; i < nomesComps.Count; i++)
         {
             string nome = nomesComps[i];
+
             Vector3 pos = posicoesOriginais[i];
             Vector3 escala = escalasOriginais[i];
 
@@ -207,6 +228,8 @@ public class Workbench : MonoBehaviour
                 continue;
             }
 
+            Debug.Log(prefab);
+            Debug.Log(pos);
             GameObject novo = Instantiate(prefab, pos, Quaternion.identity);
             novo.transform.localScale = escala;
 
