@@ -9727,6 +9727,8 @@ MonoBehaviour:
   customerPrefabs:
   - {fileID: 2310723480595246685}
   clienteAtual: {fileID: 2310723480595246685}
+  posX: -2.8
+  posY: -1.35
 --- !u!82 &7295997370953304417
 AudioSource:
   m_ObjectHideFlags: 0
