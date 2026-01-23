@@ -9970,18 +9970,14 @@ MonoBehaviour:
   customerNameText: {fileID: 1632533929}
   nomeDoCliente: "Trombilufo Pafad\xF4nio - o cupido aposentado"
   falas1:
-  - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
-    e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
-  - "Busco a lend\xE1ria Adaga de Manteiga! Potente, m\xEDstica\u2026 e excelente
-    para cortar p\xE3o nas    segundas-feiras. \xC9 vital para minha jornada.       
-    Ou para meu caf\xE9."
-  - "Por favor, artes\xE3o! Consegue forj\xE1-la? Prometo n\xE3o repetir de novo
-    a lenda do Frango de Tr\xEAs Cabe\xE7as e Meio\u2026 ningu\xE9m merece ouvir
-    a vers\xE3o longa."
+  - "Ol\xE1 querido! Bom dia. Preciso de algo que me ajude a espalhar felicidade
+    para os outros."
+  - "J\xE1 sei! Um instrumento, uma flauta! Voc\xEA consegue me arrumar uma bel\xEDssima
+    flauta?"
+  - "Por favor, eu prometo que TODOS ficar\xE3o muito felizes... hehe"
   falas2:
-  - "Ha! A Adaga de Manteiga! Agora sim meu p\xE3o de segunda t\xE1 salvo. Voc\xEA
-    \xE9 um her\xF3i, artes\xE3o \u2014 e pela primeira vez, o Trov\xE3o n\xE3o estragou
-    tudo!"
+  - "\xC9... O formato dela \xE9 meio estranho... De qualquer forma, muito obrigado
+    amore! Te desejo um \xF3timo dia!"
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
   fade: {fileID: 941719695}
