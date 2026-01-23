@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         db = GetComponent<GameDatabase>();
         // Teste: salvar dados
         db.SalvarConfiguracoes(0.7f, false);
-        db.SalvarProgresso(2, 3, "Canino");
+        //db.SalvarProgresso(2, 3, 1);
 
         // Teste: carregar dados
         var cfg = db.CarregarConfiguracoes();
@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
         //Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
 
         var prog = db.CarregarProgresso();
-        botoesVisiveis = prog.Desbloqueaveis;
         nivelAtual = prog.NivelAtual;
 
         //Testando Parse

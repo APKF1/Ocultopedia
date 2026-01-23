@@ -32,7 +32,7 @@ public class Configs : MonoBehaviour
         
     }
 
-    void ResolutionNext()
+    public void ResolutionNext()
     {
         if (!Screen.fullScreen)
         {
@@ -42,7 +42,7 @@ public class Configs : MonoBehaviour
         }
     }
 
-    void ResolutionBack()
+    public void ResolutionBack()
     {
         if (Screen.fullScreen)
         {

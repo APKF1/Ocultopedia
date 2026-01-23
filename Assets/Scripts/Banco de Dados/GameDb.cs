@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using SQLite4Unity3d;
+using System.Linq;
 
 public class GameDatabase : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameDatabase : MonoBehaviour
 
         db.CreateTable<Configuracoes>();
         db.CreateTable<Progresso>();
+        db.CreateTable<Colecao>();
 
         // Se ainda não existir dados, cria com valores padrão
         if (db.Table<Configuracoes>().Count() == 0)
@@ -23,7 +25,7 @@ public class GameDatabase : MonoBehaviour
 
         if (db.Table<Progresso>().Count() == 0)
         {
-            SalvarProgresso(1, 1, "");
+            db.Insert(new Progresso { NivelProgresso = 1, NivelAtual =  1 });
         }
     }
 
@@ -44,23 +46,9 @@ public class GameDatabase : MonoBehaviour
     }
 
     // ---------------- PROGRESSO ----------------
-    public void SalvarProgresso(int maiorNivel, int nivelJogado,  string desbloqueaveis)
+    public void SalvarProgresso(int maiorNivel, int nivelEscolhido,  int id)
     {
-        db.DeleteAll<Progresso>(); // garante só 1 linha
-        if(maiorNivel > nivelJogado)
-        {
-            db.Insert(new Progresso
-            {
-                NivelAtual = maiorNivel,
-                Desbloqueaveis = desbloqueaveis
-            });
-        }else{
-            db.Insert(new Progresso
-            {
-                NivelAtual = nivelJogado,
-                Desbloqueaveis = desbloqueaveis
-            });
-        }
+        db.Execute("UPDATE Progresso SET NivelProgresso = ?, NivelAtual = ? WHERE Id = ?", maiorNivel, nivelEscolhido, id);
 
     }
 
@@ -68,6 +56,27 @@ public class GameDatabase : MonoBehaviour
     {
         return db.Table<Progresso>().FirstOrDefault();
     }
+
+    public Colecao CarregarColecao(string desbloq, int id)
+    {
+        if (desbloq == null) return db.Table<Colecao>().FirstOrDefault();
+        else return db.Table<Colecao>().Where(c => c.Desbloqueavel == desbloq && c.Id == id).FirstOrDefault();
+    }
+
+    public void SalvarColecao(int id, bool coletado, string colecionavel)
+    {
+        db.Execute("UPDATE Colecao SET Coletado = ? WHERE Desbloqueavel = '?' AND Id = ?", coletado ? 1: 0, colecionavel, id);
+    }
+
+    public void InserirColecao(string desb)
+    {
+        db.Insert(new Colecao
+        {
+            Coletado = false ? 1:0,
+            Desbloqueavel = desb
+        });
+    }
+
 
     void OnDestroy()
     {
@@ -88,6 +97,15 @@ public class Progresso
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
+
+    public int NivelProgresso { get; set; }
     public int NivelAtual { get; set; }
-    public string Desbloqueaveis { get; set; } 
+}
+
+public class Colecao
+{
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+    public int Coletado { get; set; } // 0 ou 1
+    public string Desbloqueavel { get; set; }
 }
