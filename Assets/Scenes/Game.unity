@@ -1289,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 290600805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.89, y: 0.59, z: 0}
+  m_LocalPosition: {x: -32.44, y: 0.59, z: 0}
   m_LocalScale: {x: 0.16071096, y: 0.15603685, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1354,10 +1354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Til\xE1pio e Gentibalda - o maior fishEO e seu \"cavalo\""
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 541037623}
   - component: {fileID: 541037622}
   m_Layer: 0
-  m_Name: Cliente 4
+  m_Name: Cliente 9
   m_TagString: Cliente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2719,7 +2719,7 @@ Transform:
   m_GameObject: {fileID: 541037620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.19, y: 0.32, z: 0}
+  m_LocalPosition: {x: -48.42, y: 0.32, z: 0}
   m_LocalScale: {x: 0.40361762, y: 0.40901664, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2784,10 +2784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: Sapolino - o vassoboy
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -4994,22 +4994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScaleSet
   scale: 0.25
---- !u!114 &1023527758 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
-  m_PrefabInstance: {fileID: 1476871007}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!224 &1023527760 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 481823830227854858, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
-  m_PrefabInstance: {fileID: 1476871007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1029561491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,11 +5299,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1023527760}
+  m_Father: {fileID: 481823831704200533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359.07007, y: -115.20004}
+  m_AnchoredPosition: {x: 359.07007, y: -100.20004}
   m_SizeDelta: {x: 86.25, y: 27.04}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1077756006
@@ -5846,7 +5830,7 @@ GameObject:
   - component: {fileID: 1140220224}
   - component: {fileID: 1140220223}
   m_Layer: 0
-  m_Name: Cliente 9
+  m_Name: Cliente 8
   m_TagString: Cliente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5861,7 +5845,7 @@ Transform:
   m_GameObject: {fileID: 1140220221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.05, y: 0.43, z: 0}
+  m_LocalPosition: {x: -42.71, y: 0.43, z: 0}
   m_LocalScale: {x: 0.18587898, y: 0.1883654, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5926,7 +5910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
   nomeDoCliente: Dom Canino da Serra
@@ -6914,7 +6898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 481823830227854858, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -317
+      value: -332
       objectReference: {fileID: 0}
     - target: {fileID: 481823830227854858, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6966,7 +6950,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_fontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_fontColor.b
@@ -6989,12 +6973,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2461645238505960221, guid: 38a56177cdcc8394c93168efbcdbb558, type: 2}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+      propertyPath: m_overrideHtmlColors
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -7002,6 +6994,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+      propertyPath: m_enableVertexGradient
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7451,7 +7447,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1023527760}
+    m_TransformParent: {fileID: 481823831704200533}
     m_Modifications:
     - target: {fileID: 900361901572869, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
       propertyPath: m_Name
@@ -7479,7 +7475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5536412029958780381, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5536412029958780381, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7519,7 +7515,7 @@ PrefabInstance:
       objectReference: {fileID: -1073996054863025801, guid: 963bf44db6161394f9b60d747082c627, type: 3}
     - target: {fileID: 7955648548470999767, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
       propertyPath: m_Color.a
-      value: 0.9607843
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 7955648548470999767, guid: a44c265639c0bd3418a2ec046e418039, type: 3}
       propertyPath: m_Color.b
@@ -7672,11 +7668,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1023527760}
+  m_Father: {fileID: 481823831704200533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.729958, y: 80.859985}
+  m_AnchoredPosition: {x: -53.729958, y: 95.859924}
   m_SizeDelta: {x: 668.5, y: 37.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632533929
@@ -7708,8 +7704,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7732,7 +7728,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 3
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7791,7 +7787,7 @@ GameObject:
   - component: {fileID: 1641890814}
   - component: {fileID: 1641890813}
   m_Layer: 0
-  m_Name: Cliente 5
+  m_Name: Cliente 7
   m_TagString: Cliente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7806,7 +7802,7 @@ Transform:
   m_GameObject: {fileID: 1641890811}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.52, y: 0.25, z: 0}
+  m_LocalPosition: {x: -37.04, y: 0.25, z: 0}
   m_LocalScale: {x: 0.18587898, y: 0.1883654, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7871,10 +7867,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: Eduardo - o jogador de RPG
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -8338,7 +8334,7 @@ Transform:
   m_GameObject: {fileID: 1792061697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.95, y: 0.53, z: 0}
+  m_LocalPosition: {x: -54.22, y: 0.53, z: 0}
   m_LocalScale: {x: 0.2920574, y: 0.31467256, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8403,10 +8399,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Pern\xE1stia Altivossa - a grande (gigantesca) modelo"
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -8937,23 +8933,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Ded\xE9zio - o diplomata eleg\xE2nte"
   falas1:
-  - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
-    e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
-  - "Busco a lend\xE1ria Adaga de Manteiga! Potente, m\xEDstica\u2026 e excelente
-    para cortar p\xE3o nas    segundas-feiras. \xC9 vital para minha jornada.       
-    Ou para meu caf\xE9."
-  - "Por favor, artes\xE3o! Consegue forj\xE1-la? Prometo n\xE3o repetir de novo
-    a lenda do Frango de Tr\xEAs Cabe\xE7as e Meio\u2026 ningu\xE9m merece ouvir
-    a vers\xE3o longa."
+  - "Muito boa tarde, sou Ded\xE9zio mas pode me chamar de Senhor Ded\xE9zio. Estou
+    aqui em busca de um amuleto \xFAnico... o \"amuleto do quase\". Acredito que
+    este artefato ser\xE1 uma grande fonte de risadas."
+  - "Lembre-se, a pressa \xE9 uma excelente conselheira... Se o objetivo for errar
+    com eleg\xE2ncia."
+  - "Estarei no aguardo. Eu o aconselho a n\xE3o confundir pressa com progresso."
   falas2:
-  - "Ha! A Adaga de Manteiga! Agora sim meu p\xE3o de segunda t\xE1 salvo. Voc\xEA
-    \xE9 um her\xF3i, artes\xE3o \u2014 e pela primeira vez, o Trov\xE3o n\xE3o estragou
-    tudo!"
+  - "Hmmm... \xD3timo. Agrade\xE7o a compreens\xE3o. Tenha um \xF3timo dia, nobre
+    artes\xE3o."
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
   fade: {fileID: 941719695}
@@ -9114,23 +9107,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Miolovski - o tem\xEDvel (e mal colado) professor"
   falas1:
-  - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
-    e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
-  - "Busco a lend\xE1ria Adaga de Manteiga! Potente, m\xEDstica\u2026 e excelente
-    para cortar p\xE3o nas    segundas-feiras. \xC9 vital para minha jornada.       
-    Ou para meu caf\xE9."
-  - "Por favor, artes\xE3o! Consegue forj\xE1-la? Prometo n\xE3o repetir de novo
-    a lenda do Frango de Tr\xEAs Cabe\xE7as e Meio\u2026 ningu\xE9m merece ouvir
-    a vers\xE3o longa."
+  - "Eu, o GRANDE professor Miolosvki preciso de sua ajuda. Ultimamente n\xE3o tem
+    sido f\xE1cil \"andar\" pelas ruas dessa forma..."
+  - "Gostaria da \"capa do sumi\xE7o social\", assim ningu\xE9m poder\xE1 ver o que
+    os atingiu quando eu dominar o mundo!"
+  - "Ande logo e me traga meu artefato! Meu plano logo ser\xE1 conclu\xEDdo e ent\xE3o
+    poderei mostrar a todos o poder da minha intelig\xEAncia! HAha-haHAHAha~~"
   falas2:
-  - "Ha! A Adaga de Manteiga! Agora sim meu p\xE3o de segunda t\xE1 salvo. Voc\xEA
-    \xE9 um her\xF3i, artes\xE3o \u2014 e pela primeira vez, o Trov\xE3o n\xE3o estragou
-    tudo!"
+  - "FINALMENTE! Agora serei capaz de avan\xE7ar no meu plano. Eu me lembrarei de
+    voc\xEA, pequeno artes\xE3o."
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
   fade: {fileID: 941719695}
@@ -9891,7 +9881,7 @@ GameObject:
   - component: {fileID: 2036799631}
   - component: {fileID: 2036799630}
   m_Layer: 0
-  m_Name: Cliente 8
+  m_Name: Cliente 4
   m_TagString: Cliente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9906,7 +9896,7 @@ Transform:
   m_GameObject: {fileID: 2036799628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -41.44, y: 0.87, z: 0}
+  m_LocalPosition: {x: -23.51, y: 0.87, z: 0}
   m_LocalScale: {x: 0.5452554, y: 0.55221915, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9975,10 +9965,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Trombilufo Pafad\xF4nio - o cupido aposentado"
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -10384,7 +10374,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 513.61, y: 191.98}
+  m_SizeDelta: {x: 577.37, y: 191.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115863997
 MonoBehaviour:
@@ -10439,7 +10429,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10543,7 +10533,7 @@ GameObject:
   - component: {fileID: 2128988420}
   - component: {fileID: 2128988419}
   m_Layer: 0
-  m_Name: Cliente 7
+  m_Name: Cliente 5
   m_TagString: Cliente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10558,7 +10548,7 @@ Transform:
   m_GameObject: {fileID: 2128988417}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.940002, y: 0.46, z: 0}
+  m_LocalPosition: {x: -28.2, y: 0.46, z: 0}
   m_LocalScale: {x: 0.1687781, y: 0.19243187, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10623,10 +10613,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Adru\xEDno e Rafeiti\xE7o - os grandes \"s\xE1bios\" do entretenimento"
   falas1:
   - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
     e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
@@ -10834,23 +10824,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerInteraction
   speechBubble: {fileID: 650965955}
-  speechText: {fileID: 1023527758}
+  speechText: {fileID: 7498565162715829736}
   okButton: {fileID: 1077756006}
   customerNameText: {fileID: 1632533929}
-  nomeDoCliente: Dom Canino da Serra
+  nomeDoCliente: "Dom Canino - o contador de hist\xF3rias"
   falas1:
-  - "Sauda\xE7\xF5es, jovem artes\xE3o! Sou Dom Canino da Serra, Guardi\xE3o de Hist\xF3rias\u2026
-    e sobrevivente das teimosias do meu burro Trov\xE3o. Preciso da sua ajuda."
-  - "Busco a lend\xE1ria Adaga de Manteiga! Potente, m\xEDstica\u2026 e excelente
-    para cortar p\xE3o nas    segundas-feiras. \xC9 vital para minha jornada.       
-    Ou para meu caf\xE9."
-  - "Por favor, artes\xE3o! Consegue forj\xE1-la? Prometo n\xE3o repetir de novo
-    a lenda do Frango de Tr\xEAs Cabe\xE7as e Meio\u2026 ningu\xE9m merece ouvir
-    a vers\xE3o longa."
+  - "Bom dia, jovem artes\xE3o! Muito prazer, sou Dom Canino da Serra, Guardi\xE3o
+    de Hist\xF3rias\u2026 e sobrevivente das teimosias de meu burro Trov\xE3o. Preciso
+    da sua ajuda."
+  - "Busco a lend\xE1ria Adaga de Manteiga! Potente, m\xEDstica\u2026 e ouvi dizer
+    que \xE9 excelente para cortar p\xE3o. \xC9 vital para minha jornada... Ou para
+    meu caf\xE9 da manh\xE3."
+  - "Voc\xEA poderia forja-la para mim? Se conseguir eu posso lhe contar a incr\xEDvel
+    hist\xF3ria do tem\xEDvel \"Frango de Tr\xEAs cabe\xE7as e Meia\"."
   falas2:
-  - "Ha! A Adaga de Manteiga! Agora sim meu p\xE3o de segunda t\xE1 salvo. Voc\xEA
-    \xE9 um her\xF3i, artes\xE3o \u2014 e pela primeira vez, o Trov\xE3o n\xE3o estragou
-    tudo!"
+  - "Incr\xEDvel! Sua habilidade \xE9 realmente extraordin\xE1ria. Agrade\xE7o pela
+    ajuda e espero que nos encontremos por ai, enquanto isso continuarei a espalhar
+    minhas magn\xEDficas hist\xF3rias!"
   timer: {fileID: 7295997370953304414}
   spawn: {fileID: 4645418297424169626}
   fade: {fileID: 941719695}
@@ -10975,6 +10965,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!224 &481823831704200533 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 481823830227854858, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+  m_PrefabInstance: {fileID: 1476871007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1258491457021920647
 GameObject:
   m_ObjectHideFlags: 0
@@ -11798,6 +11793,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7498565162715829736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7498565161507919543, guid: 020409bfdec4f9d4bb03ab2ce8dc112a, type: 3}
+  m_PrefabInstance: {fileID: 1476871007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &7551236403743842209
 Transform:
   m_ObjectHideFlags: 0
@@ -11825,7 +11831,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1023527760}
+  - {fileID: 481823831704200533}
   - {fileID: 465806379}
   - {fileID: 941719694}
   - {fileID: 1969322092}
