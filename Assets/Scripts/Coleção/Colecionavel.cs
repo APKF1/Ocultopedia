@@ -15,7 +15,7 @@ public class Colecionavel : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        VerificarColecao();
+        //VerificarColecao();
         
     }
 
@@ -31,6 +31,7 @@ public class Colecionavel : MonoBehaviour
         }
     }
 
+    /*
     public void VerificarColecao()
     {
         // Verifica qual fase está rodando
@@ -54,5 +55,5 @@ public class Colecionavel : MonoBehaviour
             gameObject.gameObject.SetActive(true);
         }
         else return;
-    }
+    }*/
 }

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
 
         var prog = db.CarregarProgresso();
-        nivelAtual = prog.NivelAtual;
+        nivelAtual = prog.Fase;
 
         //Testando Parse
         //Debug.Log($"Progresso -> Nível: {prog.NivelAtual}, Pontos: {prog.Pontos}, Itens: {prog.Itens}");
