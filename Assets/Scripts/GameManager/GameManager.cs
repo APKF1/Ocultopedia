@@ -11,25 +11,27 @@ public class GameManager : MonoBehaviour
     private string botoesVisiveis;
     public GameDatabase db;
 
+    public static GameManager Instance;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);   // destrói o NOVO
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         db = GetComponent<GameDatabase>();
-        // Teste: salvar dados
-        db.SalvarConfiguracoes(0.7f, false);
-        //db.SalvarProgresso(2, 3, 1);
-
-        // Teste: carregar dados
-        var cfg = db.CarregarConfiguracoes();
-        volume = cfg.VolumeMusica;
-        telaCheia = cfg.TelaCheia;
-
-        //Debug.Log($"Config -> Música: {cfg.VolumeMusica}, Efeitos: {cfg.VolumeEfeitos}, Res: {cfg.Resolucao}, Tela Cheia: {cfg.TelaCheia}");
 
         var prog = db.CarregarProgresso();
         nivelAtual = prog.Fase;
 
-        //Testando Parse
-        //Debug.Log($"Progresso -> Nível: {prog.NivelAtual}, Pontos: {prog.Pontos}, Itens: {prog.Itens}");
     }
     
     // Método público para recuperar isso como array
